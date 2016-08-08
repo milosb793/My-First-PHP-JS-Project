@@ -174,11 +174,12 @@ class Administrator extends Korisnik
     public static function izmeniSaradnika($ime_prezime, $e_mail,$novo_ime_prez="",$novo_kor_ime="",$nova_loz="",$novi_mejl="",$novi_opis="",$novi_status="",$nova_slika="")
     {
         $rezultat = [];
-//      $niz = array(-1,-1,-1,-1,-1,-1,-1); //овде ће се поставити 0 ако је прослеђен атрибут а није убачен у базу
-        $niz = [-1 => ["ime_prezime"=>$novo_ime_prez], -1=>["kor_ime"=>$novo_kor_ime],
-                -1 =>["lozinka"=>$nova_loz], -1=>["e_mail"=>$novi_mejl],
-                -1=>["opis"=>$novi_opis], -1=>["status"=>$novi_status],
-                -1=>["slika_url"=>$nova_slika]];
+        $niz = array(-1,-1,-1,-1,-1,-1,-1); //овде ће се поставити 0 ако је прослеђен атрибут а није убачен у базу
+        $parametri = [ ["ime_prezime"=>$novo_ime_prez], ["kor_ime"=>$novo_kor_ime],
+                       ["lozinka"=>$nova_loz],          ["e_mail"=>$novi_mejl],
+                       ["opis"=>$novi_opis],            ["status"=>$novi_status],
+                       ["slika_url"=>$nova_slika]
+                    ];
 
         //прво провера да ли постоји
         $rezultat = mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT saradnik_id,status FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND e_mail='{$e_mail}' ;") );
@@ -192,98 +193,112 @@ class Administrator extends Korisnik
         if(!empty( $rezultat["saradnik_id"]) || $rezultat['saradnik_id']!=0)
         {
             $upit = "UPDATE saradnik SET ";
-            foreach($niz as &$red=>$pod_niz)
-                foreach($pod_niz as $naziv_polja => $vrednost)
+
+            $i=1; //Укупно измена
+            $j=0; //текући елемент за форич
+            $indeks = 0; //индексирање низа
+
+            foreach($parametri as $naziv=>$vrednost)
+            {
+                if($vrednost!=0)
                 {
-                    global $red;
-                    if($vrednost!="")
+                    $i++;
+                    $niz[$indeks]=1;
+                }
+                else
+                    $niz[$indeks]=0;
+            }
+
+            foreach($parametri as $naziv=>$vrednost)
+            {
+                if($vrednost!=0)
+                {
+                    $upit .= "{$naziv}='{$vrednost}'";
+                    $j++;
+                    if($i==$j)
                     {
-                        $red = 1;
+                        $upit .= " ";
+                    }
+                    else
+                    {
+                        $upit .= " , ";
                     }
                 }
-
-            foreach($niz as $red=>$pod_niz)
-                foreach($pod_niz as $naziv_polja => $vrednost)
-                {
-                    global $red;
-                    if($vrednost!="")
-                    {
-                        $red = $red[1];
-                    }
-                }
-
-
-
-
-            if($novo_ime_prez!="")
-            {
-                if (Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET ime_prezime='{$novo_ime_prez}' ;"))
-                    $niz[0]=1;
             }
-            else
-                $niz[0]=0;
 
-            if($novo_kor_ime!="")
-            {
-                if (Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET kor_ime='" . $novo_kor_ime . "' ;"))
-                    $niz[1]=1;
-            }
-            else
-                $niz[1]=0;
-
-            if($nova_loz!="")
-            {
-                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET lozinka='".$nova_loz."' ;") )
-                    $niz[2]=1;
-            }
-            else
-                $niz[2]=0;
-
-            if($novi_mejl!="")
-            {
-                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET e_mail='".$novi_mejl."' ;") )
-                    $niz[3]=1;
-            }
-            else
-                $niz[3]=0;
-
-            if($novi_opis!="")
-            {
-                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET opis='".$novi_opis."' ;") )
-                    $niz[4]=1;
-            }
-            else
-                $niz[4]=0;
-
-            if($novi_status!="")
-            {
-                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='".$novi_status."' ;") )
-                    $niz[5]=1;
-            }
-            else
-                $niz[5]=0;
-
-            if($nova_slika!="")
-            {
-                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET slika_url='".$nova_slika."' ;") )
-                    $niz[6]=1;
-            }
-            else
-                $niz[6]=0;
-
-
-            //провера шта је од задатих параметара промењено; ако није један од задатих, изацује се грешка
-            foreach($niz as $n)
-            {
-                if($n==0)
-                    throw new Izuzetak("Дошло је до грешке при ажурирања базе. Покушајте поново.");
-            }
+            if(Baza::vratiInstancu()->inUpDel($upit))
+                echo "Успешно сте ажурирали сарадника!";
+//
+//            if($novo_ime_prez!="")
+//            {
+//                if (Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET ime_prezime='{$novo_ime_prez}' ;"))
+//                    $niz[0]=1;
+//            }
+//            else
+//                $niz[0]=0;
+//
+//            if($novo_kor_ime!="")
+//            {
+//                if (Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET kor_ime='" . $novo_kor_ime . "' ;"))
+//                    $niz[1]=1;
+//            }
+//            else
+//                $niz[1]=0;
+//
+//            if($nova_loz!="")
+//            {
+//                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET lozinka='".$nova_loz."' ;") )
+//                    $niz[2]=1;
+//            }
+//            else
+//                $niz[2]=0;
+//
+//            if($novi_mejl!="")
+//            {
+//                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET e_mail='".$novi_mejl."' ;") )
+//                    $niz[3]=1;
+//            }
+//            else
+//                $niz[3]=0;
+//
+//            if($novi_opis!="")
+//            {
+//                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET opis='".$novi_opis."' ;") )
+//                    $niz[4]=1;
+//            }
+//            else
+//                $niz[4]=0;
+//
+//            if($novi_status!="")
+//            {
+//                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='".$novi_status."' ;") )
+//                    $niz[5]=1;
+//            }
+//            else
+//                $niz[5]=0;
+//
+//            if($nova_slika!="")
+//            {
+//                if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET slika_url='".$nova_slika."' ;") )
+//                    $niz[6]=1;
+//            }
+//            else
+//                $niz[6]=0;
+//
+//
+//            //провера шта је од задатих параметара промењено; ако није један од задатих, изацује се грешка
+//            foreach($niz as $n)
+//            {
+//                if($n==0)
+//                    throw new Izuzetak("Дошло је до грешке при ажурирања базе. Покушајте поново.");
+//            }
         }
         else
             throw new Izuzetak("Не постоји сарадник са унетим именом и презименом и мејлом.");
     }
 
     /**
+     * Реализовати као линк
      * @param $ime_prezime
      * @param $e_mail
      * @throws Izuzetak
@@ -293,12 +308,12 @@ class Administrator extends Korisnik
         $saradnik_id = 0;
 
         //прво провера да ли постоји
-        $rezultat = Metode::ocistiNiz(mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT saradnik_id FROM saradnik WHERE ime_prezime='".$ime_prezime."' AND e_mail='".$e_mail."' ;") ) );
+        $rezultat = Metode::ocistiNiz(mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND e_mail='{$e_mail}' ;") ) );
 
-        if( $rezultat["saradnik_id"] == 0 || !isset($rezultat["saradnik_id"]) )
+        if( $rezultat["saradnik_id"] == 0 || empty($rezultat["saradnik_id"]) )
         {
-            if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='"."deaktiviran"."' WHERE saradnik_id='".$saradnik_id."' ;") )
-                Metode::obavestenje("Успешно сте променили статус.");
+            if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='"."deaktiviran"."' WHERE saradnik_id={$saradnik_id} ;") )
+                echo "Успешно сте променили статус.";
             else
                 throw new Izuzetak("Дошло је до грешке при ажурурању базе. Покушајте поново.");
         }
@@ -313,15 +328,15 @@ class Administrator extends Korisnik
     public static function dodajSaradnikaNaPredmet($saradnik_id, $predmet_id)
     {
         //провера да већ не постоји овај пар
-        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id='".$saradnik_id."' AND predmet_id='".$predmet_id."' ;";
+        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id={$saradnik_id} AND predmet_id={$predmet_id} ; ";
         
        $rezultat = Metode::ocistiNiz( mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit1) ) );
 
         if( $rezultat["saradnik_id"] == $saradnik_id && $rezultat["predmet_id"] == $predmet_id )
-            Metode::obavestenje("Сарадник је већ ангажован на том предмету.");
+            echo "Сарадник је већ ангажован на том предмету.";
         else
-            if( Baza::vratiInstancu()->inUpDel("UPDATE predmet_saradnik SET saradnik_id='".$saradnik_id."', predmet_id='".$predmet_id."' ;") )
-                Metode::obavestenje("Сарадник је додат на предмет. ");
+            if( Baza::vratiInstancu()->inUpDel("UPDATE predmet_saradnik SET saradnik_id={$saradnik_id}, predmet_id={$predmet_id} ;") )
+                echo "Сарадник је додат на предмет. ";
             else
                 throw new Izuzetak("Дошло је до грешке при додавању сарадника на предмет. Покушајте поново.");
     }
@@ -334,30 +349,22 @@ class Administrator extends Korisnik
     public static function obrisiSaradnikaSaPredmeta($saradnik_id, $predmet_id)
     {
         //провера да већ не постоји овај пар
-        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id='".$saradnik_id."' AND predmet_id='".$predmet_id."' ;";
+        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id='{$saradnik_id}' AND predmet_id='{$predmet_id}' ;";
 
         $rezultat = Metode::ocistiNiz( mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit1) ) );
 
         if( $rezultat["saradnik_id"] == $saradnik_id && $rezultat["predmet_id"] == $predmet_id )
         {
-            if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet_saradnik WHERE saradnik_id='".$saradnik_id."' AND predmet_id='".$predmet_id."' ;") )
-                Metode::obavestenje("Сарадник је успешно уклоњен са предмета. ");
+            if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet_saradnik WHERE saradnik_id='{$saradnik_id}' AND predmet_id='{$predmet_id}' ;") )
+                echo "Сарадник је успешно уклоњен са предмета. ";
             else
                 throw new Izuzetak("Дошло је до грешке при уклањању сарадника са предмета. Покушајте поново.");
         }
         else
-            Metode::obavestenje("Сарадник није ангажован на том предмету.");
+            echo "Сарадник није ангажован на том предмету.";
 
     }
 
-    public static function daLiJeAdmin()
-    {
-        if(!isset($_SESSION['korisnik']['admin_id']) )
-        {
-            self::preusmeri("login.php");
-            echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
-        }
-    }
 
 }
 
