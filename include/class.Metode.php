@@ -17,7 +17,7 @@ class Metode
         echo "</div>";
     }
 
-    public static function ocistiNiz(array $niz)
+    public static function ocistiNiz( $niz)
     {
         $noviNiz = [];
 
