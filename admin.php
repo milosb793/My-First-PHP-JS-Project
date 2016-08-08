@@ -22,6 +22,9 @@ echo "Кор. име: {$_SESSION['korisnik']['kor_ime']}" . "<br/>";
 echo "Лозинка(хеш): " . sha1($_SESSION['korisnik']['kor_ime']) . "<br/>";
 echo "Е-пошта: {$_SESSION['korisnik']['e_mail']}";
 
+// код методе, додај предмет:
+# try { Administrator::dodajPredmet() } catch($e) { echo $e->getMessag
+
 ?>
 
 </body>
