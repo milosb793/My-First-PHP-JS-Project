@@ -47,15 +47,15 @@ class Administrator extends Korisnik
      */
     public static function dodajPredmet($naziv,$opis)
     {
-        if(!isset($naziv) && !isset($opis))
+        if(isset($naziv) && isset($opis))
         {
-            if( Baza::vratiInstancu()->inUpDel("INSERT INTO predmet(naziv, opis) VALUES('".$naziv."', '".$opis."' ; ") )
-                Metode::obavestenje("Успешно сте додали предмет!");
+            if( Baza::vratiInstancu()->inUpDel("INSERT INTO predmet(naziv, opis) VALUES( '{$naziv}', '{$opis}' ; ") )
+                echo "Успешно сте додали предмет!";
             else
-                throw new Izuzetak("Дошло је до грешке при ажурирању базе. Покушајте поново.");
+                echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
         }
         else
-            throw new Izuzetak("Нисте унели параметре за предмет.");
+            echo "Нисте унели параметре за предмет.";
     }
 
     /**
