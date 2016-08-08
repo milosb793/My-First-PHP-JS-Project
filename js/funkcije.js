@@ -1,3 +1,5 @@
-/**
- * Created by logos on 9.8.16..
- */
+// za admin.php
+
+$("#dodajSaradnikaLink").onclick(function () {
+    $("#dodavanjeSaradnikaForma").css("display","block");
+});
