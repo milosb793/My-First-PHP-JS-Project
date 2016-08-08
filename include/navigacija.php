@@ -6,6 +6,6 @@
     <br>
     <hr>
     <nav>
-        <a href="http://localhost/pva_projekat/index.php">Почетна</a> | <a href="http://localhost/pva_projekat/login.php">Пријави/Одјави се</a>
+        <a href="http://localhost/pva_projekat/pva/index.php">Почетна</a> | <a href="http://localhost/pva_projekat/pva/login.php">Пријави/Одјави се</a>
     </nav>
 </div>
