@@ -29,7 +29,7 @@ echo "Е-пошта: {$_SESSION['korisnik']['e_mail']}";
 
 <a href="#" id="dodajSaradnikaLink">додајте сарадника</a> ";
 
-<div id="dodavanjeSaradnikaForma" style='display: none;'>
+<div id="dodavanjeSaradnikaForma" style='display: none;' hidden="hidden">
 
 <?php
 $forma = "<form id='noviSaradnik' method='post' action='#'>";
@@ -47,14 +47,14 @@ $tabela .= "<tr> <td>Статус: </td>
 <td> 
 <select id='status' name='status'>
 <option name='podrazumevano' value='---'></option> 
-<option name='1' value='aktiviran'></option> 
-<option name='0' value='deaktiviran'></option> 
+<option name='1' value='aktiviran'>Активиран</option> 
+<option name='0' value='deaktiviran'>Деактивиран</option> 
 </select> </td></tr>";
 
 $tabela .= "<tr> <td>URL слике: </td> <td> <input type='url' name='slika_url'> </td></tr>";
 
-$tabela .= "</form>";
-$tabela .= "<button onclick='prosledi()'>";
+$tabela .= "</table> </form>";
+$tabela .= "<button id='prosledi' name='prosledi'>Проследи</button>";
 
 $forma .= $tabela;
 
@@ -64,9 +64,9 @@ echo $forma;
 </div>
 
 </body>
-<script src="js/funkcije.js"></script>
-<script src="js/polja_forme.js"></script>
-<script src="js/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="js/funkcije.js"></script>
+<script type="text/javascript" src="js/polja_forme.js"></script>
 
 </html>
 
