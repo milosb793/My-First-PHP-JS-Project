@@ -1,4 +1,5 @@
 <?php
+require_once "class.Korisnik.php";
 require_once "class.Izuzetak.php";
 
 
