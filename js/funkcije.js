@@ -26,24 +26,27 @@ $('button[name=prosledi]').click(function () {
     var st = $('select[name=status] option:selected').val();
     var url = $('input[name=slika_url]').val();
     //proba var status;
-    $.post("ajax/dodavanjeSaradnika.php",
-        {ime_prezime: imeprez, kor_ime: kor_ime, lozinka: loz, e_mail: em, opis: op, status: st, slika_url: url},
-        function (odgovor, status) {
-            alert(odgovor + status);
-        });
-    alert(status);
-});
-    // Не ради //
-//     $.ajax({
-//         url: "ajax/dodavanjeSaradnika.php",
-//         type: "POST",
-//         data: "ime_prezime="+imeprez + "kor_ime=" + kor_ime + "lozinka=" + loz + "e_mail=" +em + "opis=" + op + "status=" + st + "slika_url=" + url,
-//     success: function(data) {
-//         alert(data);
-//     },
-//     error: function () {
-//         alert("Greska");
-//     }
-// })
+
+//     alert("pre posta");
+//     $.post("ajax/dodavanjeSaradnika.php",
+//         {ime_prezime:imeprez, kor_ime:kor_ime, lozinka:loz, e_mail:em, opis:op, status:st, slika_url:url},
+//         function (odgovor, status) {
+//             alert("Одговор: " + odgovor +'\n'+ "Статус: " + status);
+//         });
+//     alert("posle posta");
 // });
+
+    // Не ради //
+    $.ajax({
+        url: "ajax/dodavanjeSaradnika.php",
+        type: "POST",
+        data: "ime_prezime="+imeprez + "&kor_ime=" + kor_ime + "&lozinka=" + loz + "&e_mail=" +em + "&opis=" + op + "&status=" + st + "&slika_url=" + url,
+    success: function(odg) {
+        alert(odg);
+    },
+    error: function () {
+        alert("Greska");
+    }
+})
+});
 

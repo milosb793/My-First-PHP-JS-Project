@@ -1,4 +1,6 @@
 <?php
+require_once "class.Korisnik.php";
+require_once "class.Metode.php";
 require_once "class.Izuzetak.php";
 
 
@@ -130,6 +132,7 @@ class Administrator extends Korisnik
      * @param $opis
      * @param $status
      * @param $slika_url
+     * @return string
      * @throws Izuzetak
      */
     public static function dodajSaradnika($ime_prezime,$kor_ime,$lozinka,$e_mail,$opis,$status,$slika_url="//") //слику мења сарадник када се пријави
@@ -137,22 +140,30 @@ class Administrator extends Korisnik
      //   $parametri = ["ime_prezime"=>$ime_prezime, "kor_ime"=>$kor_ime, "lozinka"=>$lozinka, "e_mail"=>$e_mail, "opis"=>$opis, "status"=>$status,"slika_url"=>$slika_url];
         #ипак преко јаваскрипта
 
+        $poruka = "~";
+
         //прво провера да ли постоји
-        if( Baza::vratiInstancu()->select("SELECT * FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;") )
+        $upit = "SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
+        $rezultat = Baza::vratiInstancu()->select($upit);
+        $poruka .=  " Резултат:".  $rezultat . " Упит: " . $upit . "\n";
+
+        if( $rezultat )
         {
-            throw new Izuzetak("Такав сарадник већ постоји. Покушајте поново.");
-            //return;
+            $poruka .= "Такав сарадник већ постоји. Покушајте поново.";
         }
         else
         {
-            $upit = "INSERT INTO saradnik(ime_prezime, kor_ime, lozinka, e_mail, opis, status, slika_url) ";
-            $upit .= "VALUES('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '\"aktiviran\"', '{$slika_url}') ;";
+            $upit = "INSERT INTO saradnik (ime_prezime, kor_ime, lozinka, e_mail, opis, status, slika_url) ";
+            $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}', '{$slika_url}') ;";
+
+            $poruka .= $upit;
 
             if( Baza::vratiInstancu()->inUpDel($upit) )
-                echo "Успешно сте додали сарадника!";
+                $poruka .= "Успешно сте додали сарадника!";
             else
-                throw new Izuzetak("Дошло је до грешке при ажурирању базе. Покушајте поново.");
+                $poruka .= "Дошло је до грешке при ажурирању базе. Покушајте поново.";
         }
+        return $poruka;
     }
 
     /**
