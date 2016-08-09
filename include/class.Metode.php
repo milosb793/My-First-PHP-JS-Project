@@ -17,7 +17,7 @@ class Metode
         echo "</div>";
     }
 
-    public static function ocistiNiz(array $niz)
+    public static function ocistiNiz( $niz)
     {
         $noviNiz = [];
 
@@ -56,6 +56,7 @@ class Metode
 
     public static function preusmeri($url)
     {
+        if(!empty($url) && $url!=null && strstr($url,'.'))
         header("Location: {$url}");
         exit;
     }
@@ -64,9 +65,28 @@ class Metode
     {
         if(!isset($_SESSION['korisnik'][$tip]) )
         {
-            self::preusmeri("login.php");
+            self::preusmeri("../login.php");
             echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
         }
+    }
+
+    public static function odjaviSe()
+    {
+        if( isset($_SESSION['korisnik']) )
+            $_SESSION = [];
+        else
+        {
+            session_start();
+            $_SESSION = [];
+        }
+
+        if(isset($_COOKIE[session_name()]) )
+            setcookie(session_name(),'',time()-3600,'/');
+
+        session_destroy();
+
+        Metode::preusmeri("../login.php");
+
     }
 
 } //klasa
