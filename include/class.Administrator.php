@@ -226,8 +226,10 @@ class Administrator extends Korisnik
                 }
             }
 
+            return $upit;
+
             if(Baza::vratiInstancu()->inUpDel($upit))
-                echo "Успешно сте ажурирали сарадника!";
+                return "Успешно сте ажурирали сарадника!";
 //
 //            if($novo_ime_prez!="")
 //            {
@@ -294,7 +296,7 @@ class Administrator extends Korisnik
 //            }
         }
         else
-            throw new Izuzetak("Не постоји сарадник са унетим именом и презименом и мејлом.");
+            return "Не постоји сарадник са унетим именом и презименом и мејлом.";
     }
 
     /**
