@@ -1,10 +1,5 @@
 // za admin.php
 
-// $("#dodajSaradnikaLink").click(function () {
-//
-//     $("#dodavanjeSaradnikaForma").show();
-// });
-
 
 // ДОДАВАЊЕ САРАДНИКА
 
@@ -21,9 +16,7 @@ $('#dodajSaradnikaLink').click(function() {
     })
 });
 
-
-
-
+    // прослеђивање форме //
 $('button[name=prosledi]').click(function () {
     var imeprez = $('input[name=ime_prezime]').val();
     var kor_ime = $('input[name=kor_ime]').val();
@@ -40,7 +33,7 @@ $('button[name=prosledi]').click(function () {
         });
     alert(status);
 });
-
+    // Не ради //
 //     $.ajax({
 //         url: "ajax/dodavanjeSaradnika.php",
 //         type: "POST",
