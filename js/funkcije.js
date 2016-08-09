@@ -1,5 +1,54 @@
 // za admin.php
 
-$("#dodajSaradnikaLink").onclick(function () {
-    $("#dodavanjeSaradnikaForma").css("display","block");
+// $("#dodajSaradnikaLink").click(function () {
+//
+//     $("#dodavanjeSaradnikaForma").show();
+// });
+
+
+// ДОДАВАЊЕ САРАДНИКА
+
+$('#dodajSaradnikaLink').click(function() {
+    $('#dodavanjeSaradnikaForma').toggle(function() {
+        if ($(this).css('display')=='none'){
+            $(this).prop('hidden', 'hidden');
+        }
+        else
+        {
+            $(this).removeProp('hidden');
+            $(this).css('display','block');
+        }
+    })
 });
+
+
+
+
+$('button[name=prosledi]').click(function () {
+    var imeprez = $('input[name=ime_prezime]').val();
+    var kor_ime = $('input[name=kor_ime]').val();
+    var loz = $('input[name=lozinka]').val();
+    var em = $('input[name=e_mail]').val();
+    var op = $('input[name=opis]').val();
+    var st = $( 'select[name=status] option:selected' ).val();
+    var url = $('input[name=slika_url]').val();
+
+// $.post("js/../ajax/dodavanjeSaradnika.php",
+//         {ime_prezime:imeprez,kor_ime:kor_ime,lozinka:loz,e_mail:em,opis:op,status:st,slika_url:url},
+//         function(odgovor,status) {
+//             alert(odgovor);
+//         });
+
+    $.ajax({
+        url: "ajax/dodavanjeSaradnika.php",
+        type: "POST",
+        data: {ime_prezime:imeprez,kor_ime:kor_ime,lozinka:loz,e_mail:em,opis:op,status:st,slika_url:url},
+    success: function(data) {
+        alert(data);
+    },
+    error: function () {
+        alert("Greska");
+    }
+})
+});
+
