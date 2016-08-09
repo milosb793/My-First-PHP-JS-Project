@@ -1,5 +1,6 @@
 <?php
 require_once "class.Korisnik.php";
+require_once "class.Baza.php";
 require_once "class.Metode.php";
 require_once "class.Izuzetak.php";
 
@@ -145,7 +146,7 @@ class Administrator extends Korisnik
         //прво провера да ли постоји
         $upit = "SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
         $rezultat = Baza::vratiInstancu()->select($upit);
-        $poruka .=  " Резултат:".  $rezultat . " Упит: " . $upit . "\n";
+        $poruka .=  " Резултат:".  $rezultat . " Упит: " . $upit ;
 
         if( $rezultat )
         {
