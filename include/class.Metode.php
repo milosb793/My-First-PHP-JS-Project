@@ -65,7 +65,7 @@ class Metode
     {
         if(!isset($_SESSION['korisnik'][$tip]) )
         {
-            self::preusmeri("login.php");
+            self::preusmeri("../login.php");
             echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
         }
     }
@@ -85,7 +85,7 @@ class Metode
 
         session_destroy();
 
-        Metode::preusmeri("login.php");
+        Metode::preusmeri("../login.php");
 
     }
 
