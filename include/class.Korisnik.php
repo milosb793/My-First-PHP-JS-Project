@@ -1,5 +1,7 @@
 <?php
-include_once "class.Baza.php";
+require_once "class.Baza.php";
+require_once "class.Metode.php";
+require_once "class.Izuzetak.php";
 
 
 abstract class Korisnik

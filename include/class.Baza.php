@@ -1,5 +1,5 @@
 <?php
-
+require_once "class.Izuzetak.php";
 
 class Baza
 {
