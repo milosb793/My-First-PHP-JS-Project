@@ -153,7 +153,6 @@ class Administrator extends Korisnik
         if( $rezultat )
         {
             echo "Такав сарадник већ постоји. Покушајте поново.";
-            return;
         }
         else
         {
@@ -167,6 +166,7 @@ class Administrator extends Korisnik
             else
                 echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
         }
+        return "Грешка";
 
     }
 
