@@ -1,7 +1,7 @@
 <?php
-require_once "class.Korisnik.php";
 require_once "class.Baza.php";
 require_once "class.Metode.php";
+require_once "class.Korisnik.php";
 require_once "class.Izuzetak.php";
 
 
@@ -145,26 +145,29 @@ class Administrator extends Korisnik
 
         //прво провера да ли постоји
         $upit = "SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
+        echo "Упит: " . $upit . '\n';
+
         $rezultat = Baza::vratiInstancu()->select($upit);
-        $poruka .=  " Резултат:".  $rezultat . " Упит: " . $upit ;
+        echo " Резултат:".  $rezultat . '\n' ;
 
         if( $rezultat )
         {
-            $poruka .= "Такав сарадник већ постоји. Покушајте поново.";
+            echo "Такав сарадник већ постоји. Покушајте поново.";
+            return;
         }
         else
         {
             $upit = "INSERT INTO saradnik (ime_prezime, kor_ime, lozinka, e_mail, opis, status, slika_url) ";
             $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}', '{$slika_url}') ;";
 
-            $poruka .= $upit;
+            echo "Упит за убацивање: " . $upit . '\n';
 
             if( Baza::vratiInstancu()->inUpDel($upit) )
-                $poruka .= "Успешно сте додали сарадника!";
+                echo "Успешно сте додали сарадника!";
             else
-                $poruka .= "Дошло је до грешке при ажурирању базе. Покушајте поново.";
+                echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
         }
-        return $poruka;
+
     }
 
     /**
