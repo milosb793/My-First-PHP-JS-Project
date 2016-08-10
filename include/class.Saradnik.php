@@ -289,14 +289,6 @@ class Saradnik extends Korisnik
         
     }
 
-    public static function daLiJeSaradnik()
-    {
-        if(!isset($_SESSION['korisnik']['admin_id']) )
-        {
-            self::preusmeri("login.php");
-            echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
-        }
-    }
 
 
 

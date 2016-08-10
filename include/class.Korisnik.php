@@ -40,46 +40,44 @@ abstract class Korisnik
     /**
      * @param $kor_ime
      * @param $lozinka
-     * @return bool|mysqli_result(object)
+     * @return bool|array
      */
-    public static function vratiKorisnika($kor_ime, $lozinka)
+    public static function vratiKorisnika($kor_ime, $lozinka, $tip="")
     {
         $korisnik = false;
 
         $kor_ime = Metode::mysqli_prep(trim($kor_ime));
         $lozinka = Metode::mysqli_prep(trim($lozinka));
 
-        // $lozinka_hash = sha1($lozinka);
-        $upit = "SELECT * FROM administrator WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;" ; // СТРИНГОВИ МОРАЈУ БИТИ ПОД НАВОДНИЦИМА
-
-        $korisnik = Baza::vratiInstancu()->select($upit);  // УКОЛИКО НЕМА ЗАПИСА, ВРАЋА СЕ FALSE
-
-        // ако није админ, настављамо проверу
-        if($korisnik->num_rows == 0 || empty($korisnik) )
-        {
-            $upit = "SELECT * FROM saradnik WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;" ;
-
+        if ($tip == "admin") {
+            $upit = "SELECT * FROM administrator WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;"; // СТРИНГОВИ МОРАЈУ БИТИ ПОД НАВОДНИЦИМА
+            $korisnik = Baza::vratiInstancu()->select($upit);  // УКОЛИКО НЕМА ЗАПИСА, ВРАЋА СЕ FALSE
+            echo "Успешно сте се улоговали!";
+            return mysqli_fetch_assoc($korisnik);
+        } else if ($tip == "saradnik") {
+            $upit = "SELECT * FROM saradnik WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
+            $korisnik = Baza::vratiInstancu()->select($upit);
+            echo "Успешно сте се улоговали!";
+            return mysqli_fetch_assoc($korisnik);
+        } else {
+            $upit = "SELECT * FROM administrator WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
             $korisnik = Baza::vratiInstancu()->select($upit);
 
-            if($korisnik->num_rows == 0 || empty($korisnik) )
-            {
-                echo "Такав корисник не постоји у бази.";
-                exit;
-            }
-            else
-            {
-                echo "Успешно сте се улоговали!";
-                return $korisnik;
+            // ако није админ, настављамо проверу
+            if ($korisnik->num_rows == 0 || empty($korisnik)) {
+                $upit = "SELECT * FROM saradnik WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
+
+                $korisnik = Baza::vratiInstancu()->select($upit);
+
+                if ($korisnik->num_rows == 0 || empty($korisnik)) {
+                    echo "Такав корисник не постоји у бази.";
+                    exit;
+                } else {
+                    echo "Успешно сте се улоговали!";
+                    return mysqli_fetch_assoc($korisnik);
+                }
             }
         }
-        else
-        {
-            echo "Успешно сте се улоговали!";
-            return $korisnik;
-        }
-
-
     }
-
 
 }

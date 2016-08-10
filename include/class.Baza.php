@@ -45,7 +45,7 @@ class Baza
     {
         $uspesno = Baza::vratiInstancu()->vratiKonekciju()->query($upit);
         
-        return $rezultat;
+        return $uspesno;
     }
     
     public function select($upit)

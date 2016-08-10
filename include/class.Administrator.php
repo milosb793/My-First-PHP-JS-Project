@@ -138,36 +138,26 @@ class Administrator extends Korisnik
      */
     public static function dodajSaradnika($ime_prezime,$kor_ime,$lozinka,$e_mail,$opis,$status,$slika_url="//") //слику мења сарадник када се пријави
     {
-     //   $parametri = ["ime_prezime"=>$ime_prezime, "kor_ime"=>$kor_ime, "lozinka"=>$lozinka, "e_mail"=>$e_mail, "opis"=>$opis, "status"=>$status,"slika_url"=>$slika_url];
-        #ипак преко јаваскрипта
-
-        $poruka = "~";
-
         //прво провера да ли постоји
-        $upit = "SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
-        echo "Упит: " . $upit . '\n';
+        $korisnik = Korisnik::vratiKorisnika($kor_ime,$lozinka,"saradnik"); // асоц низ са свим атрибутима
 
-        $rezultat = Baza::vratiInstancu()->select($upit);
-        echo " Резултат:".  $rezultat . '\n' ;
-
-        if( $rezultat )
+        if( $korisnik )
         {
             echo "Такав сарадник већ постоји. Покушајте поново.";
         }
         else
         {
             $upit = "INSERT INTO saradnik (ime_prezime, kor_ime, lozinka, e_mail, opis, status, slika_url) ";
-            $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}', '{$slika_url}') ;";
+            $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}', '{$slika_url}' ) ";
 
-            echo "Упит за убацивање: " . $upit . '\n';
+            // echo "Упит за убацивање: " . $upit ;
 
-            if( Baza::vratiInstancu()->inUpDel($upit) )
+            Baza::vratiInstancu()->inUpDel($upit);
+            if( Baza::vratiInstancu()->vratiObjekatKonekcije()->affected_rows != 0 )
                 echo "Успешно сте додали сарадника!";
             else
                 echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
         }
-        return "Грешка";
-
     }
 
     /**
