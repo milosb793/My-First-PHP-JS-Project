@@ -38,7 +38,7 @@ $tabela = "<table border='0'>";
 $tabela .= "<th>Наслов</th>";
 $tabela .= "<tr> <td>Име и презиме: </td> <td> <input type='text' name='ime_prezime'> </td></tr>";
 $tabela .= "<tr> <td>Koр. име: </td> <td> <input type='text' name='kor_ime'> </td></tr>";
-$tabela .= "<tr> <td>Лозинка: </td> <td> <input type='password' name='lozinka1'> </td></tr>";
+$tabela .= "<tr> <td>Лозинка: </td> <td> <input type='password' name='lozinka'> </td></tr>";
 $tabela .= "<tr> <td>Поновљена лозинка: </td> <td> <input type='password' name='lozinka2'> </td></tr>";
 $tabela .= "<tr> <td>Е-пошта: </td> <td> <input type='email' name='e_mail'> </td></tr>";
 $tabela .= "<tr> <td>Опис: </td> <td> <input type='text' name='opis'> </td></tr>";
@@ -65,8 +65,8 @@ echo $forma;
 
 </body>
 <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
-<script type="text/javascript" src="js/funkcije.js"></script>
 <script type="text/javascript" src="js/polja_forme.js"></script>
+<script type="text/javascript" src="js/funkcije.js"></script>
 
 </html>
 

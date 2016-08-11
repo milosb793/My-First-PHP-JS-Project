@@ -1,5 +1,5 @@
 <?php
-
+require_once "class.Izuzetak.php";
 
 class Baza
 {
@@ -45,7 +45,7 @@ class Baza
     {
         $uspesno = Baza::vratiInstancu()->vratiKonekciju()->query($upit);
         
-        return $rezultat;
+        return $uspesno;
     }
     
     public function select($upit)
