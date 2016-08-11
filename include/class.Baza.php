@@ -43,7 +43,7 @@ class Baza
      
     public function inUpDel($upit)
     {
-        $uspesno = Baza::vratiInstancu()->vratiKonekciju()->query($upit);
+        $uspesno = Baza::vratiInstancu()->vratiObjekatKonekcije()->query($upit);
         
         return $uspesno;
     }

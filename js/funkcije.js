@@ -22,7 +22,7 @@ $('button[name=prosledi]').click(function () {
     var kor_ime = $('input[name=kor_ime]').val();
     var loz = $('input[name=lozinka]').val();
     var em = $('input[name=e_mail]').val();
-    var op = $('input[name=opis]').val();
+    var op = $('input[name=opis]').val();2
     var st = $('select[name=status] option:selected').val();
     var url = $('input[name=slika_url]').val();
     //proba var status;
