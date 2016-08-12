@@ -52,7 +52,7 @@ class Materijal
         $rezultat = "";
         $objekat = null;
 
-        $rezultat =  Baza::vratiInstancu()->vratiKonekciju()->query("SELECT * FROM materijal");
+        $rezultat =  Baza::vratiInstancu()->vratiObjekatKonekcije()->query("SELECT * FROM materijal");
         while($objekat = $rezultat->fetch_object("Materijal"))
         {
             array_push($nizPredmeta, $objekat );

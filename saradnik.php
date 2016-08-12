@@ -1,7 +1,9 @@
 ﻿<?php
 session_start();
 require_once "include/class.Metode.php";
-Metode::autorizuj("saradnik_id");
+require_once "include/class.Saradnik.php";
+if( !isset($_SESSION['korisnik']['saradnik_id']) )
+    Metode::autorizuj();
 ?>
 
     <!DOCTYPE html>
@@ -12,6 +14,7 @@ Metode::autorizuj("saradnik_id");
         <title>Title</title>
     </head>
     <body>
+    <a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime'] ?> (одјавите се)</a> <br/>
 
     <?php
 
@@ -31,6 +34,9 @@ Metode::autorizuj("saradnik_id");
     ?>
 
     </body>
+    <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="js/funkcije.js"></script>
+
     </html>
 
 

@@ -1,4 +1,7 @@
 <?php
+require_once  "class.Korisnik.php";
+require_once  "class.Baza.php";
+require_once  "class.Metode.php";
 require_once "class.Izuzetak.php";
 
 class Saradnik extends Korisnik
@@ -284,9 +287,18 @@ class Saradnik extends Korisnik
         // реализовати
     }
     
-    public static function izlistajSvePredmete()
+    public static function izlistajSvePredmete($saradnik_id)
     {
         
+    }
+
+    public static function izlistajSveSaradnike()
+    {
+        $nizSaradnika = [];
+
+        $rezultat = Baza::vratiInstancu()->select("SELECT * FROM saradnik ORDER BY ime_prezime ASC");
+        $nizSaradnika = $rezultat->fetch_assoc();
+        return $nizSaradnika;
     }
 
 

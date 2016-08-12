@@ -5,6 +5,7 @@ class Baza
 {
     private $konekcija;
     private static $instanca;
+    public static $affected_rows;
 
     public function __construct($server="localhost",$kor_ime="root",$lozinka="123455",$ime_baze="lab_vezbe")
     {
@@ -43,7 +44,8 @@ class Baza
      
     public function inUpDel($upit)
     {
-        $uspesno = Baza::vratiInstancu()->vratiObjekatKonekcije()->query($upit);
+        $uspesno = $this->konekcija->query($upit);
+        self::$affected_rows = $this->konekcija->affected_rows;
         
         return $uspesno;
     }
@@ -52,9 +54,11 @@ class Baza
     {
     
         $rezultat = $this->konekcija->query($upit);
+        self::$affected_rows = $this->konekcija->affected_rows;
 
         return $rezultat;
     }
+
     
      
 

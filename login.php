@@ -4,27 +4,20 @@ require_once "include/class.Korisnik.php";
 require_once "include/class.Baza.php";
 require_once "include/class.Metode.php";
 
+if(isset($_GET['id']) && $_GET['id'] == 1  )
+{
+    Metode::odjaviSe();
+}
 
 if(isset($_POST["kor_ime"]) && isset($_POST["lozinka"]))
 {
-    $korisnik =  Korisnik::vratiKorisnika($_POST["kor_ime"], $_POST["lozinka"]);
-    $korisnik =  $korisnik->fetch_assoc();
-    // $korisnik = Metode::ocistiNiz($korisnik);
-    $_SESSION['korisnik'] = $korisnik;
-}
-//else
-//    echo "Проблем при преносу пост методом.";
+    $korisnik =  Korisnik::vratiKorisnika($_POST["kor_ime"], $_POST["lozinka"]); // Враћа асоцијативни низ
 
-
-if(isset($korisnik['admin_id']))
-{
-    Metode::preusmeri("admin.php");
-
-}
-else if(isset($korisnik["saradnik_id"]))
-{
-    Metode::preusmeri("saradnik.php");
-
+    if( !empty($korisnik) )
+    {
+        $_SESSION['korisnik'] = $korisnik;
+        Metode::autorizuj();
+    }
 }
 ?>
 
@@ -51,7 +44,8 @@ else if(isset($korisnik["saradnik_id"]))
 
 </body>
 
-<!--<script src="js/jquery-3.0.0.js"></script>-->
-<!--<script src="js/login.js"></script>-->
+<script src="js/jquery-3.0.0.js"></script>
+<script src="js/funkcije.js"></script>
 
 </html>
+

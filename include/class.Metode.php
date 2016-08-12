@@ -61,12 +61,21 @@ class Metode
         exit;
     }
 
-    public static function autorizuj($tip)
+    public static function autorizuj()
     {
-        if(!isset($_SESSION['korisnik'][$tip]) )
+        if(!isset($_SESSION['korisnik']) )
         {
-            self::preusmeri("../login.php");
             echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
+            self::preusmeri("login.php");
+        }
+        else
+        {
+            if($_SESSION['korisnik']['admin_id'] > 0)
+                self::preusmeri("admin.php");
+            else if($_SESSION['korisnik']['saradnik_id'] > 0)
+                self::preusmeri("saradnik.php");
+            else
+                self::preusmeri("login.php");
         }
     }
 
@@ -84,8 +93,6 @@ class Metode
             setcookie(session_name(),'',time()-3600,'/');
 
         session_destroy();
-
-        Metode::preusmeri("../login.php");
 
     }
 

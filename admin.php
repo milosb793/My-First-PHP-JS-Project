@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once "include/class.Metode.php";
-Metode::autorizuj("admin_id");
+require_once "include/class.Saradnik.php";
+
+if( !isset($_SESSION['korisnik']['admin_id']) )
+    Metode::autorizuj();
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +36,15 @@ echo "Е-пошта: {$_SESSION['korisnik']['e_mail']}" . '\n';
 # try { Administrator::dodajPredmet() } catch($e) { echo $e->getMessag
 
 ?>
+<br/> <br/>
+<a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime'] ?> (одјавите се)</a> <br/>
 
-<a href="#" id="dodajSaradnikaLink">додајте сарадника</a> ";
+<a href="#" id="dodajSaradnikaLink">Додајте сарадника</a> <br/>
 
 <div id="dodavanjeSaradnikaForma" style='display: none;' hidden="hidden">
 
 <?php
+
 $forma = "<form id='noviSaradnik' method='post' action='#'>";
 
 $tabela = "<table border='0'>";
@@ -49,24 +55,68 @@ $tabela .= "<tr> <td>Лозинка*: </td> <td> <input type='password' id='lozi
 $tabela .= "<tr> <td>Поновљена лозинка*: </td> <td> <input type='password' id='lozinka2' class='reqd lozinka'/> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
 $tabela .= "<tr> <td>Е-пошта*: </td> <td> <input type='email' id='e_mail' class='reqd email '/>               </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
 $tabela .= "<tr> <td>Опис: </td> <td> <input type='text' id='opis' class=''/>                          </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
-$tabela .= "<tr> <td>Статус*: </td> 
+$tabela .= "<tr> <td>Статус: </td> 
 <td> 
 <select id='status' name='status' class='' >
-<option name='podrazumevano' value='---'></option> 
 <option name='1' value='aktiviran'>Активиран</option> 
-<option name='0' value='deaktiviran'>Деактивиран</option> 
+<option name='0' value='deaktiviran' selected='selected'>Деактивиран</option> 
 </select> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
 
 $tabela .= "<tr> <td>URL слике: </td> <td> <input type='url' id='slika_url' class='slika_url'/> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
 
 $tabela .= "</table> </form>";
-$tabela .= "<button id='prosledi' name='prosledi'>Проследи</button>";
+$tabela .= "<button id='prosledi1' name='prosledi1'>Проследи</button>";
 
 $forma .= $tabela;
 
 echo $forma;
 ?>
 
+</div>
+
+<a href="#" id="izmeniSaradnikaLink">Измени сарадника</a> <br/>
+
+<div id="izmeniSaradnikaDiv" style='display: none;' hidden="hidden">
+    <?php  $saradnici = Saradnik::izlistajSveSaradnike(); ?>
+
+    <div id="padajucaLista1">
+        <select id="saradnici" class="reqd" >
+            <option selected="selected">Изаберите сарадника</option>
+        <?php
+            foreach ($saradnici as $saradnik)
+                echo "<option id='saradnik{$saradnik['saradnik_id']}' value='{$saradnik['saradnik_id']}'>{$saradnik['ime_prezime']}</option>";
+        ?>
+        </select>
+    </div>
+
+    <div id="izmeniSaradnikaForma">
+        <?php
+        $forma = "<form id='izmeniSaradnika' method='post' action='#'>";
+
+        $tabela = "<table border='0'>";
+        $tabela .= "<th>Наслов</th>";
+        $tabela .= "<tr> <td>Име и презиме: </td> <td> <input type='text' id='ime_prezime' class='ime_prezime'/>      </td> <td id='greska' hidden='hidden'>" .$poruka. "</td> </tr>";
+        $tabela .= "<tr> <td>Koр. име: </td> <td> <input type='text' id='kor_ime' class='kor_ime'/>               </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+        $tabela .= "<tr> <td>Лозинка: </td> <td> <input type='password' id='lozinka' class='lozinka'/>            </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+        $tabela .= "<tr> <td>Поновљена лозинка: </td> <td> <input type='password' id='lozinka2' class='lozinka'/> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+        $tabela .= "<tr> <td>Е-пошта: </td> <td> <input type='email' id='e_mail' class='email '/>               </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+        $tabela .= "<tr> <td>Опис: </td> <td> <input type='text' id='opis' class=''/>                          </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+        $tabela .= "<tr> <td>Статус: </td> 
+                        <td> 
+                        <select id='status' name='status' class='' >
+                        <option name='1' value='aktiviran'>Активиран</option> 
+                        <option name='0' value='deaktiviran' selected='selected'>Деактивиран</option> 
+                        </select> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+
+        $tabela .= "<tr> <td>URL слике: </td> <td> <input type='url' id='slika_url' class='slika_url'/> </td> <td id='greska' hidden='hidden'>" .$poruka. "</td>  </tr>";
+
+        $tabela .= "</table> </form>";
+        $tabela .= "<button id='prosledi2' name='prosledi2'>Проследи</button>";
+        $forma .= $tabela;
+        echo $forma;
+        ?>
+
+    </div>
 </div>
 
 </body>
