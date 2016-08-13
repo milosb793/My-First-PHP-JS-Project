@@ -85,7 +85,6 @@ abstract class Korisnik
                     }
                     else
                     {
-                        echo "Успешно сте се улоговали!";
                         return mysqli_fetch_assoc($korisnik);
                      }
             }

@@ -1,21 +1,21 @@
 /**
  * Created by logos on 8.8.16..
  */
-window.onload = inicijalizujForme;
 
 
 // ############### ГЛОБАЛНЕ ПРОМЕНЉИВЕ #############//
-var statusValidacje = false;
+var statusValidacje ;
 var poruka = "";
 var polje_sme_biti_prazno = false;
 
+
 // ### ПРИКАЗ ФОРМЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
-
-
 $('#dodajSaradnikaLink').click(function() {
+
     $('#dodavanjeSaradnikaForma').toggle(function() {
         if ($(this).css('display')=='none'){
             $(this).prop('hidden', 'hidden');
+            window.location.reload();
         }
         else
         {
@@ -25,7 +25,6 @@ $('#dodajSaradnikaLink').click(function() {
     })
 });
 // ### КРАЈ ФУНКЦИЈЕ ПРИКАЗА ФОРМЕ ### //
-
 
 
 
@@ -56,11 +55,11 @@ function validirajFormu()
     function validirajTag(ovajTag)
     {
         var spoljnaKlasa = "";
-        var sveKlase = ovajTag.className.split(" "); // Уколико имамо више речи у класи
+        var nizKlasa = ovajTag.className.split(" "); // Уколико имамо више речи у класи
 
-        for (var j=0; j<sveKlase.length; j++)
+        for (var j=0; j<nizKlasa.length; j++)
         {
-            spoljnaKlasa += validiranjePoKlasi(sveKlase[j]) + " "; // овде додаје invalid ако не ваља
+            spoljnaKlasa += validiranjePoKlasi(nizKlasa[j]) + " "; // овде додаје invalid ако не ваља
         }
 
         ovajTag.className = spoljnaKlasa;
@@ -82,6 +81,7 @@ function validirajFormu()
             switch(ovaKlasa)
             {
                 case "":
+                case " ":
                 case "invalid":
                     break;
                 case "reqd":
@@ -107,12 +107,9 @@ function validirajFormu()
                     novaKlasa += ovaKlasa;
                     break;
                 default:
-                    if (OK && !duplaPolja(ovajTag,ovaKlasa))
-                    {
-                        novaKlasa = "invalid ";
-                        poruka = "Лозинке се не поклапају.";
-                    }
+                   break;
                     novaKlasa += ovaKlasa;
+
             }
             return novaKlasa;
         }
@@ -123,6 +120,7 @@ function validirajFormu()
             {
                 return false;
             }
+            else if(document.getElementById(idDrugogPolja).className == "" ) return false;
             return (trenutniTag.value == document.getElementById(idDrugogPolja).value);
         }
         // поставити радио дугмићу назив
@@ -190,20 +188,26 @@ function validirajFormu()
             }
             return true;
         }
+
+        function invalidLabel(parentTag) {
+            if (parentTag.nodeName == "TR") {
+                parentTag.className += " invalid";
+            }
+        }
     }
 }
-
-// ### КРАЈ ПРОВЕРЕ ФОРМИ ###//
+// // ### КРАЈ ПРОВЕРЕ ФОРМИ ###//
 
 // прослеђивање форме //
-$('#prosledi1').click(function () {
-    var imeprez = $('#ime_prezime').val();
-    var kor_ime = $('#kor_ime').val();
-    var loz = $('#lozinka').val();
-    var em = $('#e_mail').val();
-    var op = $('#opis').val();
-    var st = $('select[name=status] option:selected').val();
-    var url = $('#slika_url').val();
+$('#prosledi1').click(function ()
+{
+    var imeprez = $('#ime_prezime1').val();
+    var kor_ime = $('#kor_ime1').val();
+    var loz = $('#lozinka1').val();
+    var em = $('#e_mail1').val();
+    var op = $('#opis1').val();
+    var st = $('select[name=status1] option:selected').val();
+    var url = $('#slika_url1').val();
 
     statusValidacje = validirajFormu();
 
@@ -214,7 +218,7 @@ $('#prosledi1').click(function () {
             $.post("ajax/dodavanjeSaradnika.php",
                 {ime_prezime: imeprez, kor_ime: kor_ime, lozinka: loz, e_mail: em, opis: op, status: st, slika_url: url},
                 function (odgovor, status) {
-                    alert("Одговор: " + odgovor + '\n' + "Статус: " + status);
+                    alert(odgovor);
                 });
         }
     }
@@ -224,82 +228,12 @@ $('#prosledi1').click(function () {
 // ### КРАЈ ФУНКЦИЈЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
 
 
-// ### КРАЈ ПРОВЕРЕ ФОРМИ ###//
 
 
-// ### ПРИКАЗ ФОРМЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
 
 
-$('#izmeniSaradnikaLink').click(function() //treba da se pokaze prvo padajuca lista, ne odmah sve
-{
-    $('#izmeniSaradnikaDiv').toggle(function()
-    {
-        if ($(this).css('display')=='none')
-        {
-            $(this).prop('hidden', 'hidden');
-        }
-        else
-        {
-            $(this).removeProp('hidden');
-            $(this).css('display','block');
-        }
-    });
-
-    var saradnik_id;
-    $("saradnici").change(function ()
-    {
-        var saradnik_id = $(this).children(":selected").attr("value");
-    });
-
-    var forma = $("#izmeniSaradnikaForma");
-
-    alert(saradnik_id);
-
-    if( saradnik_id !== undefined || saradnik_id != null || saradnik_id > 0)
-        forma.toggle(function()
-        {
-            if ($(this).css('display')=='none')
-            {
-                $(this).prop('hidden', 'hidden');
-            }
-            else
-            {
-                $(this).removeProp('hidden');
-                $(this).css('display','block');
-            }
-        });
-});
 
 
-// ### КРАЈ ФУНКЦИЈЕ ПРИКАЗА ФОРМЕ ### //
-
-// прослеђивање форме //
-$('#prosledi2').click(function () {
-    var imeprez = $('#ime_prezime').val();
-    var kor_ime = $('#kor_ime').val();
-    var loz = $('#lozinka').val();
-    var em = $('#e_mail').val();
-    var op = $('#opis').val();
-    var st = $('select[name=status] option:selected').val();
-    var url = $('#slika_url').val();
-
-    statusValidacje = validirajFormu();
-
-    if(statusValidacje == true)
-    {
-        if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
-        {
-            $.post("ajax/izmeniSaradnika.php",
-                {ime_prezime: imeprez, kor_ime: kor_ime, lozinka: loz, e_mail: em, opis: op, status: st, slika_url: url},
-                function (odgovor, status) {
-                    alert("Одговор: " + odgovor + '\n' + "Статус: " + status);
-                });
-        }
-    }
-    else
-        alert(poruka);
-});
-// ### КРАЈ ФУНКЦИЈЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
 
 
 // ### ОДЈАВЉИВАЊЕ ### //

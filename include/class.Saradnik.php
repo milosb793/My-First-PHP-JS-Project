@@ -294,11 +294,9 @@ class Saradnik extends Korisnik
 
     public static function izlistajSveSaradnike()
     {
-        $nizSaradnika = [];
+        $rezultat = Baza::vratiInstancu()->select("SELECT * FROM saradnik ");
+        return $rezultat;
 
-        $rezultat = Baza::vratiInstancu()->select("SELECT * FROM saradnik ORDER BY ime_prezime ASC");
-        $nizSaradnika = $rezultat->fetch_assoc();
-        return $nizSaradnika;
     }
 
 

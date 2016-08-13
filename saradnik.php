@@ -14,7 +14,7 @@ if( !isset($_SESSION['korisnik']['saradnik_id']) )
         <title>Title</title>
     </head>
     <body>
-    <a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime'] ?> (одјавите се)</a> <br/>
+    <a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime'] ?> (одјавите се)</a> <br/> <br/>
 
     <?php
 
