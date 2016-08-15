@@ -52,7 +52,16 @@ class Administrator extends Korisnik
     {
         if(isset($naziv) && isset($opis))
         {
-            if( Baza::vratiInstancu()->inUpDel("INSERT INTO predmet(naziv, opis) VALUES( '{$naziv}', '{$opis}' ; ") )
+            $predmet = Baza::vratiInstancu()->select("SELECT * FROM predmet WHERE naziv='{$naziv}'")->fetch_assoc();
+            if(!empty($predmet) || $predmet!=null)
+            {
+                echo "Предмет са тим називом већ постоји.";
+                return;
+            }
+
+            Baza::vratiInstancu()->inUpDel("INSERT INTO predmet (naziv, opis) VALUES ('{$naziv}', '{$opis}') ; ");
+
+            if( Baza::$affected_rows )
                 echo "Успешно сте додали предмет!";
             else
                 echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
@@ -70,15 +79,17 @@ class Administrator extends Korisnik
      * @param string $novi_opis
      * @throws Izuzetak
      */
-    public static function izmeniPredmet($naziv,$opis, $novi_naziv="", $novi_opis="")
+    public static function izmeniPredmet($predmet_id, $novi_naziv="", $novi_opis="")
     {
         //прво тражимо предмет_ид помоћу прва два параметра
-        $result_set = Baza::vratiInstancu()->select("SELECT predmet_id FROM predmet WHERE opis='{$opis}' AND naziv='{$naziv}' ;");
-        $predmet_id = $result_set->fetch_assoc();
-        $predmet_id = $result_set['predmet_id']; //proveri
+        $result_set = Baza::vratiInstancu()->select("SELECT * FROM predmet WHERE predmet_id={$predmet_id} ;");
+        $predmet = $result_set->fetch_assoc();
+        $naziv = $predmet['naziv']; //proveri
 
-        if(empty($predmet_id) )
-            echo"Предмет са унетим називом и описом не постоји.";
+        if(empty( $naziv) ) {
+            echo "Предмет са унетим називом и описом не постоји.";
+            return;
+        }
         else
         {
             if(!empty($novi_opis) && !empty($novi_naziv) )
@@ -88,28 +99,23 @@ class Administrator extends Korisnik
                 else
                     echo "Дошло је до грешке при ажурирању базе. ";
             }
-            else if($novi_naziv!="")
+            else if(!empty($novi_naziv))
             {
                 if( Baza::vratiInstancu()->inUpDel("UPDATE predmet SET naziv='{$novi_naziv}' WHERE predmet_id='{$predmet_id}' ;") )
                     echo "Успешно сте изменили предмет.";
                 else
-                    throw new Izuzetak("Дошло је до грешке при ажурирању базе. ");
+                    echo ("Дошло је до грешке при ажурирању базе. ");
             }
-            else if($novi_opis!="")
+            else if(!empty($novi_opis))
             {
                 if( Baza::vratiInstancu()->inUpDel("UPDATE predmet SET opis='{$novi_opis}' WHERE predmet_id={$predmet_id} ;") )
                     echo "Успешно сте изменили предмет.";
                 else
-                    throw new Izuzetak("Дошло је до грешке при ажурирању базе. ");
+                    echo ("Дошло је до грешке при ажурирању базе. ");
             }
             else
-                throw new Izuzetak("Нису унети исправни подаци за измену. Покушајте поново.");
+                echo ("Нису унети исправни подаци за измену. Покушајте поново.");
         }
-
-
-
-
-
     }
 
     /**
@@ -254,8 +260,9 @@ class Administrator extends Korisnik
             foreach($niz as $n)
             {
                 if($n==-1)
-                {  echo ("Дошло је до грешке при ажурирања базе. Покушајте поново.");
-                  $status = 1; }
+                {
+                  $status = 1;
+                }
             }
             if($status == 1)
                 echo ("Дошло је до грешке при ажурирања базе. Покушајте поново.");
@@ -270,26 +277,20 @@ class Administrator extends Korisnik
 
     /**
      * Реализовати као линк
-     * @param $ime_prezime
-     * @param $e_mail
+     * @param $saradnik_id
      * @throws Izuzetak
      */
-    public static function deaktivirajSaradnika($ime_prezime, $e_mail)
+    public static function deaktivirajSaradnika($saradnik_id)
     {
-        $saradnik_id = 0;
+        $status = "deaktiviran";
 
-        //прво провера да ли постоји
-        $rezultat = Metode::ocistiNiz(mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT saradnik_id FROM saradnik WHERE ime_prezime='{$ime_prezime}' AND e_mail='{$e_mail}' ;") ) );
-
-        if( $rezultat["saradnik_id"] == 0 || empty($rezultat["saradnik_id"]) )
-        {
-            if( Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='"."deaktiviran"."' WHERE saradnik_id={$saradnik_id} ;") )
-                echo "Успешно сте променили статус.";
-            else
-                throw new Izuzetak("Дошло је до грешке при ажурурању базе. Покушајте поново.");
-        }
+        Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='{$status}' WHERE saradnik_id={$saradnik_id} ;");
+        if( Baza::$affected_rows )
+            echo "Успешно сте променили статус.";
         else
-            throw new Izuzetak("Не постоји сарадник са унетим именом и презименом и мејлом.");
+            echo ("Дошло је до грешке при ажурурању базе. Покушајте поново.");
+
+
     }
 
     /**
@@ -316,6 +317,9 @@ class Administrator extends Korisnik
      * Ажурирање табеле Сарадник-Предмет;
      * изабира се сарадник из падајуће листе, излиставају се предмети за датог сарадника,позивом методе из класе Предмет;
      * подаци се прослеђују овој методи
+     * @param $saradnik_id
+     * @param $predmet_id
+     * @throws Izuzetak
      */
     public static function obrisiSaradnikaSaPredmeta($saradnik_id, $predmet_id)
     {

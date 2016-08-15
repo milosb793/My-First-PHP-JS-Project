@@ -40,22 +40,19 @@ $('#izmeniSaradnikaLink').click(function() //treba da se pokaze prvo padajuca li
                         }
                     });
                 });
-
-            $("#izmeniSaradnikaForma").toggle(function ()
-            {
-                if ($(this).css('display') == 'none') {
-                    $(this).prop('hidden', 'hidden');
-                }
-                else {
-                    $(this).removeProp('hidden');
-                    $(this).css('display', 'block');
-                }
-            });
-
         }
     });
 });
-
+$("#izmeniSaradnikaForma").toggle(function ()
+{
+    if ($(this).css('display') == 'none') {
+        $(this).prop('hidden', 'hidden');
+    }
+    else {
+        $(this).removeProp('hidden');
+        $(this).css('display', 'block');
+    }
+});
 
 // ### ПРОСЛЕЂИВАЊЕ ФОРМЕ ЗА ИЗМЕНУ САР. ### //
 // прослеђивање форме //
@@ -65,9 +62,9 @@ $('#prosledi2').click(function () {
     var loz = $('#lozinka2').val();
     var em = $('#e_mail2').val();
     var op = $('#opis2').val();
-    var st = $('select[name=status2] option:selected').val();
+    var st = $("select[name=status2] option:selected").val();
     var url = $('#slika_url2').val();
-
+    alert(st);
 
         if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
         {

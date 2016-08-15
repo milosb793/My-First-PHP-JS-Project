@@ -35,7 +35,7 @@ if( !isset($_SESSION['korisnik']['saradnik_id']) )
 
     </body>
     <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="js/funkcije.js"></script>
+    <script type="text/javascript" src="js/g_fnc.js"></script>
 
     </html>
 

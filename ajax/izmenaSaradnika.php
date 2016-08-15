@@ -20,7 +20,7 @@ if(isset($_POST['sid']))
 
     $sid = intval($_POST['sid']);
     $saradnik = mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT * FROM saradnik WHERE saradnik_id='{$sid}' "));
-
+    echo $_POST['status'];
     Administrator::izmeniSaradnika($sid, $_POST['ime_prezime'], $_POST['kor_ime'], $_POST['lozinka'], $_POST['e_mail'], $_POST['opis'], $_POST['status'], $_POST['slika_url']);
 }
 

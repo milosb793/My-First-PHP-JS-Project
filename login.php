@@ -45,7 +45,7 @@ if(isset($_POST["kor_ime"]) && isset($_POST["lozinka"]))
 </body>
 
 <script src="js/jquery-3.0.0.js"></script>
-<script src="js/funkcije.js"></script>
+<script src="js/g_fnc.js"></script>
 
 </html>
 

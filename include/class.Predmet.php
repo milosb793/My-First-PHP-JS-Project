@@ -50,17 +50,8 @@ class Predmet
      */
     public static function procitajSve()
     {
-        $nizPredmeta=[];
-        $rezultat = "";
-        $objekat = null;
-
-        $rezultat =  Baza::vratiInstancu()->vratiKonekciju()->query("SELECT * FROM predmet");
-        while($objekat = $rezultat->fetch_object($rezultat,"Predmet"))
-        {
-            array_push($nizPredmeta, $objekat );
-        }
-
-        return $nizPredmeta;
+        $rezultat =  Baza::vratiInstancu()->select("SELECT * FROM predmet");
+        return $rezultat;
     }
 
     /**
