@@ -1,62 +1,82 @@
 var saradnik_id;
+
+function prikaziFormu() {
+    $("#izmeniSaradnikaForma").toggle(function () {
+
+        if ($(this).css('display') == 'none') {
+            $(t).prop('hidden', 'hidden');
+        }
+        else {
+            forma.removeProp('hidden');
+            forma.css('display', 'block');
+        }
+    });
+}
+
+function prikaziSaradnike()
+{
+    saradnik_id = $("#saradnici").find("option:selected").val();
+
+    if (saradnik_id !== undefined || saradnik_id != null || saradnik_id > 0)
+    {
+        $.get("ajax/izmenaSaradnika.php?id=" + saradnik_id+"",
+            {},
+            function (odgovor, status)
+            {
+                var niz = odgovor.split("|");
+                var i = 1; // 0 je id
+
+                $('#izmeniSaradnika').find("input[type=text], input[type=password], input[type=email], input[type=url]").each(function (ev)
+                {
+                    if (!$(this).val())
+                    {
+                        if (niz.indexOf("status") > -1)
+                            ++niz;
+
+                        $(this).attr("placeholder", niz[i++]);
+                    }
+                });
+            });
+        prikaziFormu();
+    }
+}
+
 // ### ПРИКАЗ ЛИСТЕ И ФОРМЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
 $('#izmeniSaradnikaLink').click(function() //treba da se pokaze prvo padajuca lista, ne odmah sve
 {
-    $('#izmeniSaradnikaDiv').toggle(function()
-    {
-        if ($(this).css('display')=='none')
+    $.post(
+        "ajax/izmenaSaradnika.php?zid=1000",
+        {},
+        function (podaci, status)
         {
-            $(this).prop('hidden', 'hidden');
-            window.location.reload();
-        }
-        else
-        {
-            $(this).removeProp('hidden');
-            $(this).css('display','block');
-        }
-    });
+            $("#sadrzaj").html(podaci);
 
-    $("#saradnici").change(function ()
-    {
-        saradnik_id = $(this).find("option:selected").val();
 
-        if( saradnik_id !== undefined || saradnik_id != null || saradnik_id > 0)
-        {
-            $.get("ajax/izmenaSaradnika.php?id="+saradnik_id+"",
-                {id:saradnik_id},
-                function (odgovor,status)
+            $('#izmeniSaradnikaDiv').toggle(function ()
+            {
+                if ($(this).css('display') == 'none')
                 {
-                    var niz = odgovor.split("|");
-                    var i= 1; // 0 je id
+                    $(this).prop('hidden', 'hidden');
+                }
+                else
+                {
+                    $(this).removeProp('hidden');
+                    $(this).css('display', 'block');
+                }
+            });
 
-                    $('#izmeniSaradnika').find("input[type=text], input[type=password], input[type=email], input[type=url]").each(function(ev)
-                    {
+        });
 
-                        if(!$(this).val()  )
-                        {   if(niz.indexOf("status") > -1 )
-                            ++niz;
 
-                            $(this).attr("placeholder", niz[i++]);
-                        }
-                    });
-                });
-        }
-    });
+
+
 });
-$("#izmeniSaradnikaForma").toggle(function ()
-{
-    if ($(this).css('display') == 'none') {
-        $(this).prop('hidden', 'hidden');
-    }
-    else {
-        $(this).removeProp('hidden');
-        $(this).css('display', 'block');
-    }
-});
+
 
 // ### ПРОСЛЕЂИВАЊЕ ФОРМЕ ЗА ИЗМЕНУ САР. ### //
 // прослеђивање форме //
-$('#prosledi2').click(function () {
+function prosledi2()
+{
     var imeprez = $('#ime_prezime2').val();
     var kor_ime = $('#kor_ime2').val();
     var loz = $('#lozinka2').val();
@@ -68,7 +88,7 @@ $('#prosledi2').click(function () {
 
         if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
         {
-            $.post("ajax/izmenaSaradnika.php",
+            $.post("ajax/izmenaSaradnika.php?zid=2",
                 {sid:saradnik_id,ime_prezime:imeprez,kor_ime:kor_ime,lozinka:loz,e_mail:em,opis:op,status:st,slika_url:url},
                 function (odgovor, status)
                 {
@@ -76,5 +96,5 @@ $('#prosledi2').click(function () {
                 });
         }
 
-});
+}
 // ### КРАЈ ФУНКЦИЈЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
