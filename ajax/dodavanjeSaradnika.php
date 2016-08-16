@@ -13,12 +13,13 @@ $rezultat .= "<table border='0'>";
 $rezultat .= "<th>Наслов</th>";
 $rezultat .= "<tr> <td>Име и презиме*: </td>    <td> <input type='text' id='ime_prezime1' class='reqd ime_prezime1'/>      </td> </tr>";
 $rezultat .= "<tr> <td>Koр. име*: </td>         <td> <input type='text' id='kor_ime1' class='reqd kor_ime1'/>               </td> </tr>";
-$rezultat .= "<tr> <td>Лозинка*: </td>          <td> <input type='password' id='lozinkaI'  class='reqd '/>            </td>   </tr>";
-$rezultat .= "<tr> <td>Е-пошта*: </td>          <td> <input type='email' id='e_mail1' class='reqd email1'/>                </tr>";
+$rezultat .= "<tr> <td>Лозинка*: </td>          <td> <input type='password' id='lozinka1'  class='reqd lozinka'/>            </td>   </tr>";
+$rezultat .= "<tr> <td>Поновљена лозинка*: </td><td> <input type='password' id='lozinka2'  class='reqd lozinka1'/>            </td>   </tr>";
+$rezultat .= "<tr> <td>Е-пошта*: </td>          <td> <input type='email' id='e_mail1' class='reqd email'/>                </tr>";
 $rezultat .= "<tr> <td>Опис: </td>              <td> <input type='text' id='opis1' class=''/>                            </tr>";
 $rezultat .= "<tr> <td>Статус: </td> 
 <td> 
-<select id='status1' name='status1' class='' >
+<select id='status1' name='status1' class='reqd' >
 <option name='1' value='aktiviran'>Активиран</option> 
 <option name='0' value='deaktiviran' selected='selected'>Деактивиран</option> 
 </select> </td>  </tr>";
@@ -26,7 +27,7 @@ $rezultat .= "<tr> <td>Статус: </td>
 $rezultat .= "<tr> <td>URL слике: </td> <td> <input type='url' id='slika_url1' class='slika_url'/> </td>   </tr>";
 
 $rezultat .= "</table> </form>";
-$rezultat .= "<button id='prosledi1' name='prosledi1'>Проследи</button>";
+$rezultat .= "<button id='prosledi1' name='prosledi1' onclick='prosledi1()'>Проследи</button>";
 
 echo $rezultat . "</div>";
     return;
