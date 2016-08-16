@@ -16,6 +16,7 @@ if(isset($_POST["kor_ime"]) && isset($_POST["lozinka"]))
     if( !empty($korisnik) )
     {
         $_SESSION['korisnik'] = $korisnik;
+        echo "Успешно сте се улоговали!";
         Metode::autorizuj();
     }
 }
