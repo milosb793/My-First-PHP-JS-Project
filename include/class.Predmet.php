@@ -63,9 +63,9 @@ class Predmet
     {
         $nizPredmeta = self::procitajSve();
 
-        foreach($nizPredmeta as $objekat)
-            if($objekat->predmet_id == $id)
-                return $objekat;
+        while($red = $nizPredmeta->fetch_assoc() )
+            if($red['predmet_id'] == $id)
+                return $red;
 
         return null;
     }

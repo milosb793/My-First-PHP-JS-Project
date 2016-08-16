@@ -55,14 +55,12 @@ abstract class Korisnik
         {
             $upit = "SELECT * FROM administrator WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;"; // СТРИНГОВИ МОРАЈУ БИТИ ПОД НАВОДНИЦИМА
             $korisnik = Baza::vratiInstancu()->select($upit);  // УКОЛИКО НЕМА ЗАПИСА, ВРАЋА СЕ FALSE
-            echo "Успешно сте се улоговали!";
             return mysqli_fetch_assoc($korisnik);
         }
         else if ($tip == "saradnik")
         {
             $upit = "SELECT * FROM saradnik WHERE kor_ime='{$kor_ime}' AND lozinka='{$lozinka}' ;";
             $korisnik = Baza::vratiInstancu()->select($upit);
-            echo "Успешно сте се улоговали!";
             return mysqli_fetch_assoc($korisnik);
         }
         else
