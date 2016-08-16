@@ -78,6 +78,11 @@ function validirajFormu()
                     novaKlasa += ovaKlasa;
                     break;
                 default:
+                    if( OK && !duplaPolja(ovajTag,ovaKlasa))
+                    {
+                        novaKlasa = "invalid ";
+                        poruka = "Лозинке се не поклапају.";
+                    }
                     break;
                     novaKlasa += ovaKlasa;
 
@@ -91,7 +96,6 @@ function validirajFormu()
             {
                 return false;
             }
-            else if(document.getElementById(idDrugogPolja).className == "" ) return false;
             return (trenutniTag.value == document.getElementById(idDrugogPolja).value);
         }
         // поставити радио дугмићу назив
