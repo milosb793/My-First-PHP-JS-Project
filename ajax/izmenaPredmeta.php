@@ -4,7 +4,7 @@ require_once "../include/class.Administrator.php";
 require_once "../include/class.Predmet.php";
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1)
-    Administrator::izmeniPredmet(intval($_POST['pid'], $_POST['naziv'], $_POST['opis']));
+    Administrator::izmeniPredmet($_POST['pid'], $_POST['naziv'], $_POST['opis']);
 
 if(isset($_GET['pid']) )
 {
@@ -25,7 +25,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     Изаберите предмет са листе: <br/>
         <!-- Исписивање динамичке падајуће листе           -->
         <select name='predmeti' id='predmeti' class='reqd' >
-            <option selected='selected' disabled='disabled'> - Изаберите сарадника - </option>";
+            <option selected='selected' disabled='disabled'> - Изаберите предмет - </option>";
         while($row = $svi_predmeti->fetch_assoc() )
            $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
     $rezultat .= "
@@ -33,8 +33,8 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 </div>
 <br/> <br/>
 
-<div id='izmeniPredmetDiv' style='display: none;' hidden='hidden'>
-    <form id='izmeniPredmetForma' method='post' action='#'>
+<div id='izmeniPredmetForma' style='display: none;' hidden='hidden'>
+    <form id='forma' method='post' action='#'>
         <table border='0'>
             <tr >Попуните форму за додавање предмета:</tr> <br/> <br/>
             <tr>Назив предмета: <input type='text' id='nazivPredmeta2' class='' placeholder=''/> </tr> <br/>
@@ -42,7 +42,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
         </table>
         <textarea id='opisPredmeta2' rows='5' cols='15' maxlength='255' placeholder='' class=''></textarea>
     </form>
-    <button id='izmeniPredmet' >Додај</button>
+    <button id='izmeniPredmet' >Измени</button>
 </div>
 </div> 
 ";
