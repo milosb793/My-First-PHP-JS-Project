@@ -296,21 +296,16 @@ class Administrator extends Korisnik
     /**
      * Ажурирање табеле Сарадник-Предмет
      * изабира се предмет из падајуће листе, као и сарадник, подаци се прослеђују овој методи
+     * @param $saradnik_id
+     * @param $predmet_id
      */
     public static function dodajSaradnikaNaPredmet($saradnik_id, $predmet_id)
     {
-        //провера да већ не постоји овај пар
-        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id={$saradnik_id} AND predmet_id={$predmet_id} ; ";
-        
-       $rezultat = Metode::ocistiNiz( mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit1) ) );
-
-        if( $rezultat["saradnik_id"] == $saradnik_id && $rezultat["predmet_id"] == $predmet_id )
-            echo "Сарадник је већ ангажован на том предмету.";
+        Baza::vratiInstancu()->inUpDel("INSERT INTO predmet_saradnik VALUES ('{$saradnik_id}', '{$predmet_id}' );");
+        if( Baza::$affected_rows )
+            echo "Сарадник је додат на предмет. ";
         else
-            if( Baza::vratiInstancu()->inUpDel("UPDATE predmet_saradnik SET saradnik_id={$saradnik_id}, predmet_id={$predmet_id} ;") )
-                echo "Сарадник је додат на предмет. ";
-            else
-                throw new Izuzetak("Дошло је до грешке при додавању сарадника на предмет. Покушајте поново.");
+            echo "Дошло је до грешке при додавању сарадника на предмет. Покушајте поново.";
     }
 
     /**
@@ -323,20 +318,10 @@ class Administrator extends Korisnik
      */
     public static function obrisiSaradnikaSaPredmeta($saradnik_id, $predmet_id)
     {
-        //провера да већ не постоји овај пар
-        $upit1 = "SELECT * FROM predmet_saradnik WHERE sardnik_id='{$saradnik_id}' AND predmet_id='{$predmet_id}' ;";
-
-        $rezultat = Metode::ocistiNiz( mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit1) ) );
-
-        if( $rezultat["saradnik_id"] == $saradnik_id && $rezultat["predmet_id"] == $predmet_id )
-        {
-            if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet_saradnik WHERE saradnik_id='{$saradnik_id}' AND predmet_id='{$predmet_id}' ;") )
-                echo "Сарадник је успешно уклоњен са предмета. ";
-            else
-                throw new Izuzetak("Дошло је до грешке при уклањању сарадника са предмета. Покушајте поново.");
-        }
+        if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet_saradnik WHERE saradnik_id={$saradnik_id} AND predmet_id={$predmet_id} ;") )
+            echo "Сарадник је успешно уклоњен са предмета. ";
         else
-            echo "Сарадник није ангажован на том предмету.";
+            echo "Дошло је до грешке при уклањању сарадника са предмета. Покушајте поново.";
 
     }
 
