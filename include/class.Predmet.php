@@ -2,6 +2,7 @@
 
 require_once "class.Izuzetak.php";
 require_once "class.Baza.php";
+require_once "class.Metode.php";
 
 class Predmet
 {
@@ -93,18 +94,11 @@ class Predmet
      */
     public static function vratiPredmete($saradnik_id)
     {
-        $nizPredmeta=[];
 
-        $upit = "SELECT * FROM predmet WHERE predmet_id IN (
-                                                            SELECT predmet_id FROM predmet_saradnik WHERE saradnik_id='" . $saradnik_id ."') ; 
-                                                            ";
+        $upit = "SELECT * FROM predmet_saradnik WHERE saradnik_id={$saradnik_id}";
 
-        $rezultat = Baza::vratiInstancu()->vratiKonekciju()->query($upit);
-        while($objekat = $rezultat->fetch_object("Predmet"))
-        {
-            array_push($nizPredmeta,$objekat);
-        }
-        return $nizPredmeta;
+        return Baza::vratiInstancu()->select($upit);
+
     }
 
     public static function izmeniOpis($predmet_id, $novi_opis)

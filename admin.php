@@ -65,6 +65,7 @@ $poruka = "Одјави се";
        <li> <a href="#" id="dodajSaradnikaLink">Додајте сарадника | </a> </li>
         <li><a href="#" id="izmeniSaradnikaLink">Измени сарадника | </a></li>
         <li><a href="#" id="deaktivirajSaradnikaLink">Деактивирај сарадника | </a></li>
+        <li><a href="#" id="angazujSaradnikaLink">Ангажуј сарадника на предмет | </a></li>
         <li><a href="#" id="dodajPredmetLink">Додај нови предмет | </a> </li>
         <li><a href="#" id="izmeniPredmetLink">Измени предмет</a> </li>
     </ul>
@@ -72,7 +73,7 @@ $poruka = "Одјави се";
     <hr/>
 
 
-<div id="sadrzaj"> </div>
+<div id="sadrzaj" align="center"> </div>
 
 </body>
 
@@ -84,5 +85,6 @@ $poruka = "Одјави се";
 <script type="text/javascript" src="js/deak_s.js" ></script>
 <script type="text/javascript" src="js/dod_pr.js" ></script>
 <script type="text/javascript" src="js/izm_pred.js" ></script>
+<script type="text/javascript" src="js/ang_sar_pr.js" ></script>
 
 </html>

@@ -4,11 +4,11 @@ function prikaziFormu() {
     $("#izmeniSaradnikaForma").toggle(function () {
 
         if ($(this).css('display') == 'none') {
-            $(t).prop('hidden', 'hidden');
+            $(this).prop('hidden', 'hidden');
         }
         else {
-            forma.removeProp('hidden');
-            forma.css('display', 'block');
+            $(this).removeProp('hidden');
+            $(this).css('display', 'block');
         }
     });
 }

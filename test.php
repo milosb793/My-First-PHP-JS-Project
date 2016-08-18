@@ -1,8 +1,10 @@
 <?php
 session_start();
+require_once "include/class.Baza.php";
 require_once "include/class.Korisnik.php";
 require_once "include/class.Administrator.php";
 require_once "include/class.Saradnik.php";
+require_once "include/class.Predmet.php";
 require_once "include/class.Metode.php";
 //require_once "include/";
 ?>
@@ -26,8 +28,12 @@ require_once "include/class.Metode.php";
 <?php
 echo "Проба";
 
-Administrator::izmeniSaradnika(8,"Богољуб Мирковић","","","","","","");
-
+$predmeti = Predmet::vratiPredmete(1);
+foreach ($predmeti as $p)
+{
+    var_dump($p);
+    echo "<br/>";
+}
 
 ?>
 
