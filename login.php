@@ -3,6 +3,7 @@ session_start();
 require_once "include/class.Korisnik.php";
 require_once "include/class.Baza.php";
 require_once "include/class.Metode.php";
+//TODO uraditi preko javaskripta
 
 if(isset($_GET['id']) && $_GET['id'] == 1  )
 {
