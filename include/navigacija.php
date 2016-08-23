@@ -1,5 +1,3 @@
-
-
 <div id="navigacija" >
     <br>
     <span id="dd">Добро дошли! </span>

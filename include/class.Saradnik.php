@@ -1,4 +1,6 @@
 <?php
+require_once "class.Administrator.php";
+require_once "class.Lab_vezba.php";
 require_once  "class.Korisnik.php";
 require_once  "class.Baza.php";
 require_once  "class.Metode.php";
@@ -73,84 +75,96 @@ class Saradnik extends Korisnik
     public static function dodajMaterijal($lab_vezba_id, $naziv, $lokacija)
     {
         //реализовати
+        //TODO: realizuj dodavanje materijala
     }
 
     /**
+     * @param $naziv
      * @param $opis
      * @param $datum_od
      * @param $br_lab
+     * @param $saradnik_id
      */
-    public static function dodajLabVezbu($opis, $datum_od, $br_lab,$drugi_saradnik_id=0)
+    public static function dodajLabVezbu($naziv,$opis, $datum_od, $br_lab,$saradnik_id, $predmet_id)
     {
         ### потребно је ажурирати најпре табелу lab_vezba, затим табелу laboratorija, затим табелу материјал;
         #   треба проверити и да ли та вежба већ постоји.
         #   мислим да би најбољи приступ уносу био попуњавање форме и слање података на страницу лаб. вежба
         #   материјали се исто убацују путем форме за датотеке
 
-
-        if (isset($opis) && isset($datum) && isset($br_lab))
-        {
-            //saradnik_id ћемо узети из сесије
-            $saradnik = unserialize($_SESSION['korisnik']);
-            $saradnik_id = $saradnik->korisnik_id;
-
             //конвертовање датума у валидан облик за базу
-            $datum = date("DD/MM/YYYY", strtotime($datum_od));
+            $datum_od = date('Y-m-d H:i:s', strtotime($datum_od));
 
             //провера да ли постоји вежба
             $lab_vezbe = Lab_vezba::procitajSve();
+            $saradnik_id = intval($saradnik_id);
+            $vezba = "";
+            $status = 0;
+            $lab_vezbe->data_seek(0);
 
-            foreach ($lab_vezbe as $vezba)
+            while($vezba = $lab_vezbe->fetch_assoc() )
             {
-                if (($vezba["opis"] == $opis) && ($vezba["datum_odrzavanja"] == $datum))
+                if ( ($vezba["naziv"] == $naziv || $vezba['opis'] == $opis) && $vezba["saradnik_id"] == $saradnik_id && strtotime($vezba['datum_odrzavanja']) == strtotime($datum_od) )
                 {
-                    throw new Izuzetak("Лаб. вежба са тим описом и датумом одржавања већ постоји!");
+                    echo "Грешка: Лаб. вежба са тим описом и датумом одржавања већ постоји!";
+                    $status = 1;
+                    break;
                 }
-                else if (($br_lab >= Lab_vezba::BROJ_LAB_MIN) && ($br_lab <= Lab_vezba::BROJ_LAB_MAX))
+                else if (($br_lab <= Lab_vezba::BROJ_LAB_MIN) || ($br_lab >= Lab_vezba::BROJ_LAB_MAX))
                 {
-                    throw new Izuzetak("Неисправан број лабараторије. Број мора бити у опсегу од: " .
-                        Lab_vezba::BROJ_LAB_MIN . " до " . Lab_vezba::BROJ_LAB_MAX . ".");
-                }
-                else
-                {   //ажурирање табеле лаб.вежба
-                        # провера да сарадник не додаје другог сарадника на вежбу
-
-                    if($drugi_saradnik_id!=0)
-                    {
-                        $sar_id = $drugi_saradnik_id;
-                        ## провера да ли је овај сарадник сарадник на предмету, у табели предмет-сарадник, али нам треба предмет_ид
-                            //предмет_ид узимамо из табеле предмет-сарадник
-                        $predmet_id = trim(Baza::vratiInstancu()->select("SELECT predmet_id FROM predmet_saradnik WHERE saradnik_id='".$sar_id."';"));
-                        if(!$predmet_id ) //ако не постоји, излазимо из методе са грешком
-                            throw new Izuzetak("Унети сарадник није сарадник на предмету.");
-                    }
-                    else
-                        $sar_id = $saradnik_id;
-
-
-                    $promenjeno_redova1 = Baza::vratiInstancu()->inUpDel("INSERT INTO lab_vezba(saradnik_id,opis,datum_odrzavanja)
-                                                                        VALUES('" . $sar_id . "', '" . $opis . "', '" . $datum . "');");
-
-                    //ажурирање табеле лабораторија
-                        #узимамо лаб_вежба_ид који је тек додат у табелу
-
-                    $lab_vezba_id = Baza::vratiInstancu()->select("SELECT lab_vezba_id FROM lab_vezba WHERE saradnik_id='" . $sar_id . "'" .
-                        " AND opis='" . $opis . "' AND datum_odrzavanja ='" . $datum . "' ;");
-
-                    $promenjeno_redova2 = Baza::vratiInstancu()->inUpDel("INSERT INTO laboratorija(lab_vezba_id,saradnik_id,broj_lab)
-                                                                        VALUES('" . trim($lab_vezba_id) . "', '" . $sar_id . "', '" . $br_lab . "');");
-
-                    //убацивање у табелу материјали
-                    $promenjeno_redova3 = 1;
-
-                    if ($promenjeno_redova1 > 0 && $promenjeno_redova2 > 0 && $promenjeno_redova3 > 0)
-                        Metode::obavestenje("База је успешно ажурирана!");
-                    else
-                        throw new Izuzetak("Дошло је до грешке. Лаб. вежба није уписана!");
+                    echo "Грешка: Неисправан број лабараторије. Број мора бити у опсегу од: " .
+                        Lab_vezba::BROJ_LAB_MIN . " до " . Lab_vezba::BROJ_LAB_MAX . "." ;
+                    $status = 1;
+                    break;
                 }
             }
-        }
-    } // реализовати додавање у табелу материјал
+            $lab_vezbe->data_seek(0);
+
+            if($status == 0)
+            {
+                //ажурирање табеле лаб.вежба
+                # провера да сарадник не додаје другог сарадника на вежбу
+                ## провера да ли је овај сарадник сарадник на предмету, у табели предмет-сарадник, али нам треба предмет_ид
+                //предмет_ид узимамо из табеле предмет-сарадник
+                $rez = Baza::vratiInstancu()->select("SELECT predmet_id FROM predmet_saradnik WHERE saradnik_id={$saradnik_id} ");
+                $predmet = $rez->fetch_assoc();
+                $predmet_id = intval($predmet['predmet_id']);
+
+                if (!$predmet_id) //ако не постоји, излазимо из методе са грешком
+                {
+                    echo "Грешка: Унети сарадник није сарадник на предмету.";
+                    return;
+                }
+
+                $promenjeno_redova1 = Baza::vratiInstancu()->inUpDel("INSERT INTO lab_vezba ( saradnik_id, predmet_id ,naziv, opis, datum_odrzavanja )" .
+                    " VALUES ( {$saradnik_id}, {$predmet_id},'{$naziv}' ,'{$opis}', '{$datum_od}' )");
+
+                if ($promenjeno_redova1 != 0)
+                {
+                    //ажурирање табеле лабораторија
+                    #узимамо лаб_вежба_ид који је тек додат у табелу
+
+                    $rez = Baza::vratiInstancu()->select("SELECT lab_vezba_id FROM lab_vezba WHERE saradnik_id={$saradnik_id} AND opis='{$opis}' AND datum_odrzavanja ='{$datum_od}' ");
+                    $lab = $rez->fetch_assoc();
+                    $lab_vezba_id = intval($lab['lab_vezba_id']);
+
+                    $promenjeno_redova2 = Baza::vratiInstancu()->inUpDel("INSERT INTO laboratorija ( lab_vezba_id, saradnik_id, broj_lab ) 
+                                                                              VALUES ( {$lab_vezba_id}, {$saradnik_id}, {$br_lab} )");
+                    if ($promenjeno_redova2 != 0)
+                    {
+                        //убацивање у табелу материјали
+                        $promenjeno_redova4 = 1;
+
+                        if ($promenjeno_redova4 != 0)
+                            echo "База је успешно ажурирана!";
+                        else
+                            echo "Грешка: Лаб. вежба није уписана!";
+                    }
+                }
+            }
+    }
+
+     // реализовати додавање у табелу материјал
 
     /**
      * Метода за измену постојеће вежбе. За детерминисање постојеће лаб вежбе користе се

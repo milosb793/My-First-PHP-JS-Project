@@ -8,7 +8,10 @@
 $("#odjaviSe").click(function ()
 {
     if(confirm("Јесте ли сигурни? :("))
-        $.post("login.php?id=1",
-                function (odgovor,status) { window.location.assign("login.php"); });
+        $.get("ajax/login.php?zid=0",
+            function (odgovor,status)
+            {
+                window.location.href = odgovor;
+            });
 });
 // ### КРАЈ ФУНКЦИЈЕ ЗА ОДЈАВЉИВАЊЕ ### //

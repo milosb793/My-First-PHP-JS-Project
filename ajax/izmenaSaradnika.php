@@ -60,6 +60,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat .= "<button id='prosledi2' name='prosledi2' onclick='prosledi2()'>Проследи</button>";
     $rezultat .= "</div>";
     $rezultat .= "</div>";
+    // TODO: izbaci redundansu
 
     echo $rezultat;
     return;

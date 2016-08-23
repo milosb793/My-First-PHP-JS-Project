@@ -23,7 +23,6 @@ $("#angazujSaradnikaLink").click(function ()
                     {
                         predmet_id =  $(this).find("option:selected").val();
 
-
                     });//predmeti change
 
                 }//if

@@ -83,8 +83,8 @@ function validirajFormu()
                         novaKlasa = "invalid ";
                         poruka = "Лозинке се не поклапају.";
                     }
-                    break;
                     novaKlasa += ovaKlasa;
+                    break;
 
             }
             return novaKlasa;
@@ -171,4 +171,5 @@ function validirajFormu()
         }
     }
 }
+
 // // ### КРАЈ ПРОВЕРЕ ФОРМИ ###//

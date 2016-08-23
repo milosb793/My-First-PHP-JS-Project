@@ -5,6 +5,7 @@ require_once "include/class.Korisnik.php";
 require_once "include/class.Administrator.php";
 require_once "include/class.Saradnik.php";
 require_once "include/class.Predmet.php";
+require_once "include/class.Lab_vezba.php";
 require_once "include/class.Metode.php";
 //require_once "include/";
 ?>
@@ -24,16 +25,9 @@ require_once "include/class.Metode.php";
 </head>
 
 <body>
-Сарадници:
 <?php
-echo "Проба";
 
-$predmeti = Predmet::vratiPredmete(1);
-foreach ($predmeti as $p)
-{
-    var_dump($p);
-    echo "<br/>";
-}
+Saradnik::dodajLabVezbu("naziv","proba","19-08-2016, 18:00",203,1);
 
 ?>
 

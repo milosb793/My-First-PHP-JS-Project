@@ -1,6 +1,6 @@
 
 // ############### ГЛОБАЛНЕ ПРОМЕНЉИВЕ #############//
-var statusValidacje ;
+var statusValidacje = false;
 var poruka = "";
 var polje_sme_biti_prazno = false;
 
@@ -48,7 +48,8 @@ function prosledi1()
 
         statusValidacje = validirajFormu();
 
-        if (statusValidacje == true) {
+        if (statusValidacje == true)
+        {
             if (confirm("Јесте ли сигурни да су сви подаци у реду?")) {
                 $.post("ajax/dodavanjeSaradnika.php",
                     {

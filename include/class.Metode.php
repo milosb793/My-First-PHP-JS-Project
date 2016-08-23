@@ -54,30 +54,54 @@ class Metode
     }
 
 
-    public static function preusmeri($url)
+    public static function preusmeri_php($url)
     {
         if(!empty($url) && $url!=null && strstr($url,'.'))
         header("Location: {$url}");
         exit;
     }
+    public static function preusmeri_js($url)
+    {
+        if(!empty($url) && $url!=null && strstr($url,'.'))
+            echo $url;
+        exit;
+    }
 
-    public static function autorizuj()
+    public static function autorizuj_php()
     {
         if(!isset($_SESSION['korisnik']) )
         {
             echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
-            self::preusmeri("login.php");
+            self::preusmeri("login.php?zid=0");
         }
         else
         {
             if($_SESSION['korisnik']['admin_id'] > 0)
-                self::preusmeri("admin.php");
+                self::preusmeri("../admin.php");
             else if($_SESSION['korisnik']['saradnik_id'] > 0)
-                self::preusmeri("saradnik.php");
+                self::preusmeri("../saradnik.php");
             else
-                self::preusmeri("login.php");
+                self::preusmeri("login.php?zid=0");
         }
     }
+    public static function autorizuj_js()
+    {
+        if(!isset($_SESSION['korisnik']) )
+        {
+            echo "Да бисте приступили овом делу сајта, морате бити улоговани! " ;
+            self::preusmeri_js("ajax/login.php?zid=0");
+        }
+        else
+        {
+            if($_SESSION['korisnik']['admin_id'] > 0)
+                self::preusmeri_js("admin.php");
+            else if($_SESSION['korisnik']['saradnik_id'] > 0)
+                self::preusmeri_js("saradnik.php");
+            else
+                self::preusmeri_js("ajax/login.php?zid=0");
+        }
+    }
+
 
     public static function odjaviSe()
     {
@@ -94,6 +118,10 @@ class Metode
 
         session_destroy();
 
+        echo "index.php";
+
     }
+
+
 
 } //klasa

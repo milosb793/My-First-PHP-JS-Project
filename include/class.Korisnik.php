@@ -78,7 +78,7 @@ abstract class Korisnik
 
                     if ( Baza::$affected_rows == 0 )
                     {
-                        echo "Такав корисник не постоји у бази.";
+                        echo "Такав корисник не постоји у бази!";
                         exit;
                     }
                     else

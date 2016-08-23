@@ -52,8 +52,8 @@ class Materijal
         $rezultat = "";
         $objekat = null;
 
-        $rezultat =  Baza::vratiInstancu()->vratiObjekatKonekcije()->query("SELECT * FROM materijal");
-        while($objekat = $rezultat->fetch_object("Materijal"))
+        $rezultat =  Baza::vratiInstancu()->select("SELECT * FROM materijal");
+        while($objekat = $rezultat->fetch_assoc())
         {
             array_push($nizPredmeta, $objekat );
         }
@@ -70,7 +70,7 @@ class Materijal
         $niz = self::procitajSve();
 
         foreach($niz as $objekat)
-            if($objekat->lab_vezba_id == $lab_id)
+            if($objekat['lab_vezba_id'] == $lab_id)
                 return $objekat;
             else
                 return null;

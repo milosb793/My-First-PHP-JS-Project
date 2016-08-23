@@ -1,35 +1,34 @@
-/**
- * Created by Milos on 14.6.2016..
- */
-$("#ulogujSe").onclick(function () {
-    var kor_ime = $("#kor_ime").val();
-    var lozinka = $("#lozinka").val();
+$("#loginLink").click(function ()
+{
+    $.get(
+        "ajax/login.php?zid=1000",
+        {},
+        function (podaci, status)
+        {
+            $("#sadrzajIndex").html(podaci);
 
-    if(kor_ime == "" || kor_ime.length < 3)
-    {
-        alert("Нисте унели корисничко име или је мање од три карактера. Унесите поново.");
-        kor_ime = "";
-        return;
-    }
-    if(lozinka == "" || lozinka.length < 3)
-    {
-        alert("Нисте унели лозинку или је мања од три карактера. Унесите поново.");
-        lozinka = "";
-        return;
-    }
+            $("#ulogujSe").click(function ()
+            {
+                var kor_ime = $("#kor_ime").val();
+                var loz = $("#lozinka").val();
 
-    $.post("ajax/prijavljivanje.php",{kor_ime:kor_ime, lozinka:lozinka}, function (odgovor,status) {
-        
+                $.post(
+                    "ajax/login.php?zid=1",
+                    {kor_ime:kor_ime, lozinka:loz},
+                    function (odgovor,status)
+                    {
+                        var niz = odgovor.split("!");
+                        alert(status + niz[0] + niz[1]);
+                        if(odgovor.indexOf(".php") > -1)
+                            if(niz[1] === undefined || niz[1] == null || niz == false)
+                                window.location.href = odgovor;
+                            else
+                                window.location.href = niz[1];
+                    }
+                );
+            });
+        }
+    );
 
-    })
+});
 
-    if(status == "success")
-    {
-        kor_ime = "";
-        lozinka = "";
-
-    }
-
-
-    
-})

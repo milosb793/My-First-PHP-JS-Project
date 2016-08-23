@@ -18,7 +18,6 @@ class Administrator extends Korisnik
      */
     public function __clone()
     {
-        // TODO: Implement __clone() method.
     }
 
     /**
@@ -119,16 +118,29 @@ class Administrator extends Korisnik
     }
 
     /**
-     * @param $naziv
-     * @param $opis
-     * @throws Izuzetak
+     * @param $predmet_id
+     * @internal param $naziv
+     * @internal param $opis
      */
-    public static function obrisiPredmet($naziv, $opis) //проверити да ли се брише ланчано у сивим табелама
+    public static function obrisiPredmet($predmet_id) //проверити да ли се брише ланчано у сивим табелама
     {
-        if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet WHERE naziv= '{$naziv}' AND opis='{$opis}' ;") )
-            echo"Успешно сте обрисали предмет.";
+        if( Baza::vratiInstancu()->inUpDel("DELETE FROM predmet WHERE predmet_id={$predmet_id} ") )
+        {
+            if(Baza::vratiInstancu()->inUpDel("DELETE FROM lab_vezba WHERE predmet_id={$predmet_id}"))
+            {
+                if(Baza::vratiInstancu()->inUpDel("DELETE FROM predmet_saradnik WHERE predmet_id={$predmet_id}"))
+                {
+                    echo "Успешно сте обрисали предмет.";
+                    // TODO: brisanje iz tabele Materijali
+                }
+                else
+                    echo "Није успело брисање из табеле PredmetSaradnik";
+            }
+            else
+                echo "Није успело брисање из табеле LabVezba";
+        }
         else
-            throw new Izuzetak("Дошло је до грешке при брисању предмета. Покушајте поново.");
+            echo "Дошло је до грешке при брисању предмета. Покушајте поново.";
     }
 
     /**

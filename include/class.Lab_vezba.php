@@ -65,29 +65,31 @@ class Lab_vezba
         $nizLab = [];
         $vezbe = "";
 
-        $vezbe =  Baza::vratiInstancu()->vratiKonekciju()->query("SELECT * FROM lab_vezba");
-        $laboratorije = Baza::vratiInstancu()->vratiKonekciju()->query("SELECT * FROM laboratorija");
-        while($labaratorija = $laboratorije->fetch_assoc())
-        {
-            array_push($nizLab,Metode::ocistiNiz($labaratorija));
-        }
-
-        while($lab_vezba = $vezbe->fetch_assoc() )
-        {
-            $lab_vezba = Metode::ocistiNiz($lab_vezba);
-            $br_lab = "";
-
-            foreach ($nizLab as $lab)
-                if( ($lab["lab_vezba_id"] == $lab_vezba["lab_vezba_id"])  &&  ($lab["saradnik_id"] == $lab_vezba["saradnik_id"]) )
-                    array_push($nizVezbi, new Lab_vezba( $lab_vezba["lab_vezba_id"],$lab_vezba["saradnik_id"], $lab_vezba["opis"],
-                                                         $lab_vezba["datum_odrzavanja"],
-                                                         Materijal::procitaj($lab_vezba["lab_vezba_id"]),
-                                                         $lab["br_lab"]
-                                                         )
-                                );
-        }
-
-        return $nizVezbi;
+        $vezbe =  Baza::vratiInstancu()->select("SELECT * FROM lab_vezba");
+        return $vezbe;
+//        $laboratorije = Baza::vratiInstancu()->select("SELECT * FROM laboratorija");
+//        while($labaratorija = $laboratorije->fetch_assoc())
+//        {
+//            array_push($nizLab,Metode::ocistiNiz($labaratorija));
+//        }
+//
+//        while($lab_vezba = $vezbe->fetch_assoc() )
+//        {
+//            $lab_vezba = Metode::ocistiNiz($lab_vezba);
+//            $br_lab = "";
+//
+//            foreach ($nizLab as $lab)
+//                if( ($lab["lab_vezba_id"] == $lab_vezba["lab_vezba_id"])  &&  ($lab["saradnik_id"] == $lab_vezba["saradnik_id"]) )
+//                    array_push($nizVezbi, [ $lab_vezba["lab_vezba_id"],
+//                                            $lab_vezba["saradnik_id"],
+//                                            $lab_vezba["opis"],
+//                                            $lab_vezba["datum_odrzavanja"],
+//                                            $lab["br_lab"]
+//                                            ]
+//                                );
+//        }
+//
+//        return $nizVezbi;
     }
 
     /**

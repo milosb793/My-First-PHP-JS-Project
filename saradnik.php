@@ -3,7 +3,7 @@ session_start();
 require_once "include/class.Metode.php";
 require_once "include/class.Saradnik.php";
 if( !isset($_SESSION['korisnik']['saradnik_id']) )
-    Metode::autorizuj();
+    Metode::autorizuj_php();
 ?>
 
     <!DOCTYPE html>
