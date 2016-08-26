@@ -1,7 +1,54 @@
-nav{
-    width: 100%;
-    text-align: center;
+body {
+    background-color: #eeeeee;
 }
+/* СТРАНИЦА */
+#stranica {
+    background-color: white;
+    margin-left: 20%;
+    /*border: 1px black solid ;*/
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    z-index: -1;
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.35);
+}
+
+/* САДРЖАЈ */
+#sadrzaj  {
+    padding: 30px;
+    font-size: 0.9em;
+}
+#sadrzaj tr {
+    padding: 10px;
+}
+
+
+
+header {
+    height: 150px;
+     background-color: coral;
+}
+
+/* НАВИГАЦИЈА */
+nav{
+    width: 99%;
+    text-align: center;
+    background-color: #f1f1f1;
+    height: 34px;
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    z-index: 0;
+    position: relative;
+    left: 0.4%;
+    top: 55%;
+    padding-top: 2px;
+    /*opacity: ;*/
+}
+
 ul {
     text-align: center;
     position: relative;
@@ -16,12 +63,82 @@ li {
     float: left;
 }
 
-li a {
+nav li a {
     text-decoration: none;
-    display: inline;
+    display: block;
     padding: 2px;
     background-color: rgba(255, 206, 172, 0.67);
 }
 #odjaviSe{
+    text-align: right;
+    text-decoration: none;
+    float:right;
+    font-size: 9pt;
+    background-color: #4CAF50;
+    border-radius: 2px;
+    color: white;
+    height: 15px;
+    width: 100%;
+    font-style: italic;
+    padding-top: 8px;
+    box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.25);
 
+
+}
+/* НАВИГАЦИЈА */
+.dugmenceMeni {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.padajuciMeni {
+    position: relative;
+    display: inline-block;
+}
+
+.padajucaLista {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.padajucaLista a {
+    color: black;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 9pt;
+    border-top: 1px dashed silver ;
+}
+
+.padajucaLista a:hover {background-color: #e0e0e0;
+}
+
+.padajuciMeni:hover .padajucaLista {
+    display: block;
+}
+
+.padajuciMeni:hover .dugmenceMeni {
+    background-color: rgba(62, 142, 65, 0.89);
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: coral;
+    text-align: center;
 }

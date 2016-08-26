@@ -7,7 +7,7 @@ function _(el)
     return document.getElementById(el);
 }
 
-function uploadFile()
+function uploadFile(materijal_id)
 {
     var file = _("file1").files[0];
     // alert(file.name+" | "+file.size+" | "+file.type);
@@ -18,7 +18,7 @@ function uploadFile()
     ajax.addEventListener("load", completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
     ajax.addEventListener("abort", abortHandler, false);
-    ajax.open("POST", "ajax/upload.php");
+    ajax.open("POST", "ajax/upload.php?zid=1&materijal_id="+materijal_id+"");
     ajax.send(formdata);
 }
 function progressHandler(event)
@@ -31,7 +31,7 @@ function progressHandler(event)
 function completeHandler(event)
 {
     _("status").innerHTML = event.target.responseText;
-    _("progressBar").value = 100;
+    _("progressBar").value = 0;
 }
 function errorHandler(event)
 {
@@ -41,3 +41,4 @@ function abortHandler(event)
 {
     _("status").innerHTML = "Убацивање прекинуто.";
 }
+

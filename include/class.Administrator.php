@@ -171,7 +171,7 @@ class Administrator extends Korisnik
             // echo "Упит за убацивање: " . $upit ;
 
             Baza::vratiInstancu()->inUpDel($upit);
-            if( Baza::vratiInstancu()->vratiObjekatKonekcije()->affected_rows != 0 )
+            if( Baza::$affected_rows != 0 )
                 echo "Успешно сте додали сарадника!";
             else
                 echo "Дошло је до грешке при ажурирању базе. Покушајте поново.";
@@ -297,10 +297,10 @@ class Administrator extends Korisnik
         $status = "deaktiviran";
 
         Baza::vratiInstancu()->inUpDel("UPDATE saradnik SET status='{$status}' WHERE saradnik_id={$saradnik_id} ;");
-        if( Baza::$affected_rows )
+        if( Baza::$affected_rows !== 0 || Baza::$affected_rows)
             echo "Успешно сте променили статус.";
         else
-            echo ("Дошло је до грешке при ажурурању базе. Покушајте поново.");
+            echo "Дошло је до грешке при ажурурању базе. Покушајте поново.";
 
 
     }

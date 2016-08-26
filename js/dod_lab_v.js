@@ -34,9 +34,9 @@ $("#dodajLabVezbuLink").click(function ()
                 var predmet_id=  $("#predmetLab").find("option:selected").val();
                 var saradnik_id= $("#saradnikLab").find("option:selected").val();
 
-                status = validirajFormu();
-                if(status == true)
-                {
+                // status = validirajFormu();
+                // if(status == true)
+                // {
                     if (confirm("Јесте ли сигруни да су сви подаци у реду? "))
                     {
                         $.post(
@@ -51,16 +51,20 @@ $("#dodajLabVezbuLink").click(function ()
                             },
                             function (odgovor, status)
                             {
-                                alert(odgovor);
+                                var niz = odgovor.split("Материјал:");
+                                var materijal_id = niz[1];
+                                alert("tip: " + typeof materijal_id+" vrednost: "+ materijal_id);
                                 if ((odgovor.indexOf("Грешка") <= -1 ))
-                                    uploadFile();
+                                {
+                                    uploadFile(materijal_id);
+                                }
                             }
                         );
                     }
-                }
-                else
-                    alert(poruka);
+                });
+
             });
             // читање фајлова //
-        });
+        // }
+
 });// dodajVezbu link

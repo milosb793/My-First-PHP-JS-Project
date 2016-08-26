@@ -100,6 +100,7 @@ class Saradnik extends Korisnik
             $saradnik_id = intval($saradnik_id);
             $vezba = "";
             $status = 0;
+            $materijal_id = "";
             $lab_vezbe->data_seek(0);
 
             while($vezba = $lab_vezbe->fetch_assoc() )
@@ -153,10 +154,15 @@ class Saradnik extends Korisnik
                     if ($promenjeno_redova2 != 0)
                     {
                         //убацивање у табелу материјали
-                        $promenjeno_redova4 = 1;
+                        $promenjeno_redova4 = Baza::vratiInstancu()->inUpDel("INSERT INTO materijal ( lab_vezba_id, opis ) 
+                                                                               VALUES ( {$lab_vezba_id}, '{$opis}')");
+
+                        $rez = Baza::vratiInstancu()->select("SELECT materijal_id FROM materijal WHERE lab_vezba_id={$lab_vezba_id}");
+                        $materijal_id = $rez->fetch_assoc();
+                        $materijal_id = intval($materijal_id['materijal_id']);
 
                         if ($promenjeno_redova4 != 0)
-                            echo "База је успешно ажурирана!";
+                            echo "База је успешно ажурирана!" . "Материјал: {$materijal_id}";
                         else
                             echo "Грешка: Лаб. вежба није уписана!";
                     }

@@ -5,7 +5,8 @@ require_once "../include/class.Metode.php";
 require_once "../include/class.Saradnik.php";
 require_once "../include/class.Predmet.php";
 require_once "../include/class.Administrator.php";
-
+ini_set('post_max_size', '64M');
+ini_set('upload_max_filesize', '64M');
 $svi_saradnici = Saradnik::izlistajSveSaradnike();
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
@@ -20,7 +21,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat = "";
 
     $rezultat .= "<form id='dodajLabVezbuForma' method='post' action='#' enctype='multipart/form-data'>
-        <table border='0'>
+        <table border='0' cellpadding='' cellspacing=''>
             <tr> <td>Назив лаб. вежбе*: </td> <td><input type='text' id='nazivLab' class='reqd'/>           </td> </tr>
             <tr> <td>Oпис лаб. вежбе*: </td> <td> <input type='text' id='opisLab' class='reqd'/>            </td> </tr>
             <tr> <td>Датум одржавања*: </td> <td> <input type='datetime-local' id='datumLab' class='reqd'/> </td> </tr>
@@ -40,7 +41,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
 
            $rezultat .= "          </td> </tr>
-            <tr> <td>Материјали*: </td> <td>      <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
+            <tr> <td>Материјали*: </td> <td>       <input type='hidden' name='MAX_FILE_SIZE' value='100000000'/> <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
         </table> <br/> 
         
         <progress id='progressBar' value='0' max='100' style='width:300px; background-color: dodgerblue;'></progress>

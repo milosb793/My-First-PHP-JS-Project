@@ -12,7 +12,7 @@ class Baza
         $this->konekcija = new mysqli($server,$kor_ime,$lozinka,$ime_baze);
         if (mysqli_connect_errno())
         {
-            throw new Izuzetak('Конекција са базом није успела: ', mysqli_connect_error());
+            die ('Конекција са базом није успела: '. mysqli_connect_error());
         }
 
         $this->konekcija->set_charset("UTF-8");

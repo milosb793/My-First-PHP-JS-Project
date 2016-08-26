@@ -18,7 +18,7 @@ $("#loginLink").click(function ()
                     function (odgovor,status)
                     {
                         var niz = odgovor.split("!");
-                        alert(status + niz[0] + niz[1]);
+                        alert(niz[0]);
                         if(odgovor.indexOf(".php") > -1)
                             if(niz[1] === undefined || niz[1] == null || niz == false)
                                 window.location.href = odgovor;

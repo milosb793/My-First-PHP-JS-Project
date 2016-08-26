@@ -13,22 +13,22 @@ require_once "include/class.Metode.php";
 <html lang="rs">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Тестирање</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-        .invalid {
-            -webkit-box-shadow: 0px 0px 14px -1px rgba(255,0,0,0.45);
-            -moz-box-shadow: 0px 0px 14px -1px rgba(255,0,0,0.45);
-            box-shadow: 0px 0px 14px -1px rgba(255,0,0,0.45);
-        }
-    </style>
+
 </head>
 
 <body>
+proba
+
 <?php
+ phpinfo();
 
-Saradnik::dodajLabVezbu("naziv","proba","19-08-2016, 18:00",203,1);
+$rez = Baza::vratiInstancu()->select("SELECT fajl_id, naziv FROM fajlovi WHERE materijal_id=52");
+$rez = $rez->fetch_assoc();
+$id = intval($rez['fajl_id']);
 
+echo "<a href='ajax/download.php?id={$id}' > {$rez['naziv']} </a>";
 ?>
 
 

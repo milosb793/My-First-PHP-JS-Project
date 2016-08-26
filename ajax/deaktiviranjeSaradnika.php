@@ -24,7 +24,11 @@ $rezultat .= "<div id='padajucaLista2'>
     <select name='saradnici2' id='saradnici2' class='reqd' >
         <option selected='selected' disabled='disabled'> - Изаберите сарадника - </option>";
         while($row = $svi_saradnici->fetch_assoc())
-            $rezultat .= "<option value=' {$row['saradnik_id']}' >  {$row['ime_prezime']} </option>";
+        {
+            if($row['status'] == "aktiviran")
+                $rezultat .= "<option value=' {$row['saradnik_id']}' >  {$row['ime_prezime']} </option>";
+            else continue;
+        }
 
    $rezultat .=  "</select>
 </div>
