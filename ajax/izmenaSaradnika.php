@@ -8,7 +8,6 @@ require_once "../include/class.Metode.php";
 if(isset($_GET['id']))
 {
     $id = intval($_GET['id']);
-    echo "proba";
     $saradnik = mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT * FROM saradnik WHERE saradnik_id={$id}"));
     echo $saradnik['saradnik_id'] . "|" . $saradnik['ime_prezime'] . "|" . $saradnik['kor_ime'] . "|" . $saradnik['lozinka'] . "|" . $saradnik['e_mail'] . "|" . $saradnik['opis'] . "|" . $saradnik['slika_url'];
     return;

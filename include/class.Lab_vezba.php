@@ -4,6 +4,9 @@ require_once "class.Baza.php";
 require_once "class.Predmet.php";
 require_once "class.Saradnik.php";
 require_once "class.Materijal.php";
+require_once "class.Izuzetak.php";
+require_once "class.Metode.php";
+
 
 class Lab_vezba
 {
@@ -45,7 +48,8 @@ class Lab_vezba
         if (property_exists("Saradnik", $this->$name))
             $this->$name = $value;
         else
-            throw new Izuzetak("Не постоји такав параметар!");    }
+            throw new Izuzetak("Не постоји такав параметар!");
+    }
 
     /**
      * @param $name
@@ -65,7 +69,7 @@ class Lab_vezba
         $nizLab = [];
         $vezbe = "";
 
-        $vezbe =  Baza::vratiInstancu()->select("SELECT * FROM lab_vezba");
+        $vezbe = Baza::vratiInstancu()->select("SELECT * FROM lab_vezba");
         return $vezbe;
 //        $laboratorije = Baza::vratiInstancu()->select("SELECT * FROM laboratorija");
 //        while($labaratorija = $laboratorije->fetch_assoc())
@@ -101,10 +105,37 @@ class Lab_vezba
         $niz = self::procitajSve();
         $nizVezbi = [];
 
-        foreach($niz as $objekat)
-            if($objekat->saradnik_id == $saradnik_id)
-                 array_push($nizVezbi,$objekat);
-            
+        while ($vezba = $niz->fetch_assoc())
+            if ($saradnik_id == $vezba['saradnik_id'])
+                array_push($nizVezbi, $vezba);
+
         return $nizVezbi;
     }
+
+
+    public static function procitaj_lab_id($lab_vezba_id)
+    {
+        $niz = self::procitajSve();
+        $nizVezbi = [];
+
+        while ($vezba = $niz->fetch_assoc())
+            if ($lab_vezba_id == $vezba['lab_vezba_id'])
+                array_push($nizVezbi, $vezba);
+
+        return $nizVezbi;
+    }
+
+    public static function procitaj_predmet_id($predmet_id)
+    {
+        $niz = self::procitajSve();
+        $nizVezbi = [];
+
+        while ($vezba = $niz->fetch_assoc())
+            if ($predmet_id == $vezba['predmet_id'])
+                array_push($nizVezbi, $vezba);
+
+        return $nizVezbi;
+    }
+
 }
+

@@ -30,11 +30,11 @@ $('#dodajPredmetLink').click(function() {
             {
                 var naziv = $('#nazivPredmeta').val();
                 var opis = $('#opisPredmeta').val();
-
-                statusValidacje = validirajFormu();
-
-                if(statusValidacje == true)
-                {
+                // TODO: ne radi provera
+                // statusValidacje = validirajFormu();
+                //
+                // if(statusValidacje == true)
+                // {
                     if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
                     {
                         $.post("ajax/dodavanjePredmeta.php?zid=1",
@@ -43,9 +43,9 @@ $('#dodajPredmetLink').click(function() {
                                 alert(odgovor);
                             });
                     }
-                }
-                else
-                    alert(poruka);
+                // }
+                // else
+                //     alert(poruka);
             });
         });
         }

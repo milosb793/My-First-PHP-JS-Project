@@ -1,4 +1,11 @@
 <?php
+require_once "class.Baza.php";
+require_once "class.Metode.php";
+require_once "class.Predmet.php";
+require_once "class.Lab_vezba.php";
+require_once "class.Saradnik.php";
+require_once "class.Korisnik.php";
+require_once "class.Izuzetak.php";
 
 class Materijal
 {
@@ -68,12 +75,15 @@ class Materijal
     public static function procitaj($lab_id)
     {
         $niz = self::procitajSve();
+        $nizMaterijala = [];
 
         foreach($niz as $objekat)
             if($objekat['lab_vezba_id'] == $lab_id)
-                return $objekat;
-            else
-                return null;
+                array_push($nizMaterijala,$objekat);
+
+        return $nizMaterijala;
     }
+
+
 
 }

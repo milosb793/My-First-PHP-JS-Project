@@ -1,7 +1,7 @@
 <?php
 
-require_once "class.Izuzetak.php";
 require_once "class.Baza.php";
+require_once "class.Izuzetak.php";
 require_once "class.Metode.php";
 
 class Predmet
@@ -60,12 +60,12 @@ class Predmet
      * @param $id
      * @return mixed|null
      */
-    public static function procitaj($id)
+    public static function procitaj($predmet_id)
     {
         $nizPredmeta = self::procitajSve();
 
         while($red = $nizPredmeta->fetch_assoc() )
-            if($red['predmet_id'] == $id)
+            if($red['predmet_id'] == $predmet_id)
                 return $red;
 
         return null;
@@ -90,7 +90,7 @@ class Predmet
     /**
      * За прослеђени сарадник ид, враћа све предмете на којима је тај сарадник нагажован
      * @param $saradnik_id
-     * @return array
+     * @return bool|mysqli_result
      */
     public static function vratiPredmete($saradnik_id)
     {

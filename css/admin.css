@@ -81,7 +81,8 @@ nav li a {
     width: 100%;
     font-style: italic;
     padding-top: 8px;
-    box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.25);
+    padding-right: 10px;
+    box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.45);
 
 
 }
@@ -133,12 +134,21 @@ nav li a {
     background-color: rgba(62, 142, 65, 0.89);
 }
 
+/*  ИКОНИЦЕ ЛИНКОВИ  */
+.ico_img {
+    width: 20px;
+    height: 20px;
+}
+
+
 footer {
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: coral;
+    background-color: #1d0e07;
     text-align: center;
+    color: white;
+    border-radius: 10px 10px 0 0;
 }

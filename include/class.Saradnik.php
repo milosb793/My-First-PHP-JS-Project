@@ -1,10 +1,12 @@
 <?php
+require_once  "class.Korisnik.php";
 require_once "class.Administrator.php";
 require_once "class.Lab_vezba.php";
-require_once  "class.Korisnik.php";
 require_once  "class.Baza.php";
 require_once  "class.Metode.php";
 require_once "class.Izuzetak.php";
+require_once "class.Predmet.php";
+require_once "class.Materijal.php";
 
 class Saradnik extends Korisnik
 {
@@ -98,6 +100,7 @@ class Saradnik extends Korisnik
             //провера да ли постоји вежба
             $lab_vezbe = Lab_vezba::procitajSve();
             $saradnik_id = intval($saradnik_id);
+            $predmet_id = intval($predmet_id);
             $vezba = "";
             $status = 0;
             $materijal_id = "";
@@ -123,19 +126,19 @@ class Saradnik extends Korisnik
 
             if($status == 0)
             {
-                //ажурирање табеле лаб.вежба
-                # провера да сарадник не додаје другог сарадника на вежбу
-                ## провера да ли је овај сарадник сарадник на предмету, у табели предмет-сарадник, али нам треба предмет_ид
-                //предмет_ид узимамо из табеле предмет-сарадник
-                $rez = Baza::vratiInstancu()->select("SELECT predmet_id FROM predmet_saradnik WHERE saradnik_id={$saradnik_id} ");
-                $predmet = $rez->fetch_assoc();
-                $predmet_id = intval($predmet['predmet_id']);
-
-                if (!$predmet_id) //ако не постоји, излазимо из методе са грешком
-                {
-                    echo "Грешка: Унети сарадник није сарадник на предмету.";
-                    return;
-                }
+//                //УРАЂЕНА ПРОВЕРА ПРЕКО ЈАВАСКРИПТА
+//                # провера да сарадник не додаје другог сарадника на вежбу
+//                ## провера да ли је овај сарадник сарадник на предмету, у табели предмет-сарадник, али нам треба предмет_ид
+//                //предмет_ид узимамо из табеле предмет-сарадник
+//                $rez = Baza::vratiInstancu()->select("SELECT predmet_id FROM predmet_saradnik WHERE saradnik_id={$saradnik_id} ");
+//                $predmet = $rez->fetch_assoc();
+//                $predmet_id = intval($predmet['predmet_id']);
+//
+//                if (!$predmet_id) //ако не постоји, излазимо из методе са грешком
+//                {
+//                    echo "Грешка: Унети сарадник није сарадник на предмету.";
+//                    return;
+//                }
 
                 $promenjeno_redova1 = Baza::vratiInstancu()->inUpDel("INSERT INTO lab_vezba ( saradnik_id, predmet_id ,naziv, opis, datum_odrzavanja )" .
                     " VALUES ( {$saradnik_id}, {$predmet_id},'{$naziv}' ,'{$opis}', '{$datum_od}' )");
@@ -164,10 +167,11 @@ class Saradnik extends Korisnik
                         if ($promenjeno_redova4 != 0)
                             echo "База је успешно ажурирана!" . "Материјал: {$materijal_id}";
                         else
-                            echo "Грешка: Лаб. вежба није уписана!";
+                            echo "Грешка: Лаб. вежба није уписана!" . Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
                     }
                 }
             }
+            else return;
     }
 
      // реализовати додавање у табелу материјал
@@ -319,6 +323,24 @@ class Saradnik extends Korisnik
 
     }
 
+    public static function sviSaradniciNaPredmetu($predmet_id)
+    {
+        $svi_saradnici = self::izlistajSveSaradnike();
+        $predmet_saradnik_sve_rs = Baza::vratiInstancu()->select("SELECT * FROM predmet_saradnik WHERE predmet_id={$predmet_id}");
+        $niz_saradnika_na_predmetu = [];
+
+        while($saradnik = $svi_saradnici->fetch_assoc() )
+        {
+            while($pr_sr = $predmet_saradnik_sve_rs->fetch_assoc())
+            {
+                if($saradnik['saradnik_id'] == $pr_sr['saradnik_id'])
+                    array_push($niz_saradnika_na_predmetu,$saradnik);
+            }
+            $predmet_saradnik_sve_rs->data_seek(0);
+        }
+
+        return $niz_saradnika_na_predmetu;
+    }
 
 
 
