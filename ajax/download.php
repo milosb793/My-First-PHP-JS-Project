@@ -1,13 +1,13 @@
 <?php
 require_once "../include/class.Baza.php";
 
-if(isset($_GET['id']))
+if(isset($_GET['materijal_id']))
 {
 // if id is set then get the file with the id from database
 
-    $id    = intval($_GET['id']);
+    $materijal_id    = intval($_GET['materijal_id']);
 
-       $rez = Baza::vratiInstancu()->select("SELECT * FROM fajlovi WHERE fajl_id={$id}");
+       $rez = Baza::vratiInstancu()->select("SELECT * FROM fajlovi WHERE materijal_id={$materijal_id}");
     $fajl = $rez->fetch_assoc();
 
     header("Content-length: {$fajl['velicina']}");

@@ -41,19 +41,13 @@ $("#dodajLabVezbuLink").click(function ()
                     {
                         $.post(
                             "ajax/dodavanjeLabVezbe.php?zid=1",
-                            {
-                                naziv_v: naziv_v,
-                                opis_v: opis_v,
-                                datum: datum,
-                                lab: lab,
-                                predmet_id: predmet_id,
-                                saradnik_id: saradnik_id
-                            },
+                            {naziv_v:naziv_v, opis_v:opis_v, datum:datum, lab:lab, predmet_id:predmet_id, saradnik_id:saradnik_id},
                             function (odgovor, status)
                             {
-                                var niz = odgovor.split("Материјал:");
+                                alert("Прво цео одговор: " + odgovor);
+                                var niz = odgovor.split("Материјал: ");
                                 var materijal_id = niz[1];
-                                alert("tip: " + typeof materijal_id+" vrednost: "+ materijal_id);
+                                alert("materijal_id[tip]: " + typeof materijal_id+" vrednost: "+ materijal_id);
                                 if ((odgovor.indexOf("Грешка") <= -1 ))
                                 {
                                     uploadFile(materijal_id);

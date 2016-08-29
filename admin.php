@@ -6,8 +6,7 @@ require_once "include/class.Metode.php";
 require_once "include/class.Administrator.php";
 require_once "include/class.Saradnik.php";
 require_once "include/class.Predmet.php";
-ini_set('post_max_size', '64M');
-ini_set('upload_max_filesize', '64M');
+
 
 if( !isset($_SESSION['korisnik']['admin_id']) )
     Metode::autorizuj_js();
@@ -23,7 +22,7 @@ $poruka = " oдјави се";
 <html lang="rs">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Админ</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/admin.css"/>
@@ -50,7 +49,6 @@ $poruka = " oдјави се";
                 <a href="#" id="deaktivirajSaradnikaLink">Деактивирај сарадника</a>
             </div>
         </div>
-
         <div class="padajuciMeni">
             <button class="dugmenceMeni"> Предмет <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
             <div class="padajucaLista">
@@ -61,19 +59,16 @@ $poruka = " oдјави се";
                 <a href="#" id="ukiniAngazovanjeLink">Укини ангажовање сараднику  </a>
             </div>
         </div>
-
         <div class="padajuciMeni">
             <button class="dugmenceMeni"> Лаб. вежба <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
             <div class="padajucaLista">
                 <a href="#" id="dodajLabVezbuLink"> Додај лаб. вежбу  </a>
+                <a href="#" id="izmeniLabVezbuLink"> Измени лаб. вежбу  </a>
             </div>
         </div>
-
     </nav>
 
 </header>
-
-
 
 <div id="stranica" align="center">
 
@@ -101,6 +96,8 @@ $poruka = " oдјави се";
 <script type="text/javascript" src="js/dod_lab_v.js" ></script>
 <script type="text/javascript" src="js/bris_pr.js" ></script>
 <script type="text/javascript" src="js/login.js" ></script>
+<script type="text/javascript" src="js/izm_lab_v.js" ></script>
+
 
 
 </html>

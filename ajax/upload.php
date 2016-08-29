@@ -53,7 +53,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1 )
     if(  Baza::vratiInstancu()->inUpDel($query)  )
         echo "Фајл {$fileName} је убачен.";
     else
-        echo "Дошло је до грешке при убацивању фајла у табелу.";
+        echo "Дошло је до грешке при убацивању фајла у табелу." . "<br/>Грешка: " . Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
 
     return;
 }

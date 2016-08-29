@@ -5,8 +5,8 @@ require_once "../include/class.Metode.php";
 require_once "../include/class.Saradnik.php";
 require_once "../include/class.Predmet.php";
 require_once "../include/class.Administrator.php";
-ini_set('post_max_size', '64M');
-ini_set('upload_max_filesize', '64M');
+
+
 $svi_saradnici = Saradnik::izlistajSveSaradnike();
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
@@ -41,7 +41,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
 
            $rezultat .= "          </td> </tr>
-            <tr> <td>Материјали*: </td> <td>       <input type='hidden' name='MAX_FILE_SIZE' value='100000000'/> <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
+            <tr> <td>Материјали*: </td> <td>       <input type='hidden' name='MAX_FILE_SIZE' value='200000000'> <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
         </table> <br/> 
         
         <progress id='progressBar' value='0' max='100' style='width:300px; background-color: dodgerblue;'></progress>
@@ -79,12 +79,12 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1001)
 
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1 )
-{
+{   echo "proba";
     Saradnik::dodajLabVezbu($_POST['naziv_v'],$_POST['opis_v'], $_POST['datum'], intval($_POST['lab']), intval($_POST['saradnik_id']),intval($_POST['predmet_id']));
     return;
 }
 
 
-
+// TODO: sakrij progress bar dok se ne klikne na njega
 
 ?>

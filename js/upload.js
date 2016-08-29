@@ -19,7 +19,7 @@ function uploadFile(materijal_id)
     ajax.addEventListener("error", errorHandler, false);
     ajax.addEventListener("abort", abortHandler, false);
     ajax.open("POST", "ajax/upload.php?zid=1&materijal_id="+materijal_id+"");
-    ajax.send(formdata);
+    ajax.send(formdata); alert(ajax.response.toString());
 }
 function progressHandler(event)
 {
@@ -31,7 +31,7 @@ function progressHandler(event)
 function completeHandler(event)
 {
     _("status").innerHTML = event.target.responseText;
-    _("progressBar").value = 0;
+    _("progressBar").value = 100;
 }
 function errorHandler(event)
 {
