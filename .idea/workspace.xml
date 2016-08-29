@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5117160-a9a4-406c-bbf0-4d0c349af3a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/pdf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ppt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/xls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/zip.png" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/README.md�" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" afterPath="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/download.php" afterPath="$PROJECT_DIR$/ajax/download.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" afterPath="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaSaradnika.php" afterPath="$PROJECT_DIR$/ajax/izmenaSaradnika.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/upload.php" afterPath="$PROJECT_DIR$/ajax/upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/admin.css" afterPath="$PROJECT_DIR$/css/admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Baza.php" afterPath="$PROJECT_DIR$/include/class.Baza.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Lab_vezba.php" afterPath="$PROJECT_DIR$/include/class.Lab_vezba.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Materijal.php" afterPath="$PROJECT_DIR$/include/class.Materijal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Predmet.php" afterPath="$PROJECT_DIR$/include/class.Predmet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Saradnik.php" afterPath="$PROJECT_DIR$/include/class.Saradnik.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dod_lab_v.js" afterPath="$PROJECT_DIR$/js/dod_lab_v.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dod_pr.js" afterPath="$PROJECT_DIR$/js/dod_pr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/izm_lab_v.js" afterPath="$PROJECT_DIR$/js/izm_lab_v.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/upload.js" afterPath="$PROJECT_DIR$/js/upload.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/admin_old.php" afterPath="$PROJECT_DIR$/backup/admin_old.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bigdump.php" afterPath="$PROJECT_DIR$/backup/bigdump.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index_o.php" afterPath="$PROJECT_DIR$/backup/index_o.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lab_vezbe.sql" afterPath="$PROJECT_DIR$/backup/lab_vezbe.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/login_o.php" afterPath="$PROJECT_DIR$/backup/login_o.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/struktura.html" afterPath="$PROJECT_DIR$/backup/struktura.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/to_utf8.php" afterPath="$PROJECT_DIR$/backup/to_utf8.php" />
     </list>
     <ignored path="pva.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -243,90 +228,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pva" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ajax" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -341,6 +242,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\pva_projekat\pva\backup" />
       <recent name="C:\xampp\htdocs\pva_projekat\pva\images" />
     </key>
   </component>
@@ -410,18 +312,18 @@
       <workItem from="1472313630459" duration="7475000" />
       <workItem from="1472394012777" duration="1792000" />
       <workItem from="1472404730242" duration="13662000" />
-      <workItem from="1472474750814" duration="1874000" />
+      <workItem from="1472474750814" duration="2195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28307000" />
+    <option name="totallyTimeSpent" value="28628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20497803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20497803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
