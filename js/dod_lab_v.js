@@ -50,7 +50,7 @@ $("#dodajLabVezbuLink").click(function ()
                                 alert("materijal_id[tip]: " + typeof materijal_id+" vrednost: "+ materijal_id);
                                 if ((odgovor.indexOf("Грешка") <= -1 ))
                                 {
-                                    uploadFile(materijal_id);
+                                    uploadFile(materijal_id,0);
                                 }
                             }
                         );

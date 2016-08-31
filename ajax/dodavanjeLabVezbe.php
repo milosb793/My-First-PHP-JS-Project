@@ -21,10 +21,11 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat = "";
 
     $rezultat .= "<form id='dodajLabVezbuForma' method='post' action='#' enctype='multipart/form-data'>
-        <table border='0' cellpadding='' cellspacing=''>
+        <table border='0' cellpadding='' cellspacing='5'>
             <tr> <td>Назив лаб. вежбе*: </td> <td><input type='text' id='nazivLab' class='reqd'/>           </td> </tr>
             <tr> <td>Oпис лаб. вежбе*: </td> <td> <input type='text' id='opisLab' class='reqd'/>            </td> </tr>
-            <tr> <td>Датум одржавања*: </td> <td> <input type='datetime-local' id='datumLab' class='reqd'/> </td> </tr>
+            <tr> <td>Датум одржавања*: </td> <td> <input type='text' id='datumLab' class='reqd'/> </td> </tr>
+            <tr><td colspan='2'> <span class='poruka'>(унесите датум у формату: dd.mm.gggg. cc:mm)</span> </td> </tr> <br/>
             <tr> <td>Лабораторија*: </td> <td>    <select id='brojLab' class='reqd'> <option value='' disabled='disabled' selected='selected'> - Изаберите лабораторију -</option>";
                 foreach ($sve_lab as $lab)
                     $rezultat .= "<option value='{$lab}'> {$lab} </option>";
@@ -37,12 +38,13 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
     $rezultat .="
             </select>            </td> </tr> 
-            <tr> <td>Сарадник*: </td> <td>        <div id='sar' > <i>(изаберите најпре предмет)</i></div>";
+            <tr> <td>Сарадник*: </td> <td>        <div id='sar' > <span class='poruka'>(изаберите најпре предмет)</span></div>";
 
 
            $rezultat .= "          </td> </tr>
             <tr> <td>Материјали*: </td> <td>       <input type='hidden' name='MAX_FILE_SIZE' value='200000000'> <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
         </table> <br/> 
+        
         
         <progress id='progressBar' value='0' max='100' style='width:300px; background-color: dodgerblue;'></progress>
     <h3 id='status'></h3>

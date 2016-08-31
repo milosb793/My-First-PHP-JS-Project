@@ -72,16 +72,16 @@ class Metode
         if(!isset($_SESSION['korisnik']) )
         {
             echo "Да бисте приступили овом делу сајта, морате бити улоговани." ;
-            self::preusmeri("login.php?zid=0");
+            self::preusmeri_php("login.php?zid=0");
         }
         else
         {
             if($_SESSION['korisnik']['admin_id'] > 0)
-                self::preusmeri("../admin.php");
+                self::preusmeri_php("../admin.php");
             else if($_SESSION['korisnik']['saradnik_id'] > 0)
-                self::preusmeri("../saradnik.php");
+                self::preusmeri_php("../saradnik.php");
             else
-                self::preusmeri("login.php?zid=0");
+                self::preusmeri_php("login.php?zid=0");
         }
     }
     public static function autorizuj_js()
@@ -93,9 +93,9 @@ class Metode
         }
         else
         {
-            if($_SESSION['korisnik']['admin_id'] > 0)
+            if(isset($_SESSION['korisnik']['admin_id']) && $_SESSION['korisnik']['admin_id'] > 0)
                 self::preusmeri_js("admin.php");
-            else if($_SESSION['korisnik']['saradnik_id'] > 0)
+            else if(isset($_SESSION['korisnik']['saradnik_id']) && $_SESSION['korisnik']['saradnik_id'] > 0)
                 self::preusmeri_js("saradnik.php");
             else
                 self::preusmeri_js("ajax/login.php?zid=0");

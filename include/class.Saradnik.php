@@ -180,64 +180,51 @@ class Saradnik extends Korisnik
      * Метода за измену постојеће вежбе. За детерминисање постојеће лаб вежбе користе се
      * прва три параметра. Друга три су опциона, и проверава се да си су постављена један по један.
      * Прослеђују се параметри из форме.
+     * @param $lab_vezba_id
+     * @param $naziv
      * @param $opis
      * @param $datum
      * @param $br_lab
-     * @param string $novi_opis
-     * @param string $novi_datum
-     * @param int $novi_br_lab
+     * @param $saradnik_id
+     * @param $predmet_id
+     * @throws Izuzetak
+     * @internal param string $novi_opis
+     * @internal param string $novi_datum
+     * @internal param int $novi_br_lab
      */
-    public static function izmeniLabVezbu($opis, $datum, $br_lab, $novi_opis = "", $novi_datum = "", $novi_br_lab = 0)
+    public static function izmeniLabVezbu($lab_vezba_id,$naziv, $opis, $datum, $br_lab,$predmet_id, $saradnik_id)
     {
-        $rezultat = [];
-        $status1 = null;
-        $status2 = null;
-        $status3 = null;
+        echo "поздрав из функције измениЛабВежбу :)\n Подаци: lab_id: {$lab_vezba_id} назив: {$naziv} opis: {$opis} datum: {$datum} br_lab: {$br_lab} pred_id: {$predmet_id} sar_id: {$saradnik_id}";
+        $datum = date('Y-m-d H:i:s', strtotime($datum));
+        //ако смо убацили фајл
 
-        //провера да ли постоји вежба са прва три параметара, коју желимо да изменимо
-        $upit = "SELECT * FROM lab_vezba WHERE opis='" . $opis . "' AND datum_odrzavanja='" . $datum . "' AND lab_vezba_id =" .
-            "(SELECT lab_vezba_id FROM laboratorija WHERE br_lab='" . $br_lab . "');";
+        $materijali = Materijal::procitaj($lab_vezba_id);
 
-        if ($rezultat = mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit))) //ако постоји овакав запис у бази, тј. ако постоји вежба, вршимо промену
+
+        // ово ради //
+        if (Baza::vratiInstancu()->inUpDel("UPDATE lab_vezba SET naziv='{$naziv}', opis='{$opis}', 
+                                                  datum_odrzavanja='{$datum}', saradnik_id={$saradnik_id} , predmet_id={$predmet_id} WHERE lab_vezba_id={$lab_vezba_id}"))
         {
-            if ($novi_opis != "") {
-                $status1 = Baza::vratiInstancu()->inUpDel("UPDATE lab_vezba SET opis='" . $novi_opis . "' WHERE lab_vezba_id='" . $rezultat["lab_vezba_id"] . "' ;");
-            }
-            if ($novi_datum != "") {
-                $status2 = Baza::vratiInstancu()->inUpDel("UPDATE lab_vezba SET datum_odrzavanja='" . $novi_datum . "' WHERE lab_vezba_id='" . $rezultat["lab_vezba_id"] . "' ;");
-
-            }
-            if ($novi_br_lab != 0) {
-                $saradnik_id = unserialize($_SESSION["korisnik"])->korisnik_id;
-
-                $status3 = Baza::vratiInstancu()->inUpDel("UPDATE laboratorija SET br_lab='" . $novi_br_lab . "' WHERE lab_vezba_id='" . $rezultat["lab_vezba_id"] . "' AND saradnik_id='" . $saradnik_id . "' ;");
-
-            }
-
-            //провера да ли има измена
-            if ($novi_opis != "") {
-                if ($novi_datum != "") {
-                    if ($novi_br_lab != "") {
-                        if ($status1 > 0 && $status2 > 0 && $status3 > 0)
-                            Metode::obavestenje("Лаб. вежба је успешно ажурирана!");
-                        else
-                            Metode::obavestenje("Дошло је до грешке приликом ажурирања!");
-                    } else {
-                        if ($status1 > 0 && $status2 > 0)
-                            Metode::obavestenje("Лаб. вежба је успешно ажурирана!");
-                        else
-                            Metode::obavestenje("Дошло је до грешке приликом ажурирања!");
+            if (Baza::vratiInstancu()->inUpDel("UPDATE laboratorija SET broj_lab={$br_lab}, saradnik_id={$saradnik_id} WHERE lab_vezba_id={$lab_vezba_id}"))
+            {
+               foreach($materijali as $materijal)
+                {
+                    if (Baza::vratiInstancu()->inUpDel("UPDATE  materijal SET opis='{$opis}' WHERE lab_vezba_id={$lab_vezba_id} )"))
+                    {
+                        echo "Успешно сте изменили лаб. вежбу!";
                     }
-                } else {
-                    if ($status1 > 0)
-                        Metode::obavestenje("Лаб. вежба је успешно ажурирана!");
                     else
-                        Metode::obavestenje("Дошло је до грешке приликом ажурирања!");
+                    {
+                        echo "Грешка: није успело ажурирање материјала." ;
+                    }
+
                 }
             }
-        } else
-            throw new Izuzetak("Не постоји лаб. вежба са тим параметрима.");
-
+            else
+                echo "Грешка: није успело ажурирање табеле лаб. вежба";
+        }
+        else
+            echo "Грешка: није успело ажурирање табеле лабораторија." ;
 
     }
 
@@ -245,28 +232,39 @@ class Saradnik extends Korisnik
      * @param $opis
      * @param $datum
      * @param $br_lab
+     * @throws Izuzetak
      */
-    public static function obrisiLabVezbu($opis, $datum, $br_lab) //проверити да ли ради и како каскадно брисање, иначе треба обрисати и из лабораторије и материјала
+    public static function obrisiLabVezbu($lab_vezba_id) //проверити да ли ради и како каскадно брисање, иначе треба обрисати и из лабораторије и материјала
     {
-        //провера да ли постоји вежба са прва три параметара, коју желимо да обришемо
-        $upit = "SELECT * FROM lab_vezba WHERE opis='" . $opis . "' AND datum_odrzavanja='" . $datum . "' AND lab_vezba_id =" .
-                     "(SELECT lab_vezba_id FROM laboratorija WHERE br_lab='" . $br_lab . "');";
+        $materijali = Materijal::procitaj($lab_vezba_id); //fetch-ovano
+        $status = 0;
 
-        if ($rezultat = mysqli_fetch_assoc(Baza::vratiInstancu()->select($upit))) //ако постоји овакав запис у бази, тј. ако постоји вежба, вршимо промену
+        if(  Baza::vratiInstancu()->inUpDel("DELETE FROM lab_vezba WHERE lab_vezba_id={$lab_vezba_id}") )
         {
-            $lab_vezba_id = trim($rezultat["lab_vezba_id"]);
-            $saradnik_id = unserialize($_SESSION["korisnik"])->korisnik_id;
-
-           $vrednost[0] =  Baza::vratiInstancu()->inUpDel("DELETE FROM lab_vezba WHERE lab_vezba_id='".$lab_vezba_id."' AND saradnik_id='".$saradnik_id."' ;");
-
-           if($vrednost[0] > 0 )
-               Metode::obavestenje("Успешно сте обрисали лаб. вежбу. ");
-            else
-                throw new Izuzetak("Дошло је до грешке, лаб вежба није обрисана.");
-
+            if( Baza::vratiInstancu()->inUpDel("DELETE FROM laboratorija WHERE lab_vezba_id={$lab_vezba_id}") )
+            {
+                if( Baza::vratiInstancu()->inUpDel("DELETE FROM materijal WHERE lab_vezba_id={$lab_vezba_id}") )
+                {
+                    foreach($materijali as $mat)
+                    {
+                        if( Baza::vratiInstancu()->inUpDel("DELETE FROM fajlovi WHERE materijal_id={$mat['materijal_id']} ") )
+                            $status=1;
+                        else
+                            $status = 0;
+                    }
+                    if( $status )
+                    {
+                        echo "Успешно сте обрисали вежбу!";
+                        return;
+                    }
+                    else echo "Грешка при брисању материјала... ";
+                }
+                else echo "Грешка при брисању материјала...";
+            }
+            else echo "Грешка при брисању лабораторије...";
         }
-        else
-            throw new Izuzetak("Не постоји таква лаб. вежба.");
+        else echo "Грешка при брисању лаб. вежбе...";
+
     }
 
     /**

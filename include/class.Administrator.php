@@ -27,7 +27,7 @@ class Administrator extends Korisnik
      */
     public function __set($name, $value)
     {
-        if (property_exists("Saradnik", $this->$name))
+        if (property_exists("Administrator", $this->$name))
             $this->$name = $value;
         else
             throw new Izuzetak("Не постоји такав параметар!");
