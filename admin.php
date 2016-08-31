@@ -64,6 +64,7 @@ $poruka = " oдјави се";
             <div class="padajucaLista">
                 <a href="#" id="dodajLabVezbuLink"> Додај лаб. вежбу  </a>
                 <a href="#" id="izmeniLabVezbuLink"> Измени лаб. вежбу  </a>
+                <a href="#" id="obrisiLabVezbuLink"> Обриши лаб. вежбу  </a>
             </div>
         </div>
     </nav>
@@ -83,7 +84,7 @@ $poruka = " oдјави се";
 
 
 <script type="text/javascript" src="js/jquery-3.0.0.js"></script>
-<!--<script type="text/javascript" src="js/pr_frm.js" ></script>-->
+<script type="text/javascript" src="js/pr_frm.js" ></script>
 <script type="text/javascript" src="js/g_fnc.js" ></script>
 <script type="text/javascript" src="js/dod_sar.js" ></script>
 <script type="text/javascript" src="js/izm_sar.js" ></script>
@@ -97,6 +98,7 @@ $poruka = " oдјави се";
 <script type="text/javascript" src="js/bris_pr.js" ></script>
 <script type="text/javascript" src="js/login.js" ></script>
 <script type="text/javascript" src="js/izm_lab_v.js" ></script>
+<script type="text/javascript" src="js/bris_lab_v.js" ></script>
 
 
 

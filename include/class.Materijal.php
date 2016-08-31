@@ -69,6 +69,7 @@ class Materijal
     }
 
     /**
+     * Враћа фечован низ
      * @param $lab_id
      * @return mixed|null
      */
