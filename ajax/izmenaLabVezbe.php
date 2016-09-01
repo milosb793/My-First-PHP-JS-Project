@@ -16,20 +16,33 @@ $svi_saradnici = Saradnik::izlistajSveSaradnike();
 // приказ изабраног предмета и листе предмета //
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
-    $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
-    $svi_predmeti_saradnika = Predmet::vratiPredmete($saradnik_id); // nije fetch-ovano
-
-    $rezultat = "<div id='predmeti'>
-    <select id='predmet' >
-         <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
-    while($predmet = $svi_predmeti->fetch_assoc() )
+    if( isset($_SESSION['korisnik']['saradnik_id']) )
     {
-        while($pr_sr = $svi_predmeti_saradnika->fetch_assoc())
+        $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
+        $svi_predmeti_saradnika = Predmet::vratiPredmete($saradnik_id); // nije fetch-ovano
+
+        $rezultat = "<div id='predmeti'>
+        <select id='predmet' >
+             <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
+        while ($predmet = $svi_predmeti->fetch_assoc())
         {
-            if($predmet['predmet_id'] == $pr_sr['predmet_id'])
-                $rezultat .="<option value='{$predmet['predmet_id']}'> {$predmet['naziv']} </option>";
+            while ($pr_sr = $svi_predmeti_saradnika->fetch_assoc())
+            {
+                if ($predmet['predmet_id'] == $pr_sr['predmet_id'])
+                    $rezultat .= "<option value='{$predmet['predmet_id']}'> {$predmet['naziv']} </option>";
+            }
+            $svi_predmeti_saradnika->data_seek(0);
         }
-        $svi_predmeti_saradnika->data_seek(0);
+    }
+    else
+    {
+        $rezultat = "<div id='predmeti'>
+        <select id='predmet' >
+             <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
+        while ($predmet = $svi_predmeti->fetch_assoc())
+        {
+            $rezultat .= "<option value='{$predmet['predmet_id']}'> {$predmet['naziv']} </option>";
+        }
     }
 
     $rezultat .= "</select> </div>

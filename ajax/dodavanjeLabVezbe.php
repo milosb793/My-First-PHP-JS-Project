@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../include/class.Baza.php";
 require_once "../include/class.Korisnik.php";
 require_once "../include/class.Metode.php";
@@ -11,12 +12,18 @@ $svi_saradnici = Saradnik::izlistajSveSaradnike();
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
+    $predmet_saradnik_rs = "";
     $svi_predmeti = Predmet::procitajSve();
     $sve_lab = [
         101,102,103,104,105,106,107,108,109,201,202,203,204,205,206,207,208,209,
         301,302,303,304,305,306,307,308,309,401,402,403,404,405,406,407,408,409,
         501,502,503,504,505,506,507,508,509
     ];
+    if(isset($_SESSION['korisnik']['saradnik_id']))
+    {
+        $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
+        $predmet_saradnik_rs = Predmet::vratiPredmete($saradnik_id); //nije fetch-ovano
+    }
 
     $rezultat = "";
 
@@ -33,8 +40,21 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat .=" 
             </select>               </td> </tr>
             <tr> <td>Предмет*: </td> <td>         <select id='predmetLab' class='reqd'><option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
-                while($predmet = $svi_predmeti->fetch_assoc() )
-                    $rezultat .="<option value='{$predmet['predmet_id']}'> {$predmet['naziv']} </option>";
+
+            while($row = $svi_predmeti->fetch_assoc() )
+            {
+                if(isset($_SESSION['korisnik']['saradnik_id']))
+                {
+                    while($pr_sr = $predmet_saradnik_rs->fetch_assoc())
+                    {
+                        if($pr_sr['predmet_id'] == $row['predmet_id'])
+                            $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
+                    }
+                    $predmet_saradnik_rs->data_seek(0);
+                }
+                else
+                    $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
+            }
 
     $rezultat .="
             </select>            </td> </tr> 

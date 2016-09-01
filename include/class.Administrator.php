@@ -85,7 +85,8 @@ class Administrator extends Korisnik
         $predmet = $result_set->fetch_assoc();
         $naziv = $predmet['naziv']; //proveri
 
-        if(empty( $naziv) ) {
+        if(empty( $naziv) )
+        {
             echo "Предмет са унетим називом и описом не постоји.";
             return;
         }

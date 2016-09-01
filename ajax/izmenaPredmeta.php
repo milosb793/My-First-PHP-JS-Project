@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../include/class.Administrator.php";
 require_once "../include/class.Predmet.php";
 
@@ -15,6 +15,15 @@ if(isset($_GET['pid']) )
 
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
+    $saradnik_id = "";
+    $predmet_saradnik_rs = "";
+
+    // ако је улогован сарадник, приказују се само предмети на којима је ангажован //
+    if(isset($_SESSION['korisnik']['saradnik_id']))
+    {
+        $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
+        $predmet_saradnik_rs = Predmet::vratiPredmete($saradnik_id); //nije fetch-ovano
+    }
 
     $svi_predmeti = Predmet::procitajSve();
     $rezultat = "
@@ -26,9 +35,24 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
         <!-- Исписивање динамичке падајуће листе           -->
         <select name='predmeti' id='predmeti' class='reqd' >
             <option selected='selected' disabled='disabled'> - Изаберите предмет - </option>";
+
         while($row = $svi_predmeti->fetch_assoc() )
-           $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
-    $rezultat .= "
+        {
+            if(isset($_SESSION['korisnik']['saradnik_id']))
+            {
+                while($pr_sr = $predmet_saradnik_rs->fetch_assoc())
+                {
+                    if($pr_sr['predmet_id'] == $row['predmet_id'])
+                        $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
+                }
+                $predmet_saradnik_rs->data_seek(0);
+            }
+            else
+                $rezultat .= "<option value=' {$row['predmet_id']}' > {$row['naziv']} </option>";
+        }
+
+
+        $rezultat .= "
 </select>
 </div>
 <br/> <br/>
