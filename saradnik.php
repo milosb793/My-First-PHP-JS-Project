@@ -40,7 +40,7 @@ $poruka = " oдјави се";
     <a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime']; echo "({$poruka})"?> </a> <br/> <br/>
 
     <nav id="nav">
-
+        <button class="dugmenceMeni" id="pocetna"> Почетна </button>
         <div class="padajuciMeni">
             <button class="dugmenceMeni"> Предмет <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
             <div class="padajucaLista">
@@ -88,6 +88,7 @@ $poruka = " oдјави се";
 <script type="text/javascript" src="js/login.js" ></script>
 <script type="text/javascript" src="js/izm_lab_v.js" ></script>
 <script type="text/javascript" src="js/bris_lab_v.js" ></script>
+<script type="text/javascript" src="js/izm_sar_pr.js" ></script>
 
 
 
