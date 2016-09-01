@@ -41,6 +41,7 @@ $poruka = " oдјави се";
     <a href="#" id="odjaviSe">Добро дошли, <?php echo $_SESSION['korisnik']['kor_ime']; echo "({$poruka})"?> </a> <br/> <br/>
 
     <nav id="nav">
+        <button class="dugmenceMeni" id="pocetna"> Почетна </button>
         <div class="padajuciMeni">
             <button class="dugmenceMeni"> Сарадник <i class="fa fa-sort-desc" aria-hidden="true"></i> </button>
             <div class="padajucaLista">
@@ -77,8 +78,7 @@ $poruka = " oдјави се";
 </div>
 
 <footer>
-    Сва права задржана
-</footer>
+    Висока школа електротехнике и рачунарства струковних студија <br/> август 2016. </footer>
 
 </body>
 

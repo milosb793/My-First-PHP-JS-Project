@@ -84,18 +84,41 @@ $("#izmeniLabVezbuLink").click(function ()
                                                         var br_lab = $("#brojLab").find("option:selected").val();
                                                         var predmet_id = $("#predmetLab").find("option:selected").val();
                                                         var saradnik_id = $("#saradnik").find("option:selected").val();
-                                                        var fajl = $('input[type=file]')[0].files[0].name;
-                                                        var ekst = fajl.split(".").pop(); alert(ekst);
+                                                        var fajl =  $('input[type=file]')[0].files[0];
+                                                        var ekst;
                                                         var u_redu = true;
                                                         var podrzani_formati = ["jpg","png","gif","bmp","pdf","doc","docx","txt","zip","ppt","pptx","xls","xls"];
-
+                                                        alert(typeof fajl + fajl);
                                                         if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
                                                         {
-                                                           u_redu = podrzani_formati.indexOf(ekst) > -1;
-
-                                                            if(u_redu)
+                                                            if(fajl != undefined || fajl!=null || fajl!==0)
                                                             {
-                                                                uploadFile(0, lab_vezba_id);
+                                                                ekst = fajl.name.split(".").pop(); alert(ekst);
+                                                                u_redu = podrzani_formati.indexOf(ekst) > -1;
+
+                                                                if (u_redu)
+                                                                {
+                                                                    uploadFile(0, lab_vezba_id);
+
+                                                                    $.post(
+                                                                        "ajax/izmenaLabVezbe.php?zid=1",
+                                                                        {
+                                                                            lab_vezba_id: lab_vezba_id,
+                                                                            naziv: naziv,
+                                                                            opis: opis,
+                                                                            datum: datum,
+                                                                            br_lab: br_lab,
+                                                                            predmet_id: predmet_id,
+                                                                            saradnik_id: saradnik_id
+                                                                        },
+                                                                        function (odgovor, status) {
+                                                                            alert("Одговор на зид = 1: " + odgovor + "статус: " + status);
+                                                                        });
+                                                                }
+                                                                else alert("Фајл није подржаног формата. ");
+                                                            }
+                                                            else
+                                                            {
                                                                 $.post(
                                                                     "ajax/izmenaLabVezbe.php?zid=1",
                                                                     {
@@ -111,7 +134,6 @@ $("#izmeniLabVezbuLink").click(function ()
                                                                         alert("Одговор на зид = 1: " + odgovor + "статус: " + status);
                                                                     });
                                                             }
-                                                            else alert("Фајл није подржаног формата. ");
                                                         }
                                                     });// izeniLab click
                                                 }); //get 1004
