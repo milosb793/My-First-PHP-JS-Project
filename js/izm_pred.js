@@ -11,13 +11,10 @@ $("#izmeniPredmetLink").click(function ()
 
             $("#izmeniPredmetDiv").toggle(function ()
             {
-
-                if ($(this).css('display') == 'none')
-                {
+                if ($(this).css('display') == 'block') {
                     $(this).prop('hidden', 'hidden');
                 }
-                else
-                {
+                else {
                     $(this).removeProp('hidden');
                     $(this).css('display', 'block');
                 }
@@ -50,12 +47,10 @@ $("#izmeniPredmetLink").click(function ()
 
                             $("#izmeniPredmetForma").toggle(function ()
                             {
-                                if ($(this).css('display') == 'none')
-                                {
+                                if ($(this).css('display') == 'block') {
                                     $(this).prop('hidden', 'hidden');
                                 }
-                                else
-                                {
+                                else {
                                     $(this).removeProp('hidden');
                                     $(this).css('display', 'block');
                                 }

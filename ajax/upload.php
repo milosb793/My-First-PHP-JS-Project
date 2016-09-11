@@ -3,8 +3,6 @@ require_once "../include/class.Baza.php";
 
 
 
-
-
 //if ( !isset($fileTmpLoc) )
 //{ // if file not chosen
 //    echo "Грешка: Нисте одабрали фајл!";
@@ -55,7 +53,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1 )
         if(  Baza::vratiInstancu()->inUpDel($query)  )
             echo "Фајл {$fileName} је убачен.";
         else
-            echo "Дошло је до грешке при убацивању фајла у табелу." . "<br/>Грешка: " . Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
+            echo "Дошло је до грешке при убацивању фајла у табелу." . "\nГрешка: " . Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
 
         return;
     }

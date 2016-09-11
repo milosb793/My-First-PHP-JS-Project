@@ -13,9 +13,9 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat =
         "<div id='angazujDiv' > 
         Изаберите сарадника: <br/>
-        <i style='font-size: 9pt;'>(приказани су само сарадници који нису деактивирани)</i> <br/> <br/>
+        <span class='poruka' >(приказани су само сарадници који нису деактивирани)</span> <br/> <br/>
         <select name='saradnici' id='saradnici' class='reqd'  >
-             <option selected='selected' disabled='disabled'> - Изаберите сарадника - </option> ";
+             <option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите сарадника - </option> ";
     while ($row = $svi_saradnici->fetch_assoc())
     {
         if($row['status'] == "aktiviran")
@@ -27,7 +27,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
     $rezultat .= "Изаберите предмет: <br/>" .
     "<select name='predmeti' id='predmeti' class='reqd' >
-             <option selected='selected' disabled='disabled'> - Изаберите предмет - </option> ";
+             <option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите предмет - </option> ";
     while ($row = $svi_predmeti->fetch_assoc())
         $rezultat .= "<option value='{$row['predmet_id']} ' > {$row['naziv']} </option>";
 

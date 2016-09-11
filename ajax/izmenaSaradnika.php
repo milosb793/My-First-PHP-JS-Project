@@ -5,24 +5,7 @@ require_once "../include/class.Administrator.php";
 require_once "../include/class.Izuzetak.php";
 require_once "../include/class.Metode.php";
 
-if(isset($_GET['id']))
-{
-    $id = intval($_GET['id']);
-    $saradnik = mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT * FROM saradnik WHERE saradnik_id={$id}"));
-    echo $saradnik['saradnik_id'] . "|" . $saradnik['ime_prezime'] . "|" . $saradnik['kor_ime'] . "|" . $saradnik['lozinka'] . "|" . $saradnik['e_mail'] . "|" . $saradnik['opis'] . "|" . $saradnik['slika_url'];
-    return;
-}
-
-
-if(isset($_GET['zid']) && $_GET['zid'] == 2)
-{
-
-    $sid = intval($_POST['sid']);
-    $saradnik = mysqli_fetch_assoc(Baza::vratiInstancu()->select("SELECT * FROM saradnik WHERE saradnik_id='{$sid}' "));
-    Administrator::izmeniSaradnika($sid, $_POST['ime_prezime'], $_POST['kor_ime'], $_POST['lozinka'], $_POST['e_mail'], $_POST['opis'], $_POST['status'], $_POST['slika_url']);
-    return;
-}
-
+// приказ форме //
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
     $svi_saradnici = Saradnik::izlistajSveSaradnike();
@@ -32,7 +15,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat .= "<div id='padajucaLista1'>";
     $rezultat .= "Изаберите сарадника са листе: <br/>";
     $rezultat .= "<select name='saradnici' id='saradnici' class='reqd' onchange='prikaziSaradnike()' >";
-    $rezultat .= "<option selected='selected' disabled='disabled'> - Изаберите сарадника - </option>";
+    $rezultat .= "<option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите сарадника - </option>";
     while ($row = $svi_saradnici->fetch_assoc())
         $rezultat .= "<option value='{$row['saradnik_id']} ?>' > {$row['ime_prezime']} </option> ";
     $rezultat .= "</select></div><br/> <br/>";
@@ -56,7 +39,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     $rezultat .= "<tr> <td>URL слике: </td> <td> <input type='url' id='slika_url2' class='' placeholder=''/> </td>              </tr>";
     $rezultat .= "</table>";
     $rezultat .= "</form>";
-    $rezultat .= "<button id='prosledi2' name='prosledi2' onclick='prosledi2()'>Проследи</button>";
+    $rezultat .= "<button id='prosledi2' name='prosledi2' onclick='return false;'>Проследи</button>";
     $rezultat .= "</div>";
     $rezultat .= "</div>";
     // TODO: izbaci redundansu
@@ -64,4 +47,28 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     echo $rezultat;
     return;
 }
-?>
+
+// узимање података сараника //
+if(isset($_GET['id']))
+{
+    $id = intval($_GET['id']);
+    $saradnik = Saradnik::vratiSaradnika($sid);
+    echo $saradnik['saradnik_id'] . "|" . $saradnik['ime_prezime'] . "|" . $saradnik['kor_ime'] . "|" . $saradnik['lozinka'] . "|" . $saradnik['e_mail'] . "|" . $saradnik['opis'] . "|" . $saradnik['slika_url'];
+    return;
+}
+
+// коначно: измена сарадника //
+if(isset($_GET['zid']) && $_GET['zid'] == 2)
+{
+    $sid = intval($_POST['sid']);
+    $ime_prezime = Metode::mysqli_prep($_POST['ime_prezime']);
+    $kor_ime = Metode::mysqli_prep($_POST['kor_ime']);
+    $lozinka = Metode::mysqli_prep($_POST['lozinka']);
+    $e_mail = Metode::mysqli_prep($_POST['e_mail']);
+    $opis = Metode::mysqli_prep($_POST['opis']);
+    $status = Metode::mysqli_prep($_POST['status']);
+    $slika_url = Metode::mysqli_prep($_POST['slika_url']);
+
+    Administrator::izmeniSaradnika($sid, $ime_prezime, $kor_ime, $lozinka, $e_mail, $opis, $status, $slika_url);
+    return;
+}

@@ -13,26 +13,37 @@ require_once "../include/class.Izuzetak.php";
 // листа предмета //
 if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
-    $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
-    $svi_predmeti_saradnika = Predmet::vratiPredmete($saradnik_id); // nije fetch-ovano, samo id-ovi
     $svi_predmeti = Predmet::procitajSve(); //nije fetch-ovano
-
     $rezultat = "";
 
-    $rezultat .="<h3>Брисање лаб. вежбе:</h3><br/>";
+    $rezultat .= "<h3>Брисање лаб. вежбе:</h3><br/>";
     $rezultat .= "<select id='predmeti'>
-                    <option value='' selected='selected' disabled='disabled'>- Изаберите предмет - </option>";
-                    while($predmet = $svi_predmeti->fetch_assoc())
-                    {
-                        while($saradnik_na_predmetu = $svi_predmeti_saradnika->fetch_assoc())
-                        {
-                            if($predmet['predmet_id'] == $saradnik_na_predmetu['predmet_id'])
-                                $rezultat .= "<option value='{$predmet['predmet_id']}' > {$predmet['naziv']}</option>";
-                        }
-                        $svi_predmeti_saradnika->data_seek(0);
-                    }
-    $rezultat .= "</select><br/> <div id='lab'></div>";
+                        <option value='' selected='selected' disabled='disabled' hidden='hidden'>- Изаберите предмет - </option>";
 
+    if(isset($_SESSION['korisnik']['saradnik_id']))
+    {
+        $saradnik_id = $_SESSION['korisnik']['saradnik_id'];
+        $svi_predmeti_saradnika = Predmet::vratiPredmete($saradnik_id); // nije fetch-ovano, samo id-ovi
+
+        while ($predmet = $svi_predmeti->fetch_assoc())
+        {
+            while ($saradnik_na_predmetu = $svi_predmeti_saradnika->fetch_assoc())
+            {
+                if ($predmet['predmet_id'] == $saradnik_na_predmetu['predmet_id'])
+                    $rezultat .= "<option value='{$predmet['predmet_id']}' > {$predmet['naziv']}</option>";
+            }
+            $svi_predmeti_saradnika->data_seek(0);
+        }
+    }
+    else
+    {
+        while ($predmet = $svi_predmeti->fetch_assoc())
+        {
+            $rezultat .= "<option value='{$predmet['predmet_id']}' > {$predmet['naziv']}</option>";
+        }
+    }
+
+    $rezultat .= "</select><br/> <div id='lab'></div>";
     $svi_predmeti->data_seek(0);
 
     echo $rezultat;
@@ -44,7 +55,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 if(isset($_GET['zid']) && $_GET['zid'] == 1001)
 {
     $rezultat = "<br/><select id='lab_vezbe'>
-                    <option value='' selected='selected' disabled='disabled'>- Изаберите лаб. вежбу - </option>";
+                    <option value='' selected='selected' disabled='disabled' hidden='hidden'>- Изаберите лаб. вежбу - </option>";
     $predmet_id = $_GET['predmet_id'];
 
     $sve_vezbe_sa_predmeta = Lab_vezba::procitaj_predmet_id($predmet_id); // fetch-ovano

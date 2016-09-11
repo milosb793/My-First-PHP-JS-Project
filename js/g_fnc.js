@@ -1,7 +1,4 @@
-/**
- * Created by logos on 8.8.16..
- */
-
+var poruka = "p";
 
 
 // ### ОДЈАВЉИВАЊЕ ### //

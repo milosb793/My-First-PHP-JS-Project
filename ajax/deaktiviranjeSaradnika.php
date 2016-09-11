@@ -22,7 +22,7 @@ $rezultat .= "<div id='padajucaLista2'>
     Изаберите сарадника са листе: <br/>
     <!-- Исписивање динамичке падајуће листе           -->
     <select name='saradnici2' id='saradnici2' class='reqd' >
-        <option selected='selected' disabled='disabled'> - Изаберите сарадника - </option>";
+        <option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите сарадника - </option>";
         while($row = $svi_saradnici->fetch_assoc())
         {
             if($row['status'] == "aktiviran")

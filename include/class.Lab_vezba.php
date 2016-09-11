@@ -120,9 +120,9 @@ class Lab_vezba
 
         while ($vezba = $niz->fetch_assoc())
             if ($lab_vezba_id == $vezba['lab_vezba_id'])
-                array_push($nizVezbi, $vezba);
+                return $vezba;
 
-        return $nizVezbi;
+        return null;
     }
 
     public static function procitaj_predmet_id($predmet_id)

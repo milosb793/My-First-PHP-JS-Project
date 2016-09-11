@@ -5,7 +5,7 @@ $("#loginLink").click(function ()
         {},
         function (podaci, status)
         {
-            $("#sadrzajIndex").html(podaci);
+            $("#sadrzaj").html(podaci);
 
             $("#ulogujSe").click(function ()
             {

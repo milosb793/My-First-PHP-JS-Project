@@ -15,7 +15,6 @@ $("#obrisiLabVezbuLink").click(function ()
             $("#predmeti").change(function ()
             {
                 predmet_id = $(this).find("option:selected").val();
-                alert(predmet_id);
 
                 $.get(
                     "ajax/brisanjeLabVezbe.php?zid=1001&predmet_id="+predmet_id+"", //ceo get mozda treba van
@@ -38,19 +37,10 @@ $("#obrisiLabVezbuLink").click(function ()
                                         {
                                             alert(odgovor);
                                         }); // get 1
-
                             }); // obrisiLab click
-
                         });// lab_vezbe change
-
                     }); // get 1001
-
             }); // predmeti change
-
-
-
-
         }); // link get predmet
-
 }); //obrisi click
 

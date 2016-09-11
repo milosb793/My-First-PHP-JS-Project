@@ -1,6 +1,6 @@
 
 // ############### ГЛОБАЛНЕ ПРОМЕНЉИВЕ #############//
-var statusValidacje = false;
+var statusValidacje;
 var poruka = "";
 var polje_sme_biti_prazno = false;
 
@@ -41,10 +41,8 @@ $('#dodajSaradnikaLink').click(function()
                 var st = $('select[name=status1] option:selected').val();
                 var url = $('#slika_url1').val();
 
-                // statusValidacje = validirajFormu();
-                //
-                // if (statusValidacje == true)
-                // {
+                if ( proveri($('#ime_prezime1'),5) && proveri($('#kor_ime1'),3) && dupljaPolja($('#lozinka1'),$("#lozinka2")) && proveriMejl($('#e_mail1')) )
+                {
                     if (confirm("Јесте ли сигурни да су сви подаци у реду?"))
                     {
                         $.post("ajax/dodavanjeSaradnika.php?zid=2",
@@ -63,10 +61,9 @@ $('#dodajSaradnikaLink').click(function()
                             }
                         );
                     }
-                }
-        //         else
-        //             alert(poruka);
-        // }
+                 }
+
+        }
     );
 
 

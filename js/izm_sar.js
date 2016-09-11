@@ -3,7 +3,7 @@ var saradnik_id;
 function prikaziFormu() {
     $("#izmeniSaradnikaForma").toggle(function () {
 
-        if ($(this).css('display') == 'none') {
+        if ($(this).css('display') == 'block') {
             $(this).prop('hidden', 'hidden');
         }
         else {
