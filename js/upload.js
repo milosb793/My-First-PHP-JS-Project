@@ -9,8 +9,6 @@ function _(el)
 
 function uploadFile(materijal_id,lab_vezba_id)
 {
-    alert("мат: " + materijal_id + "лаб.: "+lab_vezba_id);
-
     var file = _("file1").files[0];
     // alert(file.name+" | "+file.size+" | "+file.type);
     var formdata = new FormData();
@@ -21,15 +19,6 @@ function uploadFile(materijal_id,lab_vezba_id)
     ajax.addEventListener("error", errorHandler, false);
     ajax.addEventListener("abort", abortHandler, false);
 
-    ajax.onreadystatechange = function ()
-    {
-        if (this.readyState == 4 && this.status == 200)
-        {
-            alert(this.responseText);
-
-            // use response in here.
-        }
-    };
 
     if(parseInt(materijal_id)!=0)
     {

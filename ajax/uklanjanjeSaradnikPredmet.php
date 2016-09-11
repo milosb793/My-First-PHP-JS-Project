@@ -14,7 +14,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
         " 
         Изаберите сарадника:
         <select name='saradnici' id='saradnici' class='reqd'  >
-             <option selected='selected' disabled='disabled'> - Изаберите сарадника - </option> ";
+             <option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите сарадника - </option> ";
     while ($row = $svi_saradnici->fetch_assoc())
         $rezultat .= "<option value='{$row['saradnik_id']} ' > {$row['ime_prezime']} </option>";
 
@@ -46,7 +46,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1001)
 
     $rezultat =
         "<select name='predmeti' id='predmeti' class='reqd' >
-             <option selected='selected' disabled='disabled'> - Изаберите предмет - </option> " . $option;
+             <option selected='selected' disabled='disabled' hidden='hidden'> - Изаберите предмет - </option> " . $option;
 
     $rezultat .= "</select> <br/> <br/>";
 
@@ -60,4 +60,5 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1 )
     $predmet_id = intval($_GET['predmet_id']);
 
     Administrator::obrisiSaradnikaSaPredmeta($saradnik_id,$predmet_id);
+    return;
 }

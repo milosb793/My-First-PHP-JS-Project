@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once "include/class.Baza.php";
 require_once "include/class.Metode.php";
@@ -7,17 +6,13 @@ require_once "include/class.Administrator.php";
 require_once "include/class.Saradnik.php";
 require_once "include/class.Predmet.php";
 
-
 if( !isset($_SESSION['korisnik']['admin_id']) )
     Metode::autorizuj_js();
 
 $svi_saradnici = Saradnik::izlistajSveSaradnike();
 $svi_predmeti = Predmet::procitajSve();
 $poruka = " oдјави се";
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="rs">
 <head>
@@ -29,10 +24,7 @@ $poruka = " oдјави се";
     <link rel="stylesheet" href="css/font-awesome.css"/>
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <script type="text/javascript" src="js/upload.js" ></script>
-    <style>
-
-
-    </style>
+    <script type="text/javascript" src="js/pr_frm.js" ></script>
 </head>
 <body>
 
@@ -72,34 +64,7 @@ $poruka = " oдјави се";
 
 </header>
 
-<div id="stranica" align="center">
+<?php include "include/sadrzaj.php"; ?>
 
-    <div id="sadrzaj" align="center"> </div>
-</div>
+<?php include "include/footer_admin.php"; ?>
 
-<footer>
-    Висока школа електротехнике и рачунарства струковних студија <br/> август 2016. </footer>
-
-</body>
-
-
-<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
-<script type="text/javascript" src="js/pr_frm.js" ></script>
-<script type="text/javascript" src="js/g_fnc.js" ></script>
-<script type="text/javascript" src="js/dod_sar.js" ></script>
-<script type="text/javascript" src="js/izm_sar.js" ></script>
-<script type="text/javascript" src="js/deak_s.js" ></script>
-<script type="text/javascript" src="js/dod_pr.js" ></script>
-<script type="text/javascript" src="js/izm_pred.js" ></script>
-<script type="text/javascript" src="js/ang_sar_pr.js" ></script>
-<script type="text/javascript" src="js/ukl_sar_pr.js" ></script>
-<script type="text/javascript" src="js/upload.js" ></script>
-<script type="text/javascript" src="js/dod_lab_v.js" ></script>
-<script type="text/javascript" src="js/bris_pr.js" ></script>
-<script type="text/javascript" src="js/login.js" ></script>
-<script type="text/javascript" src="js/izm_lab_v.js" ></script>
-<script type="text/javascript" src="js/bris_lab_v.js" ></script>
-
-
-
-</html>

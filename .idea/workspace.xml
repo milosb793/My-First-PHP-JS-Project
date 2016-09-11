@@ -1,22 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5117160-a9a4-406c-bbf0-4d0c349af3a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ajax/brisanjeLabVezbe.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/saradnik.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bris_lab_v.js" />
+    <list default="true" id="a5117160-a9a4-406c-bbf0-4d0c349af3a6" name="Default" comment="Izmena profila saradnika realizovana uspesno.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/pocetna.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/footer_saradnik.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/sadrzaj.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/skripte_admin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/skripte_saranik.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/pocetna.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md´" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/README.md�" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/admin_old.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/bigdump.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/index_o.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/lab_vezbe.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/lab_vezbe_no_constraints_27_08_2016.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/login_o.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/struktura.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/to_utf8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/uploader/file_upload_parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/uploader/test_uploads/114648269-Džordž-Orvel-Zivotinjska-Farma-ćirilica.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backup/uploader/upload_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/navigacija.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/header_admin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/header_saradnik.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/navigacija.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/navigacija_inx.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lab_vezba.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/footer.php" afterPath="$PROJECT_DIR$/include/footer_admin.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/predmet.php" afterPath="$PROJECT_DIR$/ajax/pocetna.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/brisanjeLabVezbe.php" afterPath="$PROJECT_DIR$/ajax/brisanjeLabVezbe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/brisanjePredmeta.php" afterPath="$PROJECT_DIR$/ajax/brisanjePredmeta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/deaktiviranjeSaradnika.php" afterPath="$PROJECT_DIR$/ajax/deaktiviranjeSaradnika.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" afterPath="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/dodavanjePredmeta.php" afterPath="$PROJECT_DIR$/ajax/dodavanjePredmeta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/dodavanjeSaradnikPredmet.php" afterPath="$PROJECT_DIR$/ajax/dodavanjeSaradnikPredmet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/dodavanjeSaradnika.php" afterPath="$PROJECT_DIR$/ajax/dodavanjeSaradnika.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/download.php" afterPath="$PROJECT_DIR$/ajax/download.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" afterPath="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaPredmeta.php" afterPath="$PROJECT_DIR$/ajax/izmenaPredmeta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaProfilaSaradnika.php" afterPath="$PROJECT_DIR$/ajax/izmenaProfilaSaradnika.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/izmenaSaradnika.php" afterPath="$PROJECT_DIR$/ajax/izmenaSaradnika.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/login.php" afterPath="$PROJECT_DIR$/ajax/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/uklanjanjeSaradnikPredmet.php" afterPath="$PROJECT_DIR$/ajax/uklanjanjeSaradnikPredmet.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/upload.php" afterPath="$PROJECT_DIR$/ajax/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/admin.css" afterPath="$PROJECT_DIR$/css/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/saradnik.css" afterPath="$PROJECT_DIR$/css/saradnik.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Administrator.php" afterPath="$PROJECT_DIR$/include/class.Administrator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Materijal.php" afterPath="$PROJECT_DIR$/include/class.Materijal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Korisnik.php" afterPath="$PROJECT_DIR$/include/class.Korisnik.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Lab_vezba.php" afterPath="$PROJECT_DIR$/include/class.Lab_vezba.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Metode.php" afterPath="$PROJECT_DIR$/include/class.Metode.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/class.Saradnik.php" afterPath="$PROJECT_DIR$/include/class.Saradnik.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bris_lab_v.js" afterPath="$PROJECT_DIR$/js/bris_lab_v.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dod_lab_v.js" afterPath="$PROJECT_DIR$/js/dod_lab_v.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dod_pr.js" afterPath="$PROJECT_DIR$/js/dod_pr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dod_sar.js" afterPath="$PROJECT_DIR$/js/dod_sar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/g_fnc.js" afterPath="$PROJECT_DIR$/js/g_fnc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/izm_lab_v.js" afterPath="$PROJECT_DIR$/js/izm_lab_v.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/izm_pred.js" afterPath="$PROJECT_DIR$/js/izm_pred.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/izm_sar.js" afterPath="$PROJECT_DIR$/js/izm_sar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pr_frm.js" afterPath="$PROJECT_DIR$/js/pr_frm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/upload.js" afterPath="$PROJECT_DIR$/js/upload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saradnik.php" afterPath="$PROJECT_DIR$/saradnik.php" />
     </list>
@@ -38,165 +88,7 @@
     <favorites_list name="pva" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.Materijal.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/class.Materijal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-              <folding>
-                <marker date="1472658363494" expanded="true" signature="1426:1449" ph="SELECT * FRO... materijal" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="izmenaLabVezbe.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ajax/izmenaLabVezbe.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
-              <folding>
-                <marker date="1472680500058" expanded="true" signature="837:935" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="837:1299" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="1834:1947" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="1835:1947" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="2494:2540" ph="SELECT broj_... laboratorija" />
-                <marker date="1472680500058" expanded="true" signature="2494:2555" ph="SELECT broj_... laboratorija" />
-                <marker date="1472680500058" expanded="true" signature="3226:5782" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3288:3387" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3288:5222" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3740:4110" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3770:4104" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3796:3837" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3796:3905" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="3796:4084" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4256:4684" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4281:4678" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4315:4356" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4315:4432" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4315:4661" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4701:4861" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="4727:4855" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="5241:5504" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="5567:5609" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="6190:6231" ph="SELECT * FRO... lab_vezba" />
-                <marker date="1472680500058" expanded="true" signature="6190:6262" ph="SELECT * FRO... lab_vezba" />
-                <marker date="1472680500058" expanded="true" signature="6190:6277" ph="SELECT * FRO... lab_vezba" />
-                <marker date="1472680500058" expanded="true" signature="6578:6615" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="6578:6644" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="6578:6706" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="6578:6714" ph="..." />
-                <marker date="1472680500058" expanded="true" signature="7255:7321" ph="SELECT naziv... fajlovi" />
-                <marker date="1472680500058" expanded="true" signature="7255:7349" ph="SELECT naziv... fajlovi" />
-                <marker date="1472680500058" expanded="true" signature="9492:9504" ph="DELETE FROM " />
-                <marker date="1472680500058" expanded="true" signature="9492:9533" ph="DELETE FROM " />
-                <marker date="1472680500058" expanded="true" signature="9492:9548" ph="DELETE FROM " />
-                <marker date="1472680500058" expanded="true" signature="9599:9633" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/upload.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.Predmet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/class.Predmet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-693">
-              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-              <folding>
-                <marker date="1472420451032" expanded="true" signature="1103:1124" ph="SELECT * FRO... predmet" />
-                <marker date="1472420451032" expanded="true" signature="2127:2176" ph="SELECT * FRO... predmet_saradnik" />
-                <marker date="1472420451032" expanded="true" signature="2646:2813" ph="SELECT * FRO... predmet_saradnik" />
-                <marker date="1472420451032" expanded="true" signature="3169:3251" ph="UPDATE predm... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dodavanjeLabVezbe.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-              <folding>
-                <marker date="1472659021472" expanded="true" signature="782:1493" ph="..." />
-                <marker date="1472659021472" expanded="true" signature="840:1493" ph="..." />
-                <marker date="1472659021472" expanded="false" signature="2565:2607" ph="..." />
-                <marker date="1472659021472" expanded="true" signature="2974:3022" ph="SELECT * FRO... predmet_saradnik" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax/upload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
-              <folding>
-                <marker date="1472669716940" expanded="true" signature="1576:1741" ph="INSERT INTO fajlovi... " />
-                <marker date="1472669716940" expanded="true" signature="2294:2342" ph="INSERT INTO materijal... " />
-                <marker date="1472669716940" expanded="true" signature="2294:2359" ph="INSERT INTO materijal... " />
-                <marker date="1472669716940" expanded="true" signature="2423:2477" ph="SELECT mater... materijal" />
-                <marker date="1472669716940" expanded="true" signature="2423:2479" ph="SELECT mater... materijal" />
-                <marker date="1472669716940" expanded="true" signature="2423:2482" ph="SELECT mater... materijal" />
-                <marker date="1472669716940" expanded="true" signature="2700:2885" ph="INSERT INTO fajlovi... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="izm_lab_v.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/izm_lab_v.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="70" column="95" selection-start-line="70" selection-start-column="95" selection-end-line="70" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saradnik.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/saradnik.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -212,29 +104,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/dod_pr.js" />
-        <option value="$PROJECT_DIR$/../../../phpMyAdmin/config.inc.php" />
         <option value="$PROJECT_DIR$/include/class.Baza.php" />
-        <option value="$PROJECT_DIR$/ajax/izmenaSaradnika.php" />
-        <option value="$PROJECT_DIR$/ajax/download.php" />
-        <option value="$PROJECT_DIR$/include/class.Lab_vezba.php" />
         <option value="$PROJECT_DIR$/include/class.Predmet.php" />
-        <option value="$PROJECT_DIR$/css/admin.css" />
-        <option value="$PROJECT_DIR$/js/dod_lab_v.js" />
-        <option value="$PROJECT_DIR$/js/upload.js" />
-        <option value="$PROJECT_DIR$/include/class.Administrator.php" />
-        <option value="$PROJECT_DIR$/js/bris_lab_v.js" />
-        <option value="$PROJECT_DIR$/saradnik.php" />
-        <option value="$PROJECT_DIR$/include/class.Metode.php" />
-        <option value="$PROJECT_DIR$/ajax/brisanjeLabVezbe.php" />
         <option value="$PROJECT_DIR$/include/class.Materijal.php" />
-        <option value="$PROJECT_DIR$/include/class.Saradnik.php" />
-        <option value="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" />
+        <option value="$PROJECT_DIR$/js/izm_sar_pr.js" />
+        <option value="$PROJECT_DIR$/ajax/brisanjePredmeta.php" />
+        <option value="$PROJECT_DIR$/ajax/deaktiviranjeSaradnika.php" />
+        <option value="$PROJECT_DIR$/ajax/dodavanjeSaradnikPredmet.php" />
+        <option value="$PROJECT_DIR$/ajax/uklanjanjeSaradnikPredmet.php" />
+        <option value="$PROJECT_DIR$/css/pocetma.css" />
+        <option value="$PROJECT_DIR$/js/login.js" />
+        <option value="$PROJECT_DIR$/include/class.Lab_vezba.php" />
+        <option value="$PROJECT_DIR$/ajax/download.php" />
         <option value="$PROJECT_DIR$/ajax/upload.php" />
-        <option value="$PROJECT_DIR$/css/saradnik.css" />
-        <option value="$PROJECT_DIR$/admin.php" />
-        <option value="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" />
+        <option value="$PROJECT_DIR$/js/upload.js" />
         <option value="$PROJECT_DIR$/js/izm_lab_v.js" />
+        <option value="$PROJECT_DIR$/js/bris_lab_v.js" />
+        <option value="$PROJECT_DIR$/include/class.Saradnik.php" />
+        <option value="$PROJECT_DIR$/css/saradnik.css" />
+        <option value="$PROJECT_DIR$/css/pocetna.css" />
+        <option value="$PROJECT_DIR$/css/admin.css" />
+        <option value="$PROJECT_DIR$/js/izm_sar.js" />
+        <option value="$PROJECT_DIR$/js/izm_pred.js" />
+        <option value="$PROJECT_DIR$/include/class.Administrator.php" />
+        <option value="$PROJECT_DIR$/include/class.Korisnik.php" />
+        <option value="$PROJECT_DIR$/ajax/brisanjeLabVezbe.php" />
+        <option value="$PROJECT_DIR$/include/sadrzaj.php" />
+        <option value="$PROJECT_DIR$/saradnik.php" />
+        <option value="$PROJECT_DIR$/include/footer_admin.php" />
+        <option value="$PROJECT_DIR$/include/footer_saradnik.php" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/include/skripte_saranik.php" />
+        <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/include/skripte_admin.php" />
+        <option value="$PROJECT_DIR$/js/g_fnc.js" />
+        <option value="$PROJECT_DIR$/ajax/pocetna.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/dod_pr.js" />
+        <option value="$PROJECT_DIR$/js/dod_sar.js" />
+        <option value="$PROJECT_DIR$/js/pocetna.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/js/dod_lab_v.js" />
+        <option value="$PROJECT_DIR$/js/pr_frm.js" />
+        <option value="$PROJECT_DIR$/include/class.Metode.php" />
+        <option value="$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php" />
+        <option value="$PROJECT_DIR$/ajax/dodavanjeSaradnika.php" />
+        <option value="$PROJECT_DIR$/ajax/izmenaLabVezbe.php" />
+        <option value="$PROJECT_DIR$/ajax/dodavanjePredmeta.php" />
+        <option value="$PROJECT_DIR$/ajax/izmenaPredmeta.php" />
+        <option value="$PROJECT_DIR$/ajax/izmenaProfilaSaradnika.php" />
+        <option value="$PROJECT_DIR$/ajax/izmenaSaradnika.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -251,8 +171,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1370" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -302,7 +222,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,16 +240,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pva" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pva" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="profil&#9;ACTION&#9;WelcomeScreen.CreateWebProject&#10;profilLink&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -407,32 +342,42 @@
       <workItem from="1472474750814" duration="23117000" />
       <workItem from="1472560891200" duration="1364000" />
       <workItem from="1472566030297" duration="15189000" />
-      <workItem from="1472648558684" duration="20356000" />
+      <workItem from="1472648558684" duration="20954000" />
+      <workItem from="1472741049227" duration="13897000" />
+      <workItem from="1472818161781" duration="28069000" />
+      <workItem from="1472986705925" duration="17000" />
+      <workItem from="1473019976099" duration="2695000" />
+      <workItem from="1473174873479" duration="1028000" />
+      <workItem from="1473334500790" duration="15236000" />
+      <workItem from="1473525171496" duration="3039000" />
+      <workItem from="1473542600711" duration="4753000" />
+      <workItem from="1473584376432" duration="11828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86459000" />
+    <option name="totallyTimeSpent" value="167619000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1370" height="772" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12664714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12629247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -448,498 +393,185 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Izmena profila saradnika realizovana uspesno." />
+    <option name="LAST_COMMIT_MESSAGE" value="Izmena profila saradnika realizovana uspesno." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin.php">
+    <entry file="file://$PROJECT_DIR$/ajax/dodavanjeSaradnikPredmet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="-26">
+          <caret line="29" column="76" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Saradnik.php">
+    <entry file="file://$PROJECT_DIR$/ajax/uklanjanjeSaradnikPredmet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="n#obrisiLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#10570#10656#0#PHP" expanded="false" />
-            <element signature="n#promeniBio#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#11022#11152#0#PHP" expanded="false" />
-            <element signature="n#promeniLozinku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#promeniSliku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSvePredmete#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSveSaradnike#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#sviSaradniciNaPredmetu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <marker date="1472658577730" expanded="true" signature="4329:4387" ph="SELECT predm... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="4828:5011" ph="INSERT INTO lab_vezba... " />
-            <marker date="1472658577730" expanded="true" signature="5260:5382" ph="SELECT lab_v... lab_vezba" />
-            <marker date="1472658577730" expanded="true" signature="5576:5773" ph="INSERT INTO laboratorija... " />
-            <marker date="1472658577730" expanded="true" signature="5983:6144" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="6211:6265" ph="SELECT mater... materijal" />
-            <marker date="1472658577730" expanded="true" signature="7954:8162" ph="UPDATE lab_v... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8295" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8329" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8486:8559" ph="UPDATE mater... " />
-            <marker date="1472658577730" expanded="true" signature="8492:8559" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="9446:9487" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9565:9609" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9695:9736" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9905:9944" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="10768:10846" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="11368:11444" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="12145:12167" ph="SELECT * FRO... saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12444" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12457" ph="SELECT * FRO... predmet_saradnik" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Lab_vezba.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="n#procitaj#0;n#Lab_vezba#0;n#!!top" expanded="false" />
-            <element signature="n#procitaj_lab_id#0;n#Lab_vezba#0;n#!!top" expanded="false" />
-            <marker date="1472420171671" expanded="true" signature="1645:1668" ph="SELECT * FRO... lab_vezba" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/izmenaLabVezbe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="153" column="39" selection-start-line="153" selection-start-column="39" selection-end-line="153" selection-end-column="39" />
-          <folding>
-            <marker date="1472680500058" expanded="true" signature="837:935" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="837:1299" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="1834:1947" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="1835:1947" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="2494:2540" ph="SELECT broj_... laboratorija" />
-            <marker date="1472680500058" expanded="true" signature="2494:2555" ph="SELECT broj_... laboratorija" />
-            <marker date="1472680500058" expanded="true" signature="3226:5782" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3288:3387" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3288:5222" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3740:4110" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3770:4104" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:3837" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:3905" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:4084" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4256:4684" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4281:4678" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4356" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4432" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4661" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4701:4861" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4727:4855" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="5241:5504" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="5567:5609" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6190:6231" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6190:6262" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6190:6277" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6578:6615" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6644" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6706" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6714" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="7255:7321" ph="SELECT naziv... fajlovi" />
-            <marker date="1472680500058" expanded="true" signature="7255:7349" ph="SELECT naziv... fajlovi" />
-            <marker date="1472680500058" expanded="true" signature="9492:9504" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9492:9533" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9492:9548" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9599:9633" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/izm_lab_v.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
-          <folding />
+        <state relative-caret-position="501">
+          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/class.Materijal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
-          <folding>
-            <marker date="1472658363494" expanded="true" signature="1426:1449" ph="SELECT * FRO... materijal" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <marker date="1472417313012" expanded="true" signature="245:286" ph="SELECT * FRO... fajlovi" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/izmenaSaradnika.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1472406875665" expanded="true" signature="358:399" ph="SELECT * FRO... saradnik" />
-            <marker date="1472406875665" expanded="true" signature="784:833" ph="SELECT * FRO... saradnik" />
-            <marker date="1472406875665" expanded="true" signature="1189:1203" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="1794:1808" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2679:3046" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2722:3021" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2792:3015" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/izm_sar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Saradnik.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="127" column="75" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
-          <folding>
-            <element signature="n#obrisiLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#10570#10656#0#PHP" expanded="false" />
-            <element signature="n#promeniBio#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#11022#11152#0#PHP" expanded="false" />
-            <element signature="n#promeniLozinku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#promeniSliku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSvePredmete#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSveSaradnike#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#sviSaradniciNaPredmetu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <marker date="1472658577730" expanded="true" signature="4329:4387" ph="SELECT predm... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="4828:5011" ph="INSERT INTO lab_vezba... " />
-            <marker date="1472658577730" expanded="true" signature="5260:5382" ph="SELECT lab_v... lab_vezba" />
-            <marker date="1472658577730" expanded="true" signature="5576:5773" ph="INSERT INTO laboratorija... " />
-            <marker date="1472658577730" expanded="true" signature="5983:6144" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="6211:6265" ph="SELECT mater... materijal" />
-            <marker date="1472658577730" expanded="true" signature="7954:8162" ph="UPDATE lab_v... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8295" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8329" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8486:8559" ph="UPDATE mater... " />
-            <marker date="1472658577730" expanded="true" signature="8492:8559" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="9446:9487" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9565:9609" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9695:9736" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9905:9944" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="10768:10846" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="11368:11444" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="12145:12167" ph="SELECT * FRO... saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12444" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12457" ph="SELECT * FRO... predmet_saradnik" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Saradnik.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="127" column="75" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
-          <folding>
-            <element signature="n#obrisiLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#10570#10656#0#PHP" expanded="false" />
-            <element signature="n#promeniBio#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#11022#11152#0#PHP" expanded="false" />
-            <element signature="n#promeniLozinku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#promeniSliku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSvePredmete#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSveSaradnike#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#sviSaradniciNaPredmetu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <marker date="1472658577730" expanded="true" signature="4329:4387" ph="SELECT predm... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="4828:5011" ph="INSERT INTO lab_vezba... " />
-            <marker date="1472658577730" expanded="true" signature="5260:5382" ph="SELECT lab_v... lab_vezba" />
-            <marker date="1472658577730" expanded="true" signature="5576:5773" ph="INSERT INTO laboratorija... " />
-            <marker date="1472658577730" expanded="true" signature="5983:6144" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="6211:6265" ph="SELECT mater... materijal" />
-            <marker date="1472658577730" expanded="true" signature="7954:8162" ph="UPDATE lab_v... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8295" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8329" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8486:8559" ph="UPDATE mater... " />
-            <marker date="1472658577730" expanded="true" signature="8492:8559" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="9446:9487" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9565:9609" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9695:9736" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9905:9944" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="10768:10846" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="11368:11444" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="12145:12167" ph="SELECT * FRO... saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12444" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12457" ph="SELECT * FRO... predmet_saradnik" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dod_lab_v.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="71" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
-          <folding>
-            <marker date="1472669716940" expanded="true" signature="1576:1741" ph="INSERT INTO fajlovi... " />
-            <marker date="1472669716940" expanded="true" signature="2294:2342" ph="INSERT INTO materijal... " />
-            <marker date="1472669716940" expanded="true" signature="2294:2359" ph="INSERT INTO materijal... " />
-            <marker date="1472669716940" expanded="true" signature="2423:2477" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2423:2479" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2423:2482" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2700:2885" ph="INSERT INTO fajlovi... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1472659021472" expanded="true" signature="782:1493" ph="..." />
-            <marker date="1472659021472" expanded="true" signature="840:1493" ph="..." />
-            <marker date="1472659021472" expanded="false" signature="2565:2607" ph="..." />
-            <marker date="1472659021472" expanded="true" signature="2974:3022" ph="SELECT * FRO... predmet_saradnik" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Baza.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/dodavanjePredmeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1472247613822" expanded="true" signature="287:301" ph="..." />
-            <marker date="1472247613822" expanded="true" signature="318:751" ph="..." />
-            <marker date="1472247613822" expanded="true" signature="377:693" ph="..." />
-            <marker date="1472247613822" expanded="true" signature="400:597" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dod_pr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpMyAdmin/config.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Baza.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/izmenaSaradnika.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1472406875665" expanded="true" signature="358:399" ph="SELECT * FRO... saradnik" />
-            <marker date="1472406875665" expanded="true" signature="784:833" ph="SELECT * FRO... saradnik" />
-            <marker date="1472406875665" expanded="true" signature="1189:1203" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="1794:1808" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2679:3046" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2722:3021" ph="..." />
-            <marker date="1472406875665" expanded="true" signature="2792:3015" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/izm_sar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <marker date="1472417313012" expanded="true" signature="245:286" ph="SELECT * FRO... fajlovi" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/izm_pred.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fonts/fontawesome-webfont.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="117" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="153" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dod_lab_v.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="61" selection-start-line="52" selection-start-column="61" selection-end-line="52" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Administrator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-          <folding>
-            <marker date="1472649067335" expanded="true" signature="1063:1107" ph="SELECT * FRO... predmet" />
-            <marker date="1472649067335" expanded="true" signature="1334:1398" ph="INSERT INTO predmet... " />
-            <marker date="1472649067335" expanded="true" signature="2152:2191" ph="SELECT * FRO... predmet" />
-            <marker date="1472649067335" expanded="true" signature="2579:2659" ph="UPDATE predm... " />
-            <marker date="1472649067335" expanded="true" signature="2947:3020" ph="UPDATE predm... " />
-            <marker date="1472649067335" expanded="true" signature="3296:3352" ph="UPDATE predm... " />
-            <marker date="1472649067335" expanded="true" signature="3908:3945" ph="DELETE FROM " />
-            <marker date="1472649067335" expanded="true" signature="4021:4060" ph="DELETE FROM " />
-            <marker date="1472649067335" expanded="true" signature="4142:4188" ph="DELETE FROM " />
-            <marker date="1472649067335" expanded="true" signature="5335:5420" ph="INSERT INTO saradnik... " />
-            <marker date="1472649067335" expanded="true" signature="6860:6911" ph="SELECT sarad... saradnik" />
-            <marker date="1472649067335" expanded="true" signature="7397:7466" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="7671:7735" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="7936:7996" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="8199:8259" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="8462:8520" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="8725:8787" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="8991:9055" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="9968:10025" ph="UPDATE sarad... " />
-            <marker date="1472649067335" expanded="true" signature="10586:10658" ph="INSERT INTO predmet_saradnik... " />
-            <marker date="1472649067335" expanded="true" signature="11288:11365" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/izmenaPredmeta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-          <folding>
-            <marker date="1472247613830" expanded="false" signature="578:592" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="609:904" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="649:904" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="810:904" ph="..." />
-            <marker date="1472247613830" expanded="false" signature="1138:1152" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="1169:1643" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="1216:1588" ph="..." />
-            <marker date="1472247613830" expanded="true" signature="1243:1468" ph="..." />
-          </folding>
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/class.Lab_vezba.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1046">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="1938">
+          <caret line="124" column="20" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding>
-            <element signature="n#procitaj#0;n#Lab_vezba#0;n#!!top" expanded="false" />
-            <element signature="n#procitaj_lab_id#0;n#Lab_vezba#0;n#!!top" expanded="false" />
-            <marker date="1472420171671" expanded="true" signature="1645:1668" ph="SELECT * FRO... lab_vezba" />
+            <marker date="1472852652839" expanded="true" signature="196:237" ph="SELECT * FRO... fajlovi" />
+            <marker date="1472852652839" expanded="true" signature="412:448" ph="SELECT * FRO... fajlovi" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <marker date="1473336142667" expanded="true" signature="1574:1739" ph="INSERT INTO fajlovi... " />
+            <marker date="1473336142667" expanded="true" signature="2289:2354" ph="INSERT INTO materijal... " />
+            <marker date="1473336142667" expanded="true" signature="2418:2472" ph="SELECT mater... materijal" />
+            <marker date="1473336142667" expanded="true" signature="2695:2880" ph="INSERT INTO fajlovi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/bris_lab_v.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+        <state relative-caret-position="714">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/class.Predmet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/navigacija.css" />
+    <entry file="file://$PROJECT_DIR$/include/header_saradnik.php" />
+    <entry file="file://$PROJECT_DIR$/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/saradnik.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="106" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/pocetna.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1063">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/izm_pred.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/class.Administrator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/brisanjePredmeta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="84" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+          <folding>
+            <marker date="1472821245320" expanded="true" signature="446:646" ph="..." />
+            <marker date="1472821245320" expanded="true" signature="529:646" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/class.Korisnik.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="45" />
+          <folding>
+            <marker date="1473352153680" expanded="true" signature="1496:1575" ph="SELECT * FRO... administrator" />
+            <marker date="1473352153680" expanded="true" signature="1851:1925" ph="SELECT * FRO... saradnik" />
+            <marker date="1473352153680" expanded="true" signature="2104:2183" ph="SELECT * FRO... administrator" />
+            <marker date="1473352153680" expanded="true" signature="2406:2480" ph="SELECT * FRO... saradnik" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/sadrzaj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/izm_sar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1084">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/footer_saradnik.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/footer_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -947,119 +579,342 @@
     <entry file="file://$PROJECT_DIR$/saradnik.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Metode.php">
+    <entry file="file://$PROJECT_DIR$/backup/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        <state relative-caret-position="411">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/izm_lab_v.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="94" column="65" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/pocetna.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
           <folding>
-            <marker date="1472656817991" expanded="true" signature="107:135" ph="..." />
-            <marker date="1472656817991" expanded="true" signature="305:335" ph="..." />
+            <element signature="e#4379#5571#0#PHP" expanded="false" />
+            <element signature="e#5589#8955#0#PHP" expanded="false" />
+            <element signature="e#8972#10291#0#PHP" expanded="false" />
+            <marker date="1473593204896" expanded="true" signature="476:502" ph="SELECT * FRO... laboratorija" />
+            <marker date="1473593204896" expanded="true" signature="1682:2033" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="1682:2125" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="1682:4035" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="1725:2033" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="2048:2125" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="2192:4034" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="3088:3812" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="3135:3530" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="3135:3608" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="3135:3806" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="4798:5083" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="4798:5122" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6074:6132" ph="SELECT fajl_... fajlovi" />
+            <marker date="1473593204896" expanded="true" signature="6074:6152" ph="SELECT fajl_... fajlovi" />
+            <marker date="1473593204896" expanded="true" signature="6315:6753" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6315:6834" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6315:8917" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6343:6753" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6571:6753" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6726:6753" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="6837:8894" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9239:9489" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9270:9335" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9375:9477" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9537:10247" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9565:10235" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9725:10218" ph="..." />
+            <marker date="1473593204896" expanded="true" signature="9749:10212" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/skripte_saranik.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/skripte_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dod_pr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pocetna.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/g_fnc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dod_sar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="219" column="41" selection-start-line="219" selection-start-column="41" selection-end-line="219" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dod_lab_v.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="39" column="103" selection-start-line="39" selection-start-column="103" selection-end-line="39" selection-end-column="103" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajax/brisanjeLabVezbe.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="109" selection-start-line="53" selection-start-column="109" selection-end-line="53" selection-end-column="109" />
+        <state relative-caret-position="432">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <marker date="1472657014649" expanded="true" signature="844:953" ph="..." />
-            <marker date="1472657014649" expanded="true" signature="1735:1765" ph="..." />
-            <marker date="1472657014649" expanded="true" signature="1735:1847" ph="..." />
-            <marker date="1472657014649" expanded="true" signature="1735:1869" ph="..." />
+            <element signature="e#459#1802#0#PHP" expanded="false" />
+            <element signature="e#1827#2513#0#PHP" expanded="false" />
+            <marker date="1473352619196" expanded="true" signature="686:815" ph="..." />
+            <marker date="1473352619196" expanded="true" signature="1921:2049" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/class.Baza.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pr_frm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/izmenaPredmeta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#338#2652#0#PHP" expanded="false" />
+            <element signature="e#2685#2918#0#PHP" expanded="false" />
+            <marker date="1473605964579" expanded="false" signature="839:853" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="870:1181" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="910:1181" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="1071:1181" ph="..." />
+            <marker date="1473605964579" expanded="false" signature="1879:1893" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="1910:2606" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="1957:2551" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="1984:2055" ph="..." />
+            <marker date="1473605964579" expanded="true" signature="1984:2431" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/izmenaProfilaSaradnika.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#272#1603#0#PHP" expanded="false" />
+            <element signature="e#1636#1961#0#PHP" expanded="false" />
+            <marker date="1473605964485" expanded="true" signature="492:726" ph="..." />
+            <marker date="1473605964485" expanded="true" signature="523:572" ph="..." />
+            <marker date="1473605964485" expanded="true" signature="612:714" ph="..." />
+            <marker date="1473605964485" expanded="true" signature="774:1559" ph="..." />
+            <marker date="1473605964485" expanded="true" signature="802:1547" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/dodavanjeSaradnika.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#77#1849#0#PHP" expanded="false" />
+            <element signature="e#1884#2438#0#PHP" expanded="false" />
+            <marker date="1473605623227" expanded="true" signature="176:190" ph="..." />
+            <marker date="1473605623227" expanded="true" signature="1319:1588" ph="..." />
+            <marker date="1473605623227" expanded="true" signature="1343:1545" ph="..." />
+            <marker date="1473605623227" expanded="true" signature="1394:1539" ph="..." />
+            <marker date="1473605623227" expanded="true" signature="1561:1588" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/izmenaSaradnika.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#255#2705#0#PHP" expanded="false" />
+            <element signature="e#2739#3067#0#PHP" expanded="false" />
+            <element signature="e#3101#3696#0#PHP" expanded="false" />
+            <marker date="1473606092406" expanded="true" signature="414:428" ph="..." />
+            <marker date="1473606092406" expanded="true" signature="1035:1049" ph="..." />
+            <marker date="1473606092406" expanded="true" signature="1920:2287" ph="..." />
+            <marker date="1473606092406" expanded="true" signature="1963:2262" ph="..." />
+            <marker date="1473606092406" expanded="true" signature="2033:2256" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/izmenaLabVezbe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="e#579#2081#0#PHP" expanded="false" />
+            <element signature="e#2106#2731#0#PHP" expanded="false" />
+            <element signature="e#2751#6307#0#PHP" expanded="false" />
+            <element signature="e#6371#7401#0#PHP" expanded="false" />
+            <element signature="e#7433#9762#0#PHP" expanded="false" />
+            <element signature="e#9778#10355#0#PHP" expanded="false" />
+            <element signature="e#10382#10908#0#PHP" expanded="false" />
+            <marker date="1473605622792" expanded="true" signature="882:1031" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="912:1031" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="913:1031" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="1494:1643" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="1524:1643" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="2364:2493" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="3040:3086" ph="SELECT * FRO... laboratorija" />
+            <marker date="1473605622792" expanded="true" signature="3696:4376" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="3758:4376" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4210:4376" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4240:4376" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4265:4376" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4727:4903" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4752:4903" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="4785:4903" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="6050:6092" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="6673:6745" ph="SELECT * FRO... lab_vezba" />
+            <marker date="1473605622792" expanded="true" signature="7061:7189" ph="..." />
+            <marker date="1473605622792" expanded="true" signature="7738:7804" ph="SELECT fajl_... fajlovi" />
+            <marker date="1473605622792" expanded="true" signature="9957:9998" ph="DELETE FROM " />
+            <marker date="1473605622792" expanded="true" signature="10064:10098" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/dodavanjePredmeta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <marker date="1473605623034" expanded="true" signature="205:219" ph="..." />
+            <marker date="1473605623034" expanded="true" signature="236:827" ph="..." />
+            <marker date="1473605623034" expanded="true" signature="295:746" ph="..." />
+            <marker date="1473605623034" expanded="true" signature="318:723" ph="..." />
+            <marker date="1473605623034" expanded="true" signature="318:734" ph="..." />
+            <marker date="1473605623034" expanded="true" signature="484:490" ph=" " />
+            <marker date="1473605623034" expanded="true" signature="490:496" ph=" " />
+            <marker date="1473605623034" expanded="true" signature="496:502" ph=" " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/class.Saradnik.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+        <state relative-caret-position="1027">
+          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
           <folding>
+            <element signature="n#dodajLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
+            <element signature="n#izmeniLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
             <element signature="n#obrisiLabVezbu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#10570#10656#0#PHP" expanded="false" />
-            <element signature="n#promeniBio#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="e#11022#11152#0#PHP" expanded="false" />
-            <element signature="n#promeniLozinku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#promeniSliku#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSvePredmete#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <element signature="n#izlistajSveSaradnike#0;n#Saradnik#0;n#!!top" expanded="false" />
+            <element signature="n#izmenaProfila#0;n#Saradnik#0;n#!!top" expanded="false" />
             <element signature="n#sviSaradniciNaPredmetu#0;n#Saradnik#0;n#!!top" expanded="false" />
-            <marker date="1472658577730" expanded="true" signature="4329:4387" ph="SELECT predm... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="4828:5011" ph="INSERT INTO lab_vezba... " />
-            <marker date="1472658577730" expanded="true" signature="5260:5382" ph="SELECT lab_v... lab_vezba" />
-            <marker date="1472658577730" expanded="true" signature="5576:5773" ph="INSERT INTO laboratorija... " />
-            <marker date="1472658577730" expanded="true" signature="5983:6144" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="6211:6265" ph="SELECT mater... materijal" />
-            <marker date="1472658577730" expanded="true" signature="7954:8162" ph="UPDATE lab_v... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8295" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8239:8329" ph="UPDATE labor... " />
-            <marker date="1472658577730" expanded="true" signature="8486:8559" ph="UPDATE mater... " />
-            <marker date="1472658577730" expanded="true" signature="8492:8559" ph="INSERT INTO materijal... " />
-            <marker date="1472658577730" expanded="true" signature="9446:9487" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9565:9609" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9695:9736" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="9905:9944" ph="DELETE FROM " />
-            <marker date="1472658577730" expanded="true" signature="10768:10846" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="11368:11444" ph="UPDATE sarad... " />
-            <marker date="1472658577730" expanded="true" signature="12145:12167" ph="SELECT * FRO... saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12444" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472658577730" expanded="true" signature="12396:12457" ph="SELECT * FRO... predmet_saradnik" />
+            <element signature="n#vratiSaradnika#0;n#Saradnik#0;n#!!top" expanded="false" />
+            <marker date="1473346152666" expanded="true" signature="4656:4835" ph="INSERT INTO lab_vezba... " />
+            <marker date="1473346152666" expanded="true" signature="5052:5174" ph="SELECT lab_v... lab_vezba" />
+            <marker date="1473346152666" expanded="true" signature="5356:5553" ph="INSERT INTO laboratorija... " />
+            <marker date="1473346152666" expanded="true" signature="5731:5892" ph="INSERT INTO materijal... " />
+            <marker date="1473346152666" expanded="true" signature="5955:6009" ph="SELECT mater... materijal" />
+            <marker date="1473346152666" expanded="true" signature="7435:7643" ph="UPDATE lab_v... " />
+            <marker date="1473346152666" expanded="true" signature="7721:7811" ph="UPDATE labor... " />
+            <marker date="1473346152666" expanded="true" signature="7970:8058" ph="UPDATE mater... " />
+            <marker date="1473346152666" expanded="true" signature="7970:8087" ph="UPDATE mater... " />
+            <marker date="1473346152666" expanded="true" signature="9033:9074" ph="DELETE FROM " />
+            <marker date="1473346152666" expanded="true" signature="9151:9195" ph="DELETE FROM " />
+            <marker date="1473346152666" expanded="true" signature="9280:9321" ph="DELETE FROM " />
+            <marker date="1473346152666" expanded="true" signature="9490:9529" ph="DELETE FROM " />
+            <marker date="1473346152666" expanded="true" signature="10349:10450" ph="UPDATE sarad... " />
+            <marker date="1473346152666" expanded="true" signature="10794:10873" ph="UPDATE sarad... " />
+            <marker date="1473346152666" expanded="true" signature="11271:11293" ph="SELECT * FRO... saradnik" />
+            <marker date="1473346152666" expanded="true" signature="11652:11700" ph="SELECT * FRO... predmet_saradnik" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Predmet.php">
+    <entry file="file://$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-693">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        <state relative-caret-position="241">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="115" selection-end-column="11" />
           <folding>
-            <marker date="1472420451032" expanded="true" signature="1103:1124" ph="SELECT * FRO... predmet" />
-            <marker date="1472420451032" expanded="true" signature="2127:2176" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472420451032" expanded="true" signature="2646:2813" ph="SELECT * FRO... predmet_saradnik" />
-            <marker date="1472420451032" expanded="true" signature="3169:3251" ph="UPDATE predm... " />
+            <element signature="e#369#4084#0#PHP" expanded="false" />
+            <element signature="e#4105#5094#0#PHP" expanded="false" />
+            <marker date="1473599486700" expanded="true" signature="1061:1876" ph="..." />
+            <marker date="1473599486700" expanded="true" signature="1119:1876" ph="..." />
+            <marker date="1473599486700" expanded="true" signature="2105:2297" ph="..." />
+            <marker date="1473599486700" expanded="true" signature="2130:2297" ph="..." />
+            <marker date="1473599486700" expanded="true" signature="2176:2297" ph="..." />
+            <marker date="1473599486700" expanded="false" signature="3840:3882" ph="..." />
+            <marker date="1473599486700" expanded="true" signature="4268:4316" ph="SELECT * FRO... predmet_saradnik" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
-          <folding>
-            <marker date="1472669716940" expanded="true" signature="1576:1741" ph="INSERT INTO fajlovi... " />
-            <marker date="1472669716940" expanded="true" signature="2294:2342" ph="INSERT INTO materijal... " />
-            <marker date="1472669716940" expanded="true" signature="2294:2359" ph="INSERT INTO materijal... " />
-            <marker date="1472669716940" expanded="true" signature="2423:2477" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2423:2479" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2423:2482" ph="SELECT mater... materijal" />
-            <marker date="1472669716940" expanded="true" signature="2700:2885" ph="INSERT INTO fajlovi... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/saradnik.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/lab_vezba.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1067,89 +922,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/class.Materijal.php">
+    <entry file="file://$PROJECT_DIR$/include/class.Metode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="457">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
-            <marker date="1472658363494" expanded="true" signature="1426:1449" ph="SELECT * FRO... materijal" />
+            <marker date="1473599486575" expanded="true" signature="107:135" ph="..." />
+            <marker date="1473599486575" expanded="true" signature="305:335" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="198">
+            <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        <state relative-caret-position="-119">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/dodavanjeLabVezbe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-          <folding>
-            <marker date="1472659021472" expanded="true" signature="782:1493" ph="..." />
-            <marker date="1472659021472" expanded="true" signature="840:1493" ph="..." />
-            <marker date="1472659021472" expanded="false" signature="2565:2607" ph="..." />
-            <marker date="1472659021472" expanded="true" signature="2974:3022" ph="SELECT * FRO... predmet_saradnik" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/izm_lab_v.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="70" column="95" selection-start-line="70" selection-start-column="95" selection-end-line="70" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/izmenaLabVezbe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
-          <folding>
-            <marker date="1472680500058" expanded="true" signature="837:935" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="837:1299" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="1834:1947" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="1835:1947" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="2494:2540" ph="SELECT broj_... laboratorija" />
-            <marker date="1472680500058" expanded="true" signature="2494:2555" ph="SELECT broj_... laboratorija" />
-            <marker date="1472680500058" expanded="true" signature="3226:5782" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3288:3387" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3288:5222" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3740:4110" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3770:4104" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:3837" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:3905" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="3796:4084" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4256:4684" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4281:4678" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4356" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4432" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4315:4661" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4701:4861" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="4727:4855" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="5241:5504" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="5567:5609" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6190:6231" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6190:6262" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6190:6277" ph="SELECT * FRO... lab_vezba" />
-            <marker date="1472680500058" expanded="true" signature="6578:6615" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6644" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6706" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="6578:6714" ph="..." />
-            <marker date="1472680500058" expanded="true" signature="7255:7321" ph="SELECT naziv... fajlovi" />
-            <marker date="1472680500058" expanded="true" signature="7255:7349" ph="SELECT naziv... fajlovi" />
-            <marker date="1472680500058" expanded="true" signature="9492:9504" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9492:9533" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9492:9548" ph="DELETE FROM " />
-            <marker date="1472680500058" expanded="true" signature="9599:9633" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

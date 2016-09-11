@@ -15,7 +15,6 @@ $("#izmeniLabVezbuLink").click(function ()
             $("#predmet").change(function ()
             {
                 predmet_id = $(this).find("option:selected").val();
-                // alert(predmet_id);
           //change predmet
 
                 $.get(
@@ -29,7 +28,6 @@ $("#izmeniLabVezbuLink").click(function ()
                         $("#lab_vezba").change(function ()
                         {
                             lab_vezba_id = $(this).find("option:selected").val();
-                            // alert(lab_vezba_id);
 
                         $.get("ajax/izmenaLabVezbe.php?zid=1002&lab_vezba_id=" + lab_vezba_id + "",
                             {},
@@ -40,7 +38,6 @@ $("#izmeniLabVezbuLink").click(function ()
                                 // $("#predmetLab").change(function ()
                                 // {
                                     predmet_id = $("#predmetLab").find("option:selected").val();
-                                    // alert(predmet_id);
                                     // change predmet x2
                                     $.get(
                                         "ajax/izmenaLabVezbe.php?zid=1003&predmet_id=" + predmet_id + "&lab_vezba_id=" + lab_vezba_id + "",
@@ -60,7 +57,6 @@ $("#izmeniLabVezbuLink").click(function ()
                                                     {
                                                             var podaci = $(this).attr('class');
                                                             var niz = podaci.split(" ");
-                                                            alert(podaci);
 
                                                         if(confirm("Јесте ли сигурни да желите да обришете фајл?"))
                                                             $.get(
@@ -69,7 +65,6 @@ $("#izmeniLabVezbuLink").click(function ()
                                                                 function (odgovor,status)
                                                                 {
                                                                     var fajl_id = "#fajl"+niz[2];
-                                                                    alert(odgovor);
                                                                     if( odgovor.indexOf("Успешно") > -1 )
                                                                         $(fajl_id).remove();
                                                                 }); //get fajl
@@ -87,13 +82,13 @@ $("#izmeniLabVezbuLink").click(function ()
                                                         var fajl =  $('input[type=file]')[0].files[0];
                                                         var ekst;
                                                         var u_redu = true;
-                                                        var podrzani_formati = ["jpg","png","gif","bmp","pdf","doc","docx","txt","zip","ppt","pptx","xls","xls"];
-                                                        alert(typeof fajl + fajl);
+                                                        var podrzani_formati = ["jpg","png","gif","bmp","pdf","doc","docx","txt","zip","rar","ppt","pptx","xls","xlsx"];
+
                                                         if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
                                                         {
-                                                            if(fajl != undefined || fajl!=null || fajl!==0)
+                                                            if(fajl)
                                                             {
-                                                                ekst = fajl.name.split(".").pop(); alert(ekst);
+                                                                ekst = fajl.name.split(".").pop();
                                                                 u_redu = podrzani_formati.indexOf(ekst) > -1;
 
                                                                 if (u_redu)
@@ -112,7 +107,7 @@ $("#izmeniLabVezbuLink").click(function ()
                                                                             saradnik_id: saradnik_id
                                                                         },
                                                                         function (odgovor, status) {
-                                                                            alert("Одговор на зид = 1: " + odgovor + "статус: " + status);
+                                                                            alert(odgovor);
                                                                         });
                                                                 }
                                                                 else alert("Фајл није подржаног формата. ");
@@ -131,7 +126,7 @@ $("#izmeniLabVezbuLink").click(function ()
                                                                         saradnik_id: saradnik_id
                                                                     },
                                                                     function (odgovor, status) {
-                                                                        alert("Одговор на зид = 1: " + odgovor + "статус: " + status);
+                                                                        alert(odgovor );
                                                                     });
                                                             }
                                                         }

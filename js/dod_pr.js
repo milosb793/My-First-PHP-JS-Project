@@ -5,7 +5,6 @@
 
 
 
-
 // ### ПРИКАЗ ФОРМЕ ЗА ДОДАВАЊЕ САРАДНИКА ### //
 $('#dodajPredmetLink').click(function() {
 
@@ -30,11 +29,9 @@ $('#dodajPredmetLink').click(function() {
             {
                 var naziv = $('#nazivPredmeta').val();
                 var opis = $('#opisPredmeta').val();
-                // TODO: ne radi provera
-                // statusValidacje = validirajFormu();
-                //
-                // if(statusValidacje == true)
-                // {
+
+                if(  proveri($('#nazivPredmeta'),5) )
+                {
                     if(confirm("Јесте ли сигурни да су сви подаци у реду?"))
                     {
                         $.post("ajax/dodavanjePredmeta.php?zid=1",
@@ -43,9 +40,7 @@ $('#dodajPredmetLink').click(function() {
                                 alert(odgovor);
                             });
                     }
-                // }
-                // else
-                //     alert(poruka);
+                }
             });
         });
         }

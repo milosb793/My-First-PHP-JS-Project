@@ -16,7 +16,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
         <form id='obrisiPr' method='post' action=''> 
         Изаберите предмет за брисање:
         <select id='predmeti' class='reqd'>
-            <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
+            <option value='' disabled='disabled' selected='selected' hidden='hidden'> - Изаберите предмет -</option>";
         while($red = $svi_predmeti->fetch_assoc() )
         {
             $rezultat .= "<option value='{$red['predmet_id']}'> {$red['naziv']} </option>";

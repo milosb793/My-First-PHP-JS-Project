@@ -15,7 +15,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 {
     $rezultat = "";
     $rezultat .= "
-    <div id = 'loginDiv' style='border: 1px dashed dodgerblue; margin-top: 50px; border-radius: 5px; margin-left: 25%;  width: 50%;' align='center'>
+    <div id = 'loginDiv' align='center'>
         <h1  > Пријавите се </h1> <br/>
         <form action = '#' method = 'post' id = 'form' >
             <table border = '0' >

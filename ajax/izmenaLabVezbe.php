@@ -23,7 +23,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
         $rezultat = "<div id='predmeti'>
         <select id='predmet' >
-             <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
+             <option value='' disabled='disabled' selected='selected' hidden='hidden'> - Изаберите предмет -</option>";
         while ($predmet = $svi_predmeti->fetch_assoc())
         {
             while ($pr_sr = $svi_predmeti_saradnika->fetch_assoc())
@@ -38,7 +38,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
     {
         $rezultat = "<div id='predmeti'>
         <select id='predmet' >
-             <option value='' disabled='disabled' selected='selected'> - Изаберите предмет -</option>";
+             <option value='' disabled='disabled' selected='selected' hidden='hidden'> - Изаберите предмет -</option>";
         while ($predmet = $svi_predmeti->fetch_assoc())
         {
             $rezultat .= "<option value='{$predmet['predmet_id']}'> {$predmet['naziv']} </option>";
@@ -63,7 +63,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1001)
 
     $rezultat = "
             <select id='lab_vezba' >
-                    <option value='' disabled='disabled' selected='selected'> - Изаберите лаб. вежбу -</option>";
+                    <option value='' disabled='disabled' selected='selected' hidden='hidden'> - Изаберите лаб. вежбу -</option>";
    foreach($sve_vezbe as $vezba)
     {
         $rezultat .= "<option value='{$vezba['lab_vezba_id']}'> {$vezba['naziv']} | {$vezba['datum_odrzavanja']} </option>";
@@ -88,14 +88,11 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1002)
         501,502,503,504,505,506,507,508,509
     ];
     $ta_vezba = [];
-    for($i=0; $i<count($vezbe); $i++)
-    {
-        if($vezbe[$i]['lab_vezba_id'] == $lab_vezba_id)
+        if($vezbe['lab_vezba_id'] == $lab_vezba_id)
         {
-            $ta_vezba = $vezbe[$i];
-            break;
+            $ta_vezba = $vezbe;
         }
-    }
+
 
     $predmet = Predmet::procitaj(intval($ta_vezba['predmet_id'])); //fetch-ovano
 
@@ -107,7 +104,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1002)
                   <tr> <td>Oпис лаб. вежбе*: </td> <td> <input type='text' id='opisLab'  value='{$ta_vezba['opis']}'/>            </td> </tr>
                   <tr> <td>Датум одржавања*: </td> <td> <input type='text' id='datumLab'  value='{$ta_vezba['datum_odrzavanja']}'/> </td> </tr>
                   <tr> <td>Лабораторија*: </td> <td>    <select id='brojLab' >
-                        <option value='{$lab['broj_lab']}' selected='selected'> {$lab['broj_lab']} </option>";
+                        <option value='{$lab['broj_lab']}' selected='selected' > {$lab['broj_lab']} </option>";
                        foreach ($sve_lab as $lab)
                             $rezultat .= "<option value='{$lab}'> {$lab} </option>";
 
@@ -129,7 +126,7 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1002)
               
             <tr> <td>Додај нови материјал: </td> <td>       <input type='hidden' name='MAX_FILE_SIZE' value='200000000'> <input type='file' name='file1' id='file1' class=' '/>      </td> </tr>
         </table> <br/>
-        <tr> <td colspan='2'><span class='poruka'>(подржани фајлови: 'jpg','png','gif','bmp','pdf','doc','docx','txt','zip','ppt','pptx','xls','xls')</span> </td></tr> <br/>
+        <tr> <td colspan='2'><span class='poruka'>(подржани формати: <br/>'jpg','png','gif','bmp','pdf','doc','docx','txt','zip','rar','ppt','pptx','xls','xlsx')</span> </td></tr> <br/>
         <tr> <td colspan='2'><span class='poruka'>(макс. један фајл)</span> </td></tr> <br/>
        
         <progress id='progressBar' value='0' max='100' style='width:300px; background-color: dodgerblue;'>  </progress>
@@ -237,13 +234,13 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1004)
 // брисање //
 if(isset($_GET['zid']) && $_GET['zid'] == 0)
 {
-    echo "proba";
     $fajl_id = intval($_GET['fajl_id']);
     $materijal_id = intval($_GET['materijal_id']);
     if( Baza::vratiInstancu()->inUpDel("DELETE FROM materijal WHERE materijal_id={$materijal_id} ") )
         if(  Baza::vratiInstancu()->inUpDel("DELETE FROM fajlovi WHERE fajl_id={$fajl_id}") )
         {
-            echo 'Успешно сте обрисали фајл.'; return;
+            echo 'Успешно сте обрисали фајл.';
+            return;
         }
         else echo Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
     else echo Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
@@ -253,7 +250,13 @@ if(isset($_GET['zid']) && $_GET['zid'] == 0)
 // коначно: измена вежбе
 if(isset($_GET['zid']) && $_GET['zid'] == 1)
 {
-    echo "Поздрав из zid = 1 :) lab_id: {$_POST['lab_vezba_id']} naziv: {$_POST['naziv']} \n";
-    Saradnik::izmeniLabVezbu(intval($_POST['lab_vezba_id']),$_POST['naziv'],$_POST['opis'],$_POST['datum'],intval($_POST['br_lab']),intval($_POST['predmet_id']),intval($_POST['saradnik_id']));
+    $naziv = Metode::mysqli_prep($_POST['naziv_v']);
+    $opis = Metode::mysqli_prep($_POST['opis_v']);
+    $datum = Metode::mysqli_prep($_POST['datum']);
+    $lab = Metode::mysqli_prep($_POST['lab']);
+    $saradnik_id = Metode::mysqli_prep($_POST['saradnik_id']);
+    $predmet_id = Metode::mysqli_prep($_POST['predmet_id']);
+
+    Saradnik::izmeniLabVezbu(intval($_POST['lab_vezba_id']),$naziv,$opis, $datum, intval($lab),intval($predmet_id), intval($saradnik_id));
     return;
 }

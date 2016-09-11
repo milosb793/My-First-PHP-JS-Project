@@ -50,6 +50,7 @@ abstract class Korisnik
 
         $kor_ime = Metode::mysqli_prep(trim($kor_ime));
         $lozinka = Metode::mysqli_prep(trim($lozinka));
+        $lozinka = md5(sha1(sha1($lozinka)));
 
         if ($tip == "admin")
         {

@@ -38,8 +38,13 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
 
 }
 
+// коначно: измена сараника //
 if(isset($_GET['zid']) && $_GET['zid'] == 1)
 {
-    Saradnik::izmenaProfila(intval($_SESSION['korisnik']['saradnik_id']),$_POST['lozinka'],$_POST['opis'],$_POST['slika_url']);
+    $lozinka = Metode::mysqli_prep($_POST['lozinka']);
+    $opis = Metode::mysqli_prep($_POST['opis']);
+    $slika_url = Metode::mysqli_prep($_POST['slika_url']);
+
+    Saradnik::izmenaProfila(intval($_SESSION['korisnik']['saradnik_id']),$lozinka,$opis,$slika_url);
     return;
 }

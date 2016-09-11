@@ -158,12 +158,13 @@ class Saradnik extends Korisnik
                     $materijal_id = intval($materijal_id['materijal_id']);
 
                     if ($promenjeno_redova4 != 0)
-                        echo "База је успешно ажурирана!" . "Материјал: {$materijal_id}";
+                        echo "Вежба је успешно додата!" . "Материјал: {$materijal_id}";
                     else
                         echo "Грешка: Лаб. вежба није уписана!" . Baza::vratiInstancu()->vratiObjekatKonekcije()->error;
                 }
             }
-        } else return;
+        }
+        else return;
     }
 
     /**
@@ -184,33 +185,36 @@ class Saradnik extends Korisnik
      */
     public static function izmeniLabVezbu($lab_vezba_id, $naziv, $opis, $datum, $br_lab, $predmet_id, $saradnik_id)
     {
-        echo "поздрав из функције измениЛабВежбу :)\n Подаци: lab_id: {$lab_vezba_id} назив: {$naziv} opis: {$opis} datum: {$datum} br_lab: {$br_lab} pred_id: {$predmet_id} sar_id: {$saradnik_id}";
         $datum = date('Y-m-d H:i:s', strtotime($datum));
         //ако смо убацили фајл
 
         $materijali = Materijal::procitaj($lab_vezba_id);
-
+        $status = false;
 
         // ово ради //
         if (Baza::vratiInstancu()->inUpDel("UPDATE lab_vezba SET naziv='{$naziv}', opis='{$opis}', 
                                                   datum_odrzavanja='{$datum}', saradnik_id={$saradnik_id} , predmet_id={$predmet_id} WHERE lab_vezba_id={$lab_vezba_id}")
         ) {
-            if (Baza::vratiInstancu()->inUpDel("UPDATE laboratorija SET broj_lab={$br_lab}, saradnik_id={$saradnik_id} WHERE lab_vezba_id={$lab_vezba_id}")) {
+            if (Baza::vratiInstancu()->inUpDel("UPDATE laboratorija SET broj_lab={$br_lab}, saradnik_id={$saradnik_id} WHERE lab_vezba_id={$lab_vezba_id}"))
+            {
                 foreach ($materijali as $materijal)
                 {
-                    if (Baza::vratiInstancu()->inUpDel("UPDATE materijal SET opis='{$opis}' WHERE lab_vezba_id={$lab_vezba_id} )"))
+                    if (Baza::vratiInstancu()->inUpDel("UPDATE materijal SET opis='{$opis}' WHERE lab_vezba_id={$lab_vezba_id} AND materijal_id={$materijal['materijal_id']} "))
                     {
-                        echo "Успешно сте изменили лаб. вежбу!";
+                        $status = true;
                     }
                     else
                     {
-                        echo "Грешка: није успело ажурирање материјала.";
+                        echo "Пажња: није успело ажурирање материјала.";
                     }
-
                 }
-            } else
+                if($status)
+                    echo "Успешно сте изменили лаб. вежбу!";
+            }
+            else
                 echo "Грешка: није успело ажурирање табеле лаб. вежба";
-        } else
+        }
+        else
             echo "Грешка: није успело ажурирање табеле лабораторија.";
 
     }
@@ -226,22 +230,29 @@ class Saradnik extends Korisnik
         $materijali = Materijal::procitaj($lab_vezba_id); //fetch-ovano
         $status = 0;
 
-        if (Baza::vratiInstancu()->inUpDel("DELETE FROM lab_vezba WHERE lab_vezba_id={$lab_vezba_id}")) {
-            if (Baza::vratiInstancu()->inUpDel("DELETE FROM laboratorija WHERE lab_vezba_id={$lab_vezba_id}")) {
-                if (Baza::vratiInstancu()->inUpDel("DELETE FROM materijal WHERE lab_vezba_id={$lab_vezba_id}")) {
-                    foreach ($materijali as $mat) {
+        if (Baza::vratiInstancu()->inUpDel("DELETE FROM lab_vezba WHERE lab_vezba_id={$lab_vezba_id}"))
+        {
+            if (Baza::vratiInstancu()->inUpDel("DELETE FROM laboratorija WHERE lab_vezba_id={$lab_vezba_id}"))
+            {
+                if (Baza::vratiInstancu()->inUpDel("DELETE FROM materijal WHERE lab_vezba_id={$lab_vezba_id}"))
+                {
+                    foreach ($materijali as $mat)
+                    {
                         if (Baza::vratiInstancu()->inUpDel("DELETE FROM fajlovi WHERE materijal_id={$mat['materijal_id']} "))
                             $status = 1;
-                        else
-                            $status = 0;
                     }
-                    if ($status) {
+                    if ($status)
+                    {
                         echo "Успешно сте обрисали вежбу!";
                         return;
-                    } else echo "Грешка при брисању материјала... ";
-                } else echo "Грешка при брисању материјала...";
-            } else echo "Грешка при брисању лабораторије...";
-        } else echo "Грешка при брисању лаб. вежбе...";
+                    }
+                    else echo "Грешка при брисању материјала... ";
+                }
+                else echo "Грешка при брисању материјала...";
+            }
+            else echo "Грешка при брисању лабораторије...";
+        }
+        else echo "Грешка при брисању лаб. вежбе...";
 
     }
 
@@ -281,6 +292,11 @@ class Saradnik extends Korisnik
 
     }
 
+    /**
+     * Враћа комплетне профиле сарадника за прослеђени ид предмета
+     * @param $predmet_id
+     * @return array
+     */
     public static function sviSaradniciNaPredmetu($predmet_id)
     {
         $svi_saradnici = self::izlistajSveSaradnike();
@@ -312,7 +328,6 @@ class Saradnik extends Korisnik
         }
 
     }
-
 
 
 

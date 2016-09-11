@@ -152,13 +152,13 @@ class Administrator extends Korisnik
      * @param $opis
      * @param $status
      * @param $slika_url
-     * @return string
      * @throws Izuzetak
      */
-    public static function dodajSaradnika($ime_prezime,$kor_ime,$lozinka,$e_mail,$opis,$status,$slika_url="//") //слику мења сарадник када се пријави
+    public static function dodajSaradnika($ime_prezime,$kor_ime,$lozinka,$e_mail,$opis,$status) //слику мења сарадник када се пријави
     {
         //прво провера да ли постоји
         $korisnik = Korisnik::vratiKorisnika($kor_ime,$lozinka,"saradnik"); // асоц низ са свим атрибутима
+        $lozinka = md5(sha1(sha1($lozinka)));
 
         if( $korisnik )
         {
@@ -166,8 +166,8 @@ class Administrator extends Korisnik
         }
         else
         {
-            $upit = "INSERT INTO saradnik (ime_prezime, kor_ime, lozinka, e_mail, opis, status, slika_url) ";
-            $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}', '{$slika_url}' ) ";
+            $upit = "INSERT INTO saradnik (ime_prezime, kor_ime, lozinka, e_mail, opis, status) ";
+            $upit .= "VALUES ('{$ime_prezime}', '{$kor_ime}', '{$lozinka}', '{$e_mail}', '{$opis}', '{$status}' ) ";
 
             // echo "Упит за убацивање: " . $upit ;
 
