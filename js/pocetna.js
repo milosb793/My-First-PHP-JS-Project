@@ -99,10 +99,7 @@ function saradnikClick(a)
 }
 
 
-$("document").ready(function()
-{
-    setTimeout(function()
-    {
-        $("#pocetna").trigger('click');
-    },10);
+ $("document").ready(function()
+ {
+    $("#pocetna").trigger('click');
 });
