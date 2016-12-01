@@ -19,11 +19,11 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1000)
         <h1  > Пријавите се </h1> <br/>
         <form action = '#' method = 'post' id = 'form' >
             <table border = '0' >
-            <tr > <td > Корисничко име:</td >  <td ><input type = 'text' id = 'kor_ime' name = 'kor_ime' class='reqd' />    </td ></tr >
-            <tr > <td > Лозинка:       </td >  <td ><input type = 'password' id = 'lozinka' name = 'lozinka' class='reqd' /></td ></tr >
+            <tr > <td > Корисничко име:</td >  <td ><input type = 'text' id = 'kor_ime' name = 'kor_ime' class='reqd' required/>    </td ></tr >
+            <tr > <td > Лозинка:       </td >  <td ><input type = 'password' id = 'lozinka' name = 'lozinka' class='reqd'  required /></td ></tr >
             </table > <br />
         </form >
-            <button id='ulogujSe' value='Пријави се' onclick=''>Пријави се </button> <br/> <br/>
+            <button id='ulogujSe' value='Пријави се' onclick='' autofocus >Пријави се </button> <br/> <br/>
     </div >
     ";
 
@@ -50,4 +50,3 @@ if(isset($_GET['zid']) && $_GET['zid'] == 1 )
     else echo "Проблем са POST-ом";
 }
 else echo "Проблем са GET-ом";
-
