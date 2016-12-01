@@ -25,7 +25,11 @@ CREATE TABLE `administrator` (
 INSERT INTO `administrator` (`admin_id`, `kor_ime`, `lozinka`, `e_mail`, `kreator_id`) VALUES
 (1, 'admin', '3a63b18fbcc415f5f7afd258919195d6', 'admin@mejl.rs', NULL);
 
--- ----------------------------
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fajlovi`
+--
 
 CREATE TABLE `fajlovi` (
   `fajl_id` int(11) NOT NULL,
@@ -115,13 +119,18 @@ INSERT INTO `materijal` (`materijal_id`, `lab_vezba_id`, `opis`) VALUES
 (3, 3, 'проба'),
 (4, 4, 'проба'),
 (5, 5, '2. из Мате 1'),
+(6, 1, NULL),
 (7, 2, NULL),
+(8, 2, NULL),
 (9, 3, NULL),
+(10, 3, NULL),
 (11, 6, 'Трећа вежба из '),
 (12, 7, 'Четврта вежба из'),
 (14, 9, 'Четврта вежба из Мате '),
+(17, 7, NULL),
 (18, 9, 'Четврта вежба из Мате '),
 (20, 9, NULL),
+(21, 4, NULL),
 (23, 11, 'додао админ');
 
 -- --------------------------------------------------------
@@ -142,7 +151,7 @@ CREATE TABLE `predmet` (
 
 INSERT INTO `predmet` (`predmet_id`, `naziv`, `opis`) VALUES
 (1, 'Математика 1', 'Предмет прве године'),
-(2, 'Програмирање Веб \r\n\r\nапликација', 'Опис пр. ПВА'),
+(2, 'Програмирање Веб \r\n\r\nапликација', 'Опис предмета ПВА'),
 (3, 'Објектно орјентисано пројектовање', 'Опис предмета ООП'),
 (4, 'Комуникациони системи', 'Предмет Комуникациони системи(Телекомуникације)');
 
@@ -286,7 +295,7 @@ ALTER TABLE `materijal`
 -- AUTO_INCREMENT for table `predmet`
 --
 ALTER TABLE `predmet`
-  MODIFY `predmet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `predmet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `saradnik`
 --
